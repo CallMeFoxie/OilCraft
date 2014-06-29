@@ -27,12 +27,12 @@ def VersionBuild = 0
 if (System.getenv("BUILD_NUMBER") != null)
     VersionBuild = System.getenv("BUILD_NUMBER")
 
-version = "1.7.2-${VersionMajor}.${VersionMinor}.${VersionRev}-${VersionBuild}"
+version = "1.7.10-${VersionMajor}.${VersionMinor}.${VersionRev}-${VersionBuild}"
 group= "cz.ondraster.oilcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "OilCraft"
 
 minecraft {
-    version = "1.7.2-10.12.2.1126"
+    version = "1.7.10-10.13.0.1152"
     assetDir = "eclipse/assets"
 }
 

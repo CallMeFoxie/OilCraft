@@ -93,46 +93,46 @@ public class ModelOiljack extends ModelBase {
       motor.mirror = true;
       setRotation(motor, 0F, 0F, 0F);
       armLeft = new ModelRenderer(this, 0, 0);
-      armLeft.addBox(-8F, 10F, -1F, 2, 16, 2);
-      armLeft.setRotationPoint(0F, -4F, -12F);
+      armLeft.addBox(-1F, -16F, -1F, 2, 16, 2);
+      armLeft.setRotationPoint(-7F, 16F, -20F);
       armLeft.setTextureSize(64, 32);
       armLeft.mirror = true;
-      setRotation(armLeft, -0.3490659F, 0F, 0F);
+      setRotation(armLeft, -0.3839724F, 0F, 0F);
       armRight = new ModelRenderer(this, 0, 0);
-      armRight.addBox(6F, 10F, -1F, 2, 16, 2);
-      armRight.setRotationPoint(0F, -4F, -12F);
+      armRight.addBox(-1F, -16F, -1F, 2, 16, 2);
+      armRight.setRotationPoint(7F, 16F, -20F);
       armRight.setTextureSize(64, 32);
       armRight.mirror = true;
-      setRotation(armRight, -0.3490659F, 0F, 0F);
+      setRotation(armRight, -0.3839724F, 0F, 0F);
       armJoin = new ModelRenderer(this, 0, 0);
-      armJoin.addBox(-8F, 10F, -1F, 16, 2, 2);
-      armJoin.setRotationPoint(0F, -4F, -12F);
+      armJoin.addBox(-8F, -16F, -1F, 16, 2, 2);
+      armJoin.setRotationPoint(0F, 16F, -20F);
       armJoin.setTextureSize(64, 32);
       armJoin.mirror = true;
-      setRotation(armJoin, -0.3490659F, 0F, 0F);
+      setRotation(armJoin, -0.3839724F, 0F, 0F);
       armConnect = new ModelRenderer(this, 0, 0);
-      armConnect.addBox(-1F, 0F, -1F, 2, 10, 2);
-      armConnect.setRotationPoint(0F, -4F, -12F);
+      armConnect.addBox(-1F, -22F, -1F, 2, 6, 2);
+      armConnect.setRotationPoint(0F, 16F, -20F);
       armConnect.setTextureSize(64, 32);
       armConnect.mirror = true;
-      setRotation(armConnect, -0.3490659F, 0F, 0F);
+      setRotation(armConnect, -0.3839724F, 0F, 0F);
       wheelLeft = new ModelRenderer(this, 0, 0);
       wheelLeft.addBox(-1F, -4F, -4F, 2, 8, 8);
       wheelLeft.setRotationPoint(-5F, 16F, -20F);
       wheelLeft.setTextureSize(32, 32);
       wheelLeft.mirror = true;
-      setRotation(wheelLeft, 0F, 0F, 0F);
+      setRotation(wheelLeft, -0.7853982F, 0F, 0F);
       wheelRight = new ModelRenderer(this, 0, 0);
       wheelRight.addBox(-1F, -4F, -4F, 2, 8, 8);
       wheelRight.setRotationPoint(5F, 16F, -20F);
       wheelRight.setTextureSize(32, 32);
       wheelRight.mirror = true;
-      setRotation(wheelRight, 0F, 0F, 0F);
+      setRotation(wheelRight, -0.7853982F, 0F, 0F);
    }
 
    public void render(float angle) {
       float renderDepth = 0.0625F;
-      //angle = 90;
+      //angle = 0;
       float finalAngle = angle % 180;
       if (angle >= 180)
          finalAngle = 361 - angle;
@@ -140,40 +140,40 @@ public class ModelOiljack extends ModelBase {
       finalAngle -= 90;
 
       float rotationAngle = angle;
-      if (rotationAngle > 180)
-         rotationAngle = 360 - rotationAngle;
+
+      rotationAngle += 90f;
 
       //angle *= 4;
-
-      setRotation(beamTop, finalAngle / 180, 0f, 0f);
-      setRotation(beamSide, finalAngle / 180, 0f, 0f);
       if (true) {
-         float angleArm = angle;
-         //System.out.println(angle);
-         if (angleArm < 0)
-            angleArm *= -1;
+         armLeft.offsetY = (float) Math.sin(Math.toRadians(rotationAngle)) / 6f;
+         armRight.offsetY = (float) Math.sin(Math.toRadians(rotationAngle)) / 6f;
+         armJoin.offsetY = (float) Math.sin(Math.toRadians(rotationAngle)) / 6f;
+         armConnect.offsetY = (float) Math.sin(Math.toRadians(rotationAngle)) / 6f;
 
-         //armLeft.setRotationPoint(0f, -6f + (angleArm / 360), 0f);
-         //armRight.setRotationPoint(0f, -6f + (angleArm / 360), 0f);
-         //armJoin.setRotationPoint(0f, -6f + (angleArm / 360), 0f);
-         //armConnect.setRotationPoint(0f, -6f + (angleArm / 360), 0f);
+         //System.out.println(armLeft.offsetY);
 
-         armLeft.offsetY = (float) (Math.sin(Math.toRadians(angle / 180)));
-         armRight.offsetY = (float) (Math.sin(Math.toRadians(angle / 180)));
-         armJoin.offsetY = (float) (Math.sin(Math.toRadians(angle / 180)));
-         armConnect.offsetY = (float) (Math.sin(Math.toRadians(angle / 180)));
+         armJoin.offsetZ = (float) -Math.cos(Math.toRadians(rotationAngle)) / 6f;
+         armLeft.offsetZ = (float) -Math.cos(Math.toRadians(rotationAngle)) / 6f;
+         armRight.offsetZ = (float) -Math.cos(Math.toRadians(rotationAngle)) / 6f;
+         armConnect.offsetZ = (float) -Math.cos(Math.toRadians(rotationAngle)) / 6f;
 
+         float offZ = armJoin.offsetZ;
+         float offY = armJoin.offsetY;
+         float rotation = (float) Math.asin(offZ);
 
-         setRotation(armLeft, (float) Math.toRadians((rotationAngle) / 12f) - 0.3490659F, 0f, 0f);
-         setRotation(armRight, (float) Math.toRadians((rotationAngle) / 12f) - 0.3490659F, 0f, 0f);
-         setRotation(armJoin, (float) Math.toRadians((rotationAngle) / 12f) - 0.3490659F, 0f, 0f);
-         setRotation(armConnect, (float) Math.toRadians((rotationAngle) / 12f) - 0.3490659F, 0f, 0f);
+         setRotation(armLeft, rotation - 0.3839724F - 0.05f, 0f, 0f);
+         setRotation(armRight, rotation - 0.3839724F - 0.05f, 0f, 0f);
+         setRotation(armJoin, rotation - 0.3839724F - 0.05f, 0f, 0f);
+         setRotation(armConnect, rotation - 0.3839724F - 0.05f, 0f, 0f);
 
-         setRotation(wheelLeft, (float) Math.toRadians(angle - 60f), 0f, 0f);
-         setRotation(wheelRight, (float) Math.toRadians(angle - 60f), 0f, 0f);
+         setRotation(wheelLeft, (float) Math.toRadians(rotationAngle + 45), 0f, 0f);
+         setRotation(wheelRight, (float) Math.toRadians(rotationAngle + 45), 0f, 0f);
 
          //prevAngle = angle;
       }
+
+      setRotation(beamTop, (float) Math.sin(Math.toRadians(angle + 120)) / 4f, 0f, 0f);
+      setRotation(beamSide, (float) Math.sin(Math.toRadians(angle + 120)) / 4f, 0f, 0f);
 
       leg2.render(renderDepth);
       leg1.render(renderDepth);
