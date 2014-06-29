@@ -1,6 +1,7 @@
 package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers;
 
-import cz.ondraster.oilcraft.TEBeam;
+import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelOiljack;
+import cz.ondraster.oilcraft.entities.EntityOiljack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -12,40 +13,6 @@ import org.lwjgl.opengl.GL11;
  * Created by Ondra on 21.6.2014.
  */
 public class OiljackRenderer extends TileEntitySpecialRenderer {
-
-   /*@Override
-   public void renderTileEntityAt(TileEntity var1, double var2, double var4, double var6, float var8) {
-      GL11.glPushMatrix();
-
-      GL11.glTranslated(var2, var4, var6);
-      //GL11.glRotatef(var8, 0.0F, 1.0F, 0.0F);
-
-      TextureManager tm = Minecraft.getMinecraft().getTextureManager();
-      tm.bindTexture(new ResourceLocation("oilcraft", "textures/blocks/beam.png"));
-
-      TEBeam te = (TEBeam) var1;
-
-      double off = (te.renderOffset % 30) * 0.8d;
-      if(te.renderOffset >= 30)
-         off = (30 * 0.8d) - off;
-
-      GL11.glTranslated(0.5, 0, 0);
-      GL11.glRotated(off, 0, 0, 2d);
-      GL11.glTranslated(-0.5, 0, 0);
-      Tessellator tessellator = Tessellator.instance;
-      tessellator.startDrawingQuads();
-      tessellator.addVertexWithUV(0, 0, 0, 0, 0); // bottom left
-      tessellator.addVertexWithUV(0, 1, 0, 0, 1); // top left
-      tessellator.addVertexWithUV(1, 1, 0, 1, 1); // top right
-      tessellator.addVertexWithUV(1, 0, 0, 1, 0); // bottom right
-
-
-
-      tessellator.draw();
-
-
-      GL11.glPopMatrix();
-   }*/
 
    private final ModelOiljack jack;
 
@@ -64,9 +31,9 @@ public class OiljackRenderer extends TileEntitySpecialRenderer {
       //GL11.glRotatef(var8, 0.0F, 1.0F, 0.0F);
 
 
-      tm.bindTexture(new ResourceLocation("oilcraft", "textures/blocks/beam_texture.png"));
+      tm.bindTexture(new ResourceLocation("oilcraft", "textures/blocks/beam.png"));
 
-      TEBeam te = (TEBeam) var1;
+      EntityOiljack te = (EntityOiljack) var1;
 
       float off = te.renderOffset;
       //if (te.renderOffset >= 30)

@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers;
+package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models;
 
 /**
  * Created by Ondra on 28.6.2014.
