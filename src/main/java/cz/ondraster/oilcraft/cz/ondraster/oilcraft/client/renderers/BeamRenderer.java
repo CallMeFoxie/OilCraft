@@ -47,12 +47,10 @@ public class BeamRenderer extends TileEntitySpecialRenderer {
       GL11.glPopMatrix();
    }*/
 
-   private final ModelBeam beam;
-   private final ModelBridle bridle;
+   private final ModelOiljack jack;
 
    public BeamRenderer() {
-      this.beam = new ModelBeam();
-      this.bridle = new ModelBridle();
+      this.jack = new ModelOiljack();
    }
 
    @Override
@@ -70,30 +68,19 @@ public class BeamRenderer extends TileEntitySpecialRenderer {
 
       TEBeam te = (TEBeam) var1;
 
-      double off = (te.renderOffset % 30) * 0.8d;
-      if (te.renderOffset >= 30)
-         off = (30 * 0.8d) - off;
+      float off = te.renderOffset;
+      //if (te.renderOffset >= 30)
+      //   off = (30 * 0.8f) - off;
 
-      off -= (15 * 0.8d);
+      //off -= (15 * 0.8d);
 
-      GL11.glTranslated(0.5, 0, 0);
-      GL11.glRotated(off, 0, 0, 2d);
-      GL11.glTranslated(-0.5, 0, 0);
-      GL11.glScalef(0.5f, 0.5f, 0.5f);
-      this.beam.render(null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-
-      GL11.glPopMatrix();
-
-      // render the bridle
-
-      GL11.glPushMatrix();
-
-
-      GL11.glTranslatef((float) x, (float) y + (float) Math.asin(Math.toRadians(off)) * -1f - 0.6f * te.bridleLength, (float) z + 0.5F);
-      GL11.glScalef(0.1f, te.bridleLength * 3.0f, 0.1f);
-      tm.bindTexture(new ResourceLocation("oilcraft", "textures/blocks/bridle_texture.png"));
-
-      this.bridle.render(null, 0f, 0f, -0.0f, 0f, 0f, 0.0f);
+      //GL11.glTranslated(0, 0, 0);
+      //GL11.glRotated(off, 0, 0, 2d);
+      //GL11.glTranslated(0, 0, 0);
+      //GL11.glScalef(0.5f, 0.5f, 0.5f);
+      GL11.glRotatef(180, 1f, 0f, 0f);
+      GL11.glTranslatef(0, -1f, 0f);
+      this.jack.render(off);
 
       GL11.glPopMatrix();
    }

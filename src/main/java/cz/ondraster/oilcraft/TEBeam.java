@@ -33,8 +33,8 @@ public class TEBeam extends TileEntity {
 
    @Override
    public void updateEntity() {
-      renderOffset++;
-      if (renderOffset >= 60) {
+      renderOffset += 4;
+      if (renderOffset >= 360) {
          renderOffset = 0;
       }
    }
