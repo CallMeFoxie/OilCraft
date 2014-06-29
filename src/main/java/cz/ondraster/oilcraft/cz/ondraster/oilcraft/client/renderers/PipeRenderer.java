@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers;
 
+import cz.ondraster.oilcraft.OrientationSimple;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelPipeHalf;
 import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelPipeMiddle;
@@ -9,7 +10,6 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.ForgeDirection;
 import org.lwjgl.opengl.GL11;
 
 /**
@@ -36,48 +36,38 @@ public class PipeRenderer extends TileEntitySpecialRenderer {
       tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/pipe.png"));
 
       EntityPipe pipe = (EntityPipe) var1;
-/*
-      for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS) {
-         if (pipe.isConnected(direction)) {
-            //GL11.glRotatef(180, 1f, 0f, 0f);
-            //GL11.glRotatef(180, 0f, 0f, 1f);
-            //GL11.glRotatef(180, 0f, 1f, 0f);
-            GL11.glRotatef(90, direction.offsetX, direction.offsetY, direction.offsetZ);
-            this.pipeHalf.render();
-         }
-      }
-*/
-      if (pipe.isConnected(ForgeDirection.NORTH)) {
+
+      if (pipe.isConnected(OrientationSimple.North)) {
          //GL11.glRotatef();
          GL11.glPushMatrix();
          this.pipeHalf.render();
          GL11.glPopMatrix();
       }
-      if (pipe.isConnected(ForgeDirection.SOUTH)) {
+      if (pipe.isConnected(OrientationSimple.South)) {
          GL11.glPushMatrix();
          GL11.glRotatef(180, 1, 0, 0);
          this.pipeHalf.render();
          GL11.glPopMatrix();
       }
-      if (pipe.isConnected(ForgeDirection.EAST)) {
+      if (pipe.isConnected(OrientationSimple.East)) {
          GL11.glPushMatrix();
          GL11.glRotatef(-90, 0, 1, 0);
          this.pipeHalf.render();
          GL11.glPopMatrix();
       }
-      if (pipe.isConnected(ForgeDirection.WEST)) {
+      if (pipe.isConnected(OrientationSimple.West)) {
          GL11.glPushMatrix();
          GL11.glRotatef(90, 0, 1, 0);
          this.pipeHalf.render();
          GL11.glPopMatrix();
       }
-      if (pipe.isConnected(ForgeDirection.UP)) {
+      if (pipe.isConnected(OrientationSimple.Up)) {
          GL11.glPushMatrix();
          GL11.glRotatef(90, 1, 0, 0);
          this.pipeHalf.render();
          GL11.glPopMatrix();
       }
-      if (pipe.isConnected(ForgeDirection.DOWN)) {
+      if (pipe.isConnected(OrientationSimple.Down)) {
          GL11.glPushMatrix();
          GL11.glRotatef(-90, 1, 0, 0);
          this.pipeHalf.render();
