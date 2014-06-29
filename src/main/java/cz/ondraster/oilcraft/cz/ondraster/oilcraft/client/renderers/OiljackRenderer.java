@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 /**
  * Created by Ondra on 21.6.2014.
  */
-public class BeamRenderer extends TileEntitySpecialRenderer {
+public class OiljackRenderer extends TileEntitySpecialRenderer {
 
    /*@Override
    public void renderTileEntityAt(TileEntity var1, double var2, double var4, double var6, float var8) {
@@ -49,7 +49,7 @@ public class BeamRenderer extends TileEntitySpecialRenderer {
 
    private final ModelOiljack jack;
 
-   public BeamRenderer() {
+   public OiljackRenderer() {
       this.jack = new ModelOiljack();
    }
 

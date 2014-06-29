@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft;
+package cz.ondraster.oilcraft.entities;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -8,12 +8,12 @@ import java.util.Random;
 /**
  * Created by Ondra on 22.6.2014.
  */
-public class TEBeam extends TileEntity {
+public class EntityOiljack extends TileEntity {
 
    public int renderOffset = 0;
    public int bridleLength = 0;
 
-   public TEBeam() {
+   public EntityOiljack() {
       setBridleLength(new Random().nextInt(5));
    }
 

@@ -1,5 +1,6 @@
-package cz.ondraster.oilcraft;
+package cz.ondraster.oilcraft.blocks;
 
+import cz.ondraster.oilcraft.entities.EntityBeam;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,12 +12,12 @@ import net.minecraft.world.World;
 * Created by Ondra on21.6.2014.
 */
 
-public class BlockBeam extends BlockContainer {
-   protected BlockBeam() {
+public class BlockOiljack extends BlockContainer {
+   protected BlockOiljack() {
       super(Material.anvil);
       this.setCreativeTab(CreativeTabs.tabBlock);
-      this.setBlockTextureName("oilcraft:beam");
-      this.setBlockName("beam");
+      this.setBlockTextureName("oilcraft:jack");
+      this.setBlockName("jack");
    }
 
    //This will tell minecraft not to render any side of our cube.
@@ -31,7 +32,7 @@ public class BlockBeam extends BlockContainer {
 
    @Override
    public TileEntity createNewTileEntity(World world, int meta) {
-      return new TEBeam();
+      return new EntityBeam();
    }
 
    @Override
