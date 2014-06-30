@@ -1,6 +1,6 @@
-package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers;
+package cz.ondraster.oilcraft.client.renderers;
 
-import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelOiljack;
+import cz.ondraster.oilcraft.client.renderers.models.ModelOiljack;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;

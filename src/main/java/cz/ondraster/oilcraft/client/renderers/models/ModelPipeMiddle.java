@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models;
+package cz.ondraster.oilcraft.client.renderers.models;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

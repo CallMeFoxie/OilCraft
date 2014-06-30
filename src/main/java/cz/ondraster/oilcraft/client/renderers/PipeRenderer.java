@@ -1,9 +1,9 @@
-package cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers;
+package cz.ondraster.oilcraft.client.renderers;
 
 import cz.ondraster.oilcraft.OrientationSimple;
 import cz.ondraster.oilcraft.References;
-import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelPipeHalf;
-import cz.ondraster.oilcraft.cz.ondraster.oilcraft.client.renderers.models.ModelPipeMiddle;
+import cz.ondraster.oilcraft.client.renderers.models.ModelPipeHalf;
+import cz.ondraster.oilcraft.client.renderers.models.ModelPipeMiddle;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;
