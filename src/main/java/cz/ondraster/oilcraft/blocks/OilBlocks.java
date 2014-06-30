@@ -1,6 +1,8 @@
-package cz.ondraster.oilcraft;
+package cz.ondraster.oilcraft.blocks;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.blocks.BlockOiljack;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
