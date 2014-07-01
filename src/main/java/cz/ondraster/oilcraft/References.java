@@ -15,6 +15,7 @@ public class References {
       public static final String BLOCKOILJACKPIPE = MODID + "_oiljack_pipe";
       public static final String ENTITYOILJACKPIPE = MODID + "_oiljack_pipe_te";
       public static final String BUCKETCRUDEOIL = MODID + "_bucket_crudeoil";
+      public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
    }
 
    public class Textures {
@@ -27,5 +28,6 @@ public class References {
       public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe";
       public static final String FLUIDCRUDEOILFLOWING = MODID + ":crudeoil_flowing";
       public static final String FLUIDCRUDEOILSTILL = MODID + ":crudeoil_still";
+      public static final String ITEMDEBUGTOOL = MODID + ":debugtool";
    }
 }

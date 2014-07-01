@@ -70,4 +70,8 @@ public class BlockPipe extends BlockContainer {
       if (world instanceof World)
          updateBlockStatus((World) world, x, y, z);
    }
+
+   public void onBlockPreDestroy(World world, int x, int y, int z, int oldmeta) {
+
+   }
 }

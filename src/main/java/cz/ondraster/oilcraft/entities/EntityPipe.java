@@ -1,8 +1,8 @@
 package cz.ondraster.oilcraft.entities;
 
 import cz.ondraster.oilcraft.FluidTank;
-import cz.ondraster.oilcraft.Helper;
-import cz.ondraster.oilcraft.OrientationSimple;
+import cz.ondraster.oilcraft.pipe.PipeFluidNetwork;
+import cz.ondraster.oilcraft.pipe.PipeNode;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -16,10 +16,22 @@ import net.minecraftforge.fluids.IFluidHandler;
 
 public class EntityPipe extends TileEntity implements IFluidHandler {
    public int connections = 0;
+   public boolean hasDr = false;
    FluidTank tank;
+   PipeFluidNetwork network = null;
+   private int drX;
+   private int drY;
+   private int drZ;
 
    public EntityPipe() {
       tank = new FluidTank(2000);
+   }
+
+   public PipeFluidNetwork getNetworkDr() {
+      if (xCoord == drX && yCoord == drY && zCoord == drZ)
+         return this.network;
+
+      return ((EntityPipe) worldObj.getTileEntity(drX, drY, drZ)).getNetworkDr();
    }
 
    @Override
@@ -38,7 +50,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
    @Override
    public void updateEntity() {
-      if (tank.getFluidAmount() > 0) {
+      /*if (tank.getFluidAmount() > 0) {
          if (tank.getFluid() == null || tank.getFluid().getFluid() == null) {
             Helper.logWarn("Cleared " + tank.getFluidAmount() + " of NULL (!!) fluid! Prevented crash...");
             tank.safeDrain();
@@ -46,13 +58,15 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
          for (int i = 0; i < OrientationSimple.Directions; i++) {
             if ((connections & (1 << i)) != 0 && tank.getFluidAmount() > 0) {
                IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + OrientationSimple.getX(i), yCoord + OrientationSimple.getY(i), zCoord + OrientationSimple.getZ(i));
+               if (handler == null)
+                  continue;
                if (handler.canFill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid().getFluid())) {
                   int amount = handler.fill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid(), true);
                   this.tank.drain(amount, true);
                }
             }
          }
-      }
+      }*/
    }
 
 
@@ -81,17 +95,34 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
    @Override
    public int fill(ForgeDirection from, FluidStack resource, boolean doFill) {
-      return tank.fill(resource, doFill);
+      int filled = tank.fill(resource, doFill);
+      if (doFill && filled > 0) {
+         getNetworkDr().fill(new FluidStack(resource.getFluid(), filled), true);
+         getNetworkDr().rebalance(worldObj);
+      }
+      return filled;
+
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
-      return tank.drain(resource.amount, doDrain);
+      FluidStack drained = tank.drain(resource.amount, doDrain);
+      if (doDrain && drained.amount > 0) {
+         getNetworkDr().drain(drained.amount, true);
+         getNetworkDr().rebalance(worldObj);
+      }
+      return drained;
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
-      return tank.drain(maxDrain, doDrain);
+      FluidStack drained = tank.drain(maxDrain, doDrain);
+      if (doDrain && drained.amount > 0) {
+         getNetworkDr().drain(drained.amount, true);
+         getNetworkDr().rebalance(worldObj);
+      }
+      return drained;
+
    }
 
    @Override
@@ -110,5 +141,49 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    @Override
    public FluidTankInfo[] getTankInfo(ForgeDirection from) {
       return new FluidTankInfo[]{tank.getInfo()};
+   }
+
+   public void setFluidParams(Fluid storedFluid, int i) {
+      this.tank.safeDrain();
+      this.tank.fill(new FluidStack(storedFluid, i), true);
+   }
+
+   public void updateNeighbour() {
+      if (this.hasDr)
+         return;
+
+      for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS) {
+         TileEntity tileEntity = worldObj.getTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ);
+         if (tileEntity instanceof EntityPipe) {
+            EntityPipe pipe = (EntityPipe) tileEntity;
+            if (!pipe.hasDr) {
+               if (getNetworkDr().addNode(new PipeNode(xCoord, yCoord, zCoord, tank.getCapacity(), tank.getFluidAmount()), worldObj)) {
+                  pipe.drX = this.drX;
+                  pipe.drY = this.drY;
+                  pipe.drZ = this.drZ;
+                  pipe.hasDr = true;
+               }
+            } else if (pipe.hasDr && getNetworkDr() != pipe.getNetworkDr()) {
+               // try joining the Drs
+            }
+         }
+      }
+
+      if (!this.hasDr) {
+         this.drX = xCoord;
+         this.drY = yCoord;
+         this.drZ = zCoord;
+         this.hasDr = true;
+         this.network = new PipeFluidNetwork();
+         this.network.addNode(new PipeNode(xCoord, yCoord, zCoord, tank.getCapacity(), tank.getFluidAmount()), worldObj);
+      }
+   }
+
+   public void setDr(int x, int y, int z) {
+
+   }
+
+   public void becomeDr(PipeFluidNetwork pipeFluidNetwork) {
+      this.network = pipeFluidNetwork;
    }
 }

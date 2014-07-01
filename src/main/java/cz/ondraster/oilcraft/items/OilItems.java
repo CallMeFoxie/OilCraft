@@ -10,11 +10,14 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class OilItems {
    public static Item bucketCrudeOil;
+   public static Item debugTool;
 
    public static void init() {
       bucketCrudeOil = new BucketCrudeOil();
       Registrator.registerItem(bucketCrudeOil);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDCRUDEOIL, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketCrudeOil), new ItemStack(Items.bucket));
 
+      debugTool = new DebugTool();
+      Registrator.registerItem(debugTool);
    }
 }

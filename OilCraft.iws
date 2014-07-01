@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa58e2e-b4b3-47a1-9a48-2a28978d86df" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OilCraft.iws" afterPath="$PROJECT_DIR$/OilCraft.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
     </list>
     <ignored path="OilCraft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,23 +76,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EntityPipe.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java">
+      <file leaf-file-name="BlockPipe.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
-              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
+              <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FluidStack.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
+      <file leaf-file-name="Block.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30823863" vertical-offset="1347" max-vertical-offset="3230">
-              <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+            <state vertical-scroll-proportion="1.1013025" vertical-offset="18432" max-vertical-offset="40035">
+              <caret line="1302" column="5" selection-start-line="1302" selection-start-column="5" selection-end-line="1302" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PipeFluidNetwork.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+              <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
               <folding>
-                <element signature="e#2506#2507#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DebugTool.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="816">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OilItems.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityPipe.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2975">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#6230#6231#0" expanded="true" />
+                <element signature="e#6274#6275#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +146,8 @@
       <file leaf-file-name="FluidTank.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1319" max-vertical-offset="2023">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2023">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -644,9 +694,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/bB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/beam.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Blocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/Beam.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/ModelBeam.java" />
@@ -670,7 +717,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/api/IDangerousFluid.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/EntityOiljackPipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
@@ -687,12 +733,17 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Helper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNetwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
       </list>
     </option>
@@ -1024,6 +1075,36 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pipe" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oilcraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="network" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1225,7 +1306,7 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1481,7 +1562,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1587,46 +1668,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/BlockFluidFinite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="5474">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockLiquid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2894354" vertical-offset="3032" max-vertical-offset="10047">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/init/Items.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="3128">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/item/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1636" max-vertical-offset="22287">
-          <caret line="174" column="64" selection-start-line="174" selection-start-column="64" selection-end-line="174" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/item/ItemBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3704777" vertical-offset="2499" max-vertical-offset="3604">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/Fluid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="4488">
@@ -1723,28 +1764,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24602026" vertical-offset="0" max-vertical-offset="691">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="704">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="704">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1838,8 +1861,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
           <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="false" />
+            <element signature="e#247#248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1848,14 +1871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1109" max-vertical-offset="6409">
           <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="1054">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1972,10 +1987,10 @@
         <state vertical-scroll-proportion="0.51704544" vertical-offset="1387" max-vertical-offset="2091">
           <caret line="119" column="93" selection-start-line="119" selection-start-column="93" selection-end-line="119" selection-end-column="93" />
           <folding>
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#2865#2866#0" expanded="true" />
-            <element signature="e#2914#2915#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#866#867#0" expanded="false" />
+            <element signature="e#2865#2866#0" expanded="false" />
+            <element signature="e#2914#2915#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1996,31 +2011,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1347" max-vertical-offset="3230">
+          <caret line="93" column="9" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+          <folding>
+            <element signature="e#2452#2453#0" expanded="false" />
+            <element signature="e#2506#2507#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1319" max-vertical-offset="2023">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2023">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30823863" vertical-offset="1347" max-vertical-offset="3230">
-          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.7244318" vertical-offset="0" max-vertical-offset="704">
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/item/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33280757" vertical-offset="6487" max-vertical-offset="22287">
+          <caret line="463" column="212" selection-start-line="463" selection-start-column="4" selection-end-line="463" selection-end-column="212" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38636363" vertical-offset="0" max-vertical-offset="704">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="816">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#2506#2507#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2975">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#6230#6231#0" expanded="true" />
+            <element signature="e#6274#6275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1122">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1013025" vertical-offset="18432" max-vertical-offset="40035">
+          <caret line="1302" column="5" selection-start-line="1302" selection-start-column="5" selection-end-line="1302" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

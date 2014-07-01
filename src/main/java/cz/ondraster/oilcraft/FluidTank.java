@@ -6,10 +6,10 @@ import net.minecraftforge.fluids.*;
 public class FluidTank implements IFluidTank {
 
    public boolean canAccept = true;
-   private int capacity;
-   private int storedAmount;
+   protected int capacity;
+   protected Fluid storedFluid;
+   protected int storedAmount;
    private Fluid filter;
-   private Fluid storedFluid;
 
    public FluidTank(int capacity) {
       this(capacity, null);
