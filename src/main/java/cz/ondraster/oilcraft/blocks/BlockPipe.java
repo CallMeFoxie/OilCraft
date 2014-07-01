@@ -1,6 +1,5 @@
 package cz.ondraster.oilcraft.blocks;
 
-import cz.ondraster.oilcraft.OilBlocks;
 import cz.ondraster.oilcraft.OrientationSimple;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.entities.EntityPipe;
@@ -11,9 +10,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-/**
- * Created by Ondra on 29.6.2014.
- */
 public class BlockPipe extends BlockContainer {
 
    public BlockPipe() {
@@ -32,7 +28,6 @@ public class BlockPipe extends BlockContainer {
 
       for (int i = 0; i < OrientationSimple.Directions; i++) {
          if (world.getBlock(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i)) == OilBlocks.pipe) {
-            System.out.println("adding to side " + i);
 
             EntityPipe pipe = (EntityPipe) world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i));
             pipe.changeState(OrientationSimple.getOpposite(i), true);

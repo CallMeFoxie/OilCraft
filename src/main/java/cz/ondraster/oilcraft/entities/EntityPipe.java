@@ -6,9 +6,6 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
-/**
- * Created by Ondra on 29.6.2014.
- */
 public class EntityPipe extends TileEntity {
    public int connections = 0;
 
@@ -48,13 +45,11 @@ public class EntityPipe extends TileEntity {
    public Packet getDescriptionPacket() {
       NBTTagCompound nbtTagCompound = new NBTTagCompound();
       this.writeToNBT(nbtTagCompound);
-      System.out.println("getDescriptionPacket..." + nbtTagCompound.getBoolean("connectYp"));
       return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, nbtTagCompound);
    }
 
    @Override
    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-      System.out.println("onDataPacket");
       readFromNBT(pkt.func_148857_g());
    }
 

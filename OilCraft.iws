@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa58e2e-b4b3-47a1-9a48-2a28978d86df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilBlocks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OilCraft.iws" afterPath="$PROJECT_DIR$/OilCraft.iws" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\cz\ondraster\oilcraft\client\renderers\OiljackRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\cz\ondraster\oilcraft\client\renderers\PipeRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\cz\ondraster\oilcraft\client\renderers\models\ModelOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\cz\ondraster\oilcraft\client\renderers\models\ModelPipeHalf.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\cz\ondraster\oilcraft\client\renderers\models\ModelPipeMiddle.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" />
     </list>
     <ignored path="OilCraft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -628,23 +644,38 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/BlockBeam.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/BlockOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/TEBeam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityBeam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/messages/MessagePipeUpdate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/api/IDangerousFluid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/EntityOiljackPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" />
       </list>
     </option>
   </component>
@@ -666,13 +697,22 @@
             <id />
           </State>
           <State>
-            <id>Abstraction issues</id>
-          </State>
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
             <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
+            <id>Compiler issues</id>
+          </State>
+          <State>
+            <id>Finalization issues</id>
+          </State>
+          <State>
+            <id>GPath inspectionsGroovy</id>
           </State>
           <State>
             <id>General</id>
@@ -681,36 +721,59 @@
             <id>Groovy</id>
           </State>
           <State>
-            <id>JUnit issues</id>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
           </State>
           <State>
             <id>Java language level migration aids</id>
           </State>
           <State>
-            <id>Method MetricsGroovy</id>
+            <id>JavaBeans issues</id>
           </State>
           <State>
-            <id>Method metrics</id>
+            <id>Javadoc issues</id>
           </State>
           <State>
             <id>Numeric issues</id>
           </State>
           <State>
-            <id>Packaging issues</id>
+            <id>OtherGroovy</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
           </State>
           <State>
             <id>Probable bugs</id>
           </State>
           <State>
-            <id>Properties Files</id>
-          </State>
-          <State>
-            <id>Resource management issues</id>
-          </State>
-          <State>
             <id>Security issues</id>
           </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>TestNG</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructs</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -741,7 +804,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -839,6 +901,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="network" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oilcraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oilcraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fluids" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -968,6 +1090,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -978,11 +1101,11 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
@@ -1186,7 +1309,7 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\Ondra.ONDRANET\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1202,7 +1325,11 @@
       <created>1403475287880</created>
       <updated>1403475287880</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Derp in package path">
+      <created>1404139257832</created>
+      <updated>1404139257832</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1230,25 +1357,25 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14258373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14162679" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2660287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29952154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29952154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288719" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49931225" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28624734" sideWeight="0.5006878" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28624734" sideWeight="0.5006878" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3043062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1300,7 +1427,8 @@
     </option>
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Testing some fancy animated rendering ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing some fancy animated rendering ;)" />
+    <MESSAGE value="Derp in package path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Derp in package path" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1308,7 +1436,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1316,200 +1444,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1126/forgeSrc-1.7.2-10.12.2.1126-sources.jar!/net/minecraft/init/Blocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11352254" vertical-offset="0" max-vertical-offset="3128">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1126/forgeSrc-1.7.2-10.12.2.1126-sources.jar!/net/minecraft/block/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71833646" vertical-offset="3513" max-vertical-offset="39899">
-          <caret line="321" column="240" selection-start-line="321" selection-start-column="2" selection-end-line="321" selection-end-column="240" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1126/forgeSrc-1.7.2-10.12.2.1126-sources.jar!/net/minecraft/block/BlockRedstoneOre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2320819" vertical-offset="714" max-vertical-offset="3043">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1126/forgeSrc-1.7.2-10.12.2.1126-sources.jar!/net/minecraft/client/model/ModelBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33222038" vertical-offset="73" max-vertical-offset="918">
-          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1126/forgeSrc-1.7.2-10.12.2.1126-sources.jar!/net/minecraft/client/model/ModelRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41736227" vertical-offset="1756" max-vertical-offset="5168">
-          <caret line="127" column="39" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraft/launchwrapper/1.9/116f2aad5b0c68353ebed66cd463517db6522f7e/launchwrapper-1.9.jar!/net/minecraft/launchwrapper/Launch.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20873123" vertical-offset="0" max-vertical-offset="733">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3343166" vertical-offset="0" max-vertical-offset="1017">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44854882" vertical-offset="0" max-vertical-offset="758">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5158311" vertical-offset="0" max-vertical-offset="758">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/client/renderer/tileentity/TileEntityRendererDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46309695" vertical-offset="1771" max-vertical-offset="2516">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/client/network/NetHandlerPlayClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7134588" vertical-offset="612" max-vertical-offset="28492">
-          <caret line="263" column="5" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
-          <folding>
-            <element signature="e#12868#12869#0" expanded="false" />
-            <element signature="e#12917#12918#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/cpw/mods/fml/common/network/simpleimpl/MessageContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77272725" vertical-offset="0" max-vertical-offset="704">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/util/Recycler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="1717">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/util/internal/RecyclableArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="1921">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#1615#1616#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/util/internal/TypeParameterMatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2141" max-vertical-offset="2822">
-          <caret line="184" column="42" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
-          <folding>
-            <element signature="e#7606#7607#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/cpw/mods/fml/common/network/internal/FMLProxyPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1291" max-vertical-offset="1972">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding>
-            <element signature="e#4408#4409#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/buffer/AbstractReferenceCountedByteBuf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="2363">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/buffer/UnpooledHeapByteBuf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3921" max-vertical-offset="6851">
-          <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar!/io/netty/buffer/AbstractByteBuf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8341" max-vertical-offset="18496">
-          <caret line="565" column="0" selection-start-line="565" selection-start-column="0" selection-end-line="565" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/109c5be93362e6e651e417c51d1863477a22969c/trove4j-3.0.3-sources.jar!/gnu/trove/impl/hash/TByteHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2952" max-vertical-offset="5338">
-          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/109c5be93362e6e651e417c51d1863477a22969c/trove4j-3.0.3-sources.jar!/gnu/trove/map/hash/TByteObjectHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2680" max-vertical-offset="15776">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/cpw/mods/fml/common/network/simpleimpl/SimpleNetworkWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28449503" vertical-offset="1296" max-vertical-offset="3400">
-          <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/cpw/mods/fml/common/network/FMLIndexedMessageToMessageCodec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26955307" vertical-offset="181" max-vertical-offset="1513">
           <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1517,20 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30717185" vertical-offset="793" max-vertical-offset="2210">
           <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#3040#3041#0" expanded="false" />
-            <element signature="e#3123#3124#0" expanded="false" />
-            <element signature="e#4928#4929#0" expanded="false" />
-            <element signature="e#4979#4980#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3721591" vertical-offset="214" max-vertical-offset="918">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1538,27 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19176136" vertical-offset="630" max-vertical-offset="1700">
           <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84517044" vertical-offset="0" max-vertical-offset="765">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6519886" vertical-offset="0" max-vertical-offset="704">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1566,7 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70028406" vertical-offset="204" max-vertical-offset="1122">
           <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1574,7 +1476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1582,7 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0983847" vertical-offset="816" max-vertical-offset="1513">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1590,7 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55716354" vertical-offset="550" max-vertical-offset="1241">
           <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,15 +1497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.780029" vertical-offset="1989" max-vertical-offset="4964">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.403763" vertical-offset="16904" max-vertical-offset="40035">
-          <caret line="1399" column="78" selection-start-line="1399" selection-start-column="78" selection-end-line="1399" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1614,23 +1504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.825257" vertical-offset="645" max-vertical-offset="1326">
           <caret line="96" column="39" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="833">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/tileentity/TileEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2979" max-vertical-offset="6409">
-          <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1638,7 +1511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1309">
           <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,34 +1518,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3718" max-vertical-offset="6290">
           <caret line="262" column="18" selection-start-line="262" selection-start-column="18" selection-end-line="262" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockSnow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27062228" vertical-offset="782" max-vertical-offset="2771">
+          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_60/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55539775" vertical-offset="0" max-vertical-offset="704">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.57954544" vertical-offset="0" max-vertical-offset="704">
+          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3621">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.21732955" vertical-offset="255" max-vertical-offset="3179">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/tileentity/TileEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4493392" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.005788712" vertical-offset="701" max-vertical-offset="6409">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockDoor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0984081" vertical-offset="2856" max-vertical-offset="7463">
+          <caret line="198" column="27" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/IFluidTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="1054">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockStaticLiquid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1017964" vertical-offset="0" max-vertical-offset="1802">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2791798" vertical-offset="21396" max-vertical-offset="40035">
+          <caret line="1472" column="34" selection-start-line="1472" selection-start-column="16" selection-end-line="1472" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/BlockFluidFinite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="5474">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockLiquid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2894354" vertical-offset="3032" max-vertical-offset="10047">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/init/Items.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="3128">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/item/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1636" max-vertical-offset="22287">
+          <caret line="174" column="64" selection-start-line="174" selection-start-column="64" selection-end-line="174" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/item/ItemBucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3704777" vertical-offset="2499" max-vertical-offset="3604">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/world/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33285093" vertical-offset="6774" max-vertical-offset="72522">
+          <caret line="492" column="19" selection-start-line="492" selection-start-column="19" selection-end-line="492" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/Fluid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="4488">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockPistonBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71257484" vertical-offset="1377" max-vertical-offset="9129">
+          <caret line="137" column="7" selection-start-line="137" selection-start-column="7" selection-end-line="137" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidTankInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4743025" vertical-offset="0" max-vertical-offset="681">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/IFluidHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.79882526" vertical-offset="765" max-vertical-offset="1479">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07244318" vertical-offset="0" max-vertical-offset="704">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21732955" vertical-offset="0" max-vertical-offset="704">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1682,68 +1685,172 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4488636" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1771#1772#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="986">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12073863" vertical-offset="0" max-vertical-offset="704">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="3383">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68607956" vertical-offset="44" max-vertical-offset="901">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="833">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilBlocks.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4346591" vertical-offset="0" max-vertical-offset="704">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="704">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14488636" vertical-offset="0" max-vertical-offset="867">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.41051137" vertical-offset="0" max-vertical-offset="765">
+          <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68607956" vertical-offset="605" max-vertical-offset="1309">
+          <caret line="74" column="117" selection-start-line="74" selection-start-column="117" selection-end-line="74" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1590909" vertical-offset="180" max-vertical-offset="884">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2599432" vertical-offset="1761" max-vertical-offset="2465">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14488636" vertical-offset="0" max-vertical-offset="704">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12073863" vertical-offset="0" max-vertical-offset="704">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31392047" vertical-offset="0" max-vertical-offset="918">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33238637" vertical-offset="378" max-vertical-offset="1156">
-          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="935">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19318181" vertical-offset="0" max-vertical-offset="704">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24602026" vertical-offset="0" max-vertical-offset="691">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="704">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95170456" vertical-offset="95" max-vertical-offset="918">
-          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="867">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/block/BlockDoor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5745296" vertical-offset="5916" max-vertical-offset="7463">
-          <caret line="310" column="9" selection-start-line="310" selection-start-column="9" selection-end-line="310" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="704">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4318182" vertical-offset="2" max-vertical-offset="884">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07244318" vertical-offset="0" max-vertical-offset="704">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1801,7 +1908,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>src</last-edited>
+          <last-edited>OilCraft</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

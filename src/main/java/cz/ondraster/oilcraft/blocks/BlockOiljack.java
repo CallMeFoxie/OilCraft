@@ -9,10 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-/*
-* Created by Ondra on21.6.2014.
-*/
-
 public class BlockOiljack extends BlockContainer {
    public BlockOiljack() {
       super(Material.anvil);

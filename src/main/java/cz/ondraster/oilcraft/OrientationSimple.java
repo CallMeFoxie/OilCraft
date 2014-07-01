@@ -1,8 +1,5 @@
 package cz.ondraster.oilcraft;
 
-/**
- * Created by Ondra on 30.6.2014.
- */
 public class OrientationSimple {
    public static int Down = 0;
    public static int Up = 1;

@@ -12,9 +12,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Ondra on 29.6.2014.
- */
 public class PipeRenderer extends TileEntitySpecialRenderer {
 
    public ModelPipeHalf pipeHalf;
@@ -33,7 +30,7 @@ public class PipeRenderer extends TileEntitySpecialRenderer {
 
       GL11.glTranslatef((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
 
-      tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/pipe.png"));
+      tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/" + References.Textures.BLOCKPIPE3D));
 
       EntityPipe pipe = (EntityPipe) var1;
 
@@ -75,7 +72,7 @@ public class PipeRenderer extends TileEntitySpecialRenderer {
       }
 
 
-      tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/pipe.png"));
+      tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/" + References.Textures.BLOCKPIPEMIDDLE3D));
       GL11.glRotatef(180, 1f, 0f, 0f);
       this.pipeMiddle.render();
 

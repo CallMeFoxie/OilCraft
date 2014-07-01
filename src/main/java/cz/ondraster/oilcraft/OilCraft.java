@@ -1,14 +1,13 @@
 package cz.ondraster.oilcraft;
 
-/**
- * Created by Ondra on 17.6.2014.
- */
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cz.ondraster.oilcraft.blocks.OilBlocks;
+import cz.ondraster.oilcraft.fluids.Fluids;
+import cz.ondraster.oilcraft.items.OilItems;
 import cz.ondraster.oilcraft.network.Network;
 
 @Mod(modid = References.MODID, version = References.VERSION, name = References.MODNAME)
@@ -29,6 +28,8 @@ public class OilCraft {
 
       // register all the blocks
       OilBlocks.init();
+      Fluids.init();
+      OilItems.init();
 
 
       // register recipes

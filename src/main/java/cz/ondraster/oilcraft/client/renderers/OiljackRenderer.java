@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.client.renderers;
 
+import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.client.renderers.models.ModelOiljack;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
 import net.minecraft.client.Minecraft;
@@ -9,9 +10,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Ondra on 21.6.2014.
- */
 public class OiljackRenderer extends TileEntitySpecialRenderer {
 
    private final ModelOiljack jack;
@@ -28,26 +26,23 @@ public class OiljackRenderer extends TileEntitySpecialRenderer {
       GL11.glPushMatrix();
 
       GL11.glTranslatef((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
-      //GL11.glRotatef(var8, 0.0F, 1.0F, 0.0F);
 
-
-      tm.bindTexture(new ResourceLocation("oilcraft", "textures/blocks/beam.png"));
+      tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/" + References.Textures.BLOCKOILJACK3D));
 
       EntityOiljack te = (EntityOiljack) var1;
 
+      if (te.canWork())
+         te.renderOffset += 4;
+      if (te.renderOffset >= 360) {
+         te.renderOffset = 0;
+      }
+
       float off = te.renderOffset;
-      //if (te.renderOffset >= 30)
-      //   off = (30 * 0.8f) - off;
 
-      //off -= (15 * 0.8d);
-
-      //GL11.glTranslated(0, 0, 0);
-      //GL11.glRotated(off, 0, 0, 2d);
-      //GL11.glTranslated(0, 0, 0);
-      //GL11.glScalef(0.5f, 0.5f, 0.5f);
       GL11.glRotatef(180, 1f, 0f, 0f);
       GL11.glTranslatef(0, -1f, 0f);
       this.jack.render(off);
+
 
       GL11.glPopMatrix();
    }

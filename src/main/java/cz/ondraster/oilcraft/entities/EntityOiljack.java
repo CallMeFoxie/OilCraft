@@ -1,46 +1,48 @@
 package cz.ondraster.oilcraft.entities;
 
+import cz.ondraster.oilcraft.OrientationSimple;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-import java.util.Random;
-
-/**
- * Created by Ondra on 22.6.2014.
- */
 public class EntityOiljack extends TileEntity {
 
    public int renderOffset = 0;
-   public int bridleLength = 0;
+   private int lastUpdate = 0;
+   private int orientation = OrientationSimple.North;
 
    public EntityOiljack() {
-      setBridleLength(new Random().nextInt(5));
+
    }
 
    @Override
    public void readFromNBT(NBTTagCompound tag) {
       super.readFromNBT(tag);
-      int tmp = tag.getInteger("bridleLength");
-      if (tmp != 0)
-         this.bridleLength = tmp;
+      orientation = tag.getInteger("orientation");
    }
 
    @Override
    public void writeToNBT(NBTTagCompound tag) {
       super.writeToNBT(tag);
-      tag.setInteger("bridleLength", bridleLength);
+      tag.setInteger("orientation", orientation);
    }
 
    @Override
    public void updateEntity() {
-      renderOffset += 4;
-      if (renderOffset >= 360) {
-         renderOffset = 0;
+      if (lastUpdate >= 40) {
+         lastUpdate = 0;
+         if (worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation)) instanceof EntityOiljackPipe) {
+            ((EntityOiljackPipe) worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation))).digOil();
+         }
       }
+
+      lastUpdate++;
    }
 
-   public void setBridleLength(int n) {
-      bridleLength = n;
-   }
+   public boolean canWork() {
+      // check for neighbour blocks. Should run client side only to help with server perfomance!
+      if (worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation)) instanceof EntityOiljackPipe)
+         return true;
 
+      return false;
+   }
 }

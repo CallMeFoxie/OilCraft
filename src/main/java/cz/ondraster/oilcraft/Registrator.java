@@ -8,9 +8,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.oredict.OreDictionary;
 
-/**
- * Created by Ondra on 29.6.2014.
- */
 public class Registrator {
    public static void registerBlock(Block block) {
       GameRegistry.registerBlock(block, References.MODID + "_" + block.getUnlocalizedName().substring(5));

@@ -3,9 +3,6 @@ package cz.ondraster.oilcraft.client.renderers.models;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-/**
- * Created by Ondra on 29.6.2014.
- */
 public class ModelPipeMiddle extends ModelBase {
    //fields
    ModelRenderer Shape1;
