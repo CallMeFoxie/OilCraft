@@ -1,26 +1,34 @@
 package cz.ondraster.oilcraft.entities;
 
+import cz.ondraster.oilcraft.FluidTank;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.*;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.IFluidHandler;
 
-public class EntityOiljackPipe extends TileEntity implements IFluidTank, IFluidHandler {
+public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
 
    public final static int MAXIMUM_SIZE = 2000;
    public final static int RANGE = 16;
-   int internalTank = 0;
    int depth = 0;
+   private FluidTank tank;
+
+   public EntityOiljackPipe() {
+      this.tank = new FluidTank(MAXIMUM_SIZE, Fluids.fluidCrudeOil);
+   }
 
    public boolean digOil() {
       if (worldObj.isRemote)
          return false;
 
       boolean didDig = false;
-      if (internalTank + 1000 > MAXIMUM_SIZE) {
+      if (tank.getFluidAmount() + 1000 > tank.getCapacity()) {
          return false;
       }
 
@@ -37,14 +45,14 @@ public class EntityOiljackPipe extends TileEntity implements IFluidTank, IFluidH
       }
 
       if (didDig) {
-         internalTank += 1000;
+         tank.fill(new FluidStack(Fluids.fluidCrudeOil, 1000), true);
          return true;
       } else {
          Block block = worldObj.getBlock(xCoord, yCoord - depth - 2, zCoord);
          if (block == Blocks.air) {
             depth++;
          } else if (block == Fluids.blockFluidCrudeOil) {
-            internalTank += 1000;
+            tank.fill(new FluidStack(Fluids.fluidCrudeOil, 1000), true);
             didDig = true;
             worldObj.setBlock(xCoord, yCoord - depth - 2, zCoord, Blocks.air, 0, 3);
             depth++;
@@ -57,64 +65,15 @@ public class EntityOiljackPipe extends TileEntity implements IFluidTank, IFluidH
    @Override
    public void readFromNBT(NBTTagCompound nbt) {
       super.readFromNBT(nbt);
-      this.internalTank = nbt.getInteger("internalTank");
       this.depth = nbt.getInteger("depth");
+      tank.load(nbt);
    }
 
    @Override
    public void writeToNBT(NBTTagCompound nbt) {
       super.writeToNBT(nbt);
-      nbt.setInteger("internalTank", internalTank);
       nbt.setInteger("depth", depth);
-   }
-
-   @Override
-   public FluidStack getFluid() {
-      if (internalTank == 0)
-         return null;
-
-      return new FluidStack(Fluids.fluidCrudeOil, internalTank);
-   }
-
-   @Override
-   public int getFluidAmount() {
-      return internalTank;
-   }
-
-   @Override
-   public int getCapacity() {
-      return MAXIMUM_SIZE;
-   }
-
-   @Override
-   public FluidTankInfo getInfo() {
-      FluidTankInfo fluidTankInfo = new FluidTankInfo(this);
-
-      return fluidTankInfo;
-   }
-
-   @Override
-   public int fill(FluidStack resource, boolean doFill) {
-      return 0;
-   }
-
-   @Override
-   public FluidStack drain(int maxDrain, boolean doDrain) {
-      FluidStack toReturn = null;
-
-      if (internalTank == 0) {
-         toReturn = null;
-      } else if (maxDrain > internalTank) {
-         toReturn = new FluidStack(Fluids.fluidCrudeOil, internalTank);
-      } else if (maxDrain <= internalTank) {
-         toReturn = new FluidStack(Fluids.fluidCrudeOil, maxDrain);
-      }
-
-      if (toReturn != null && doDrain) {
-         internalTank -= toReturn.amount;
-      }
-
-      return toReturn;
+      tank.save(nbt);
    }
 
    @Override
@@ -124,15 +83,12 @@ public class EntityOiljackPipe extends TileEntity implements IFluidTank, IFluidH
 
    @Override
    public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
-      if (resource.getFluid() == Fluids.fluidCrudeOil)
-         return drain(resource.amount, doDrain);
-      else
-         return null;
+      return tank.drain(resource.amount, doDrain);
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
-      return drain(maxDrain, doDrain);
+      return tank.drain(maxDrain, doDrain);
    }
 
    @Override
@@ -147,7 +103,7 @@ public class EntityOiljackPipe extends TileEntity implements IFluidTank, IFluidH
 
    @Override
    public FluidTankInfo[] getTankInfo(ForgeDirection from) {
-      FluidTankInfo info = getInfo();
+      FluidTankInfo info = tank.getInfo();
       return new FluidTankInfo[]{info};
    }
 }
