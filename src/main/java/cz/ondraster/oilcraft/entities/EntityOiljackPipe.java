@@ -18,6 +18,7 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
    public final static int RANGE = 16;
    int depth = 0;
    private FluidTank tank;
+   private int ticksSinceOutput = 0;
 
    public EntityOiljackPipe() {
       this.tank = new FluidTank(MAXIMUM_SIZE, Fluids.fluidCrudeOil);
@@ -106,4 +107,27 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
       FluidTankInfo info = tank.getInfo();
       return new FluidTankInfo[]{info};
    }
+
+   @Override
+   public void updateEntity() {
+      ticksSinceOutput++;
+
+      if (ticksSinceOutput % 20 == 0 && tank != null) {
+         if (tank.getFluidAmount() > 0 && tank.getFluid().getFluid() != null) {
+            for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS) {
+               if (worldObj.getTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ) instanceof IFluidHandler) {
+                  IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ);
+                  if (handler.canFill(direction.getOpposite(), tank.getFluid().getFluid())) {
+                     int amount = handler.fill(direction.getOpposite(), tank.getFluid(), true);
+                     this.tank.drain(amount, true);
+                  }
+               }
+            }
+         }
+         ticksSinceOutput = 0;
+      }
+
+
+   }
+
 }

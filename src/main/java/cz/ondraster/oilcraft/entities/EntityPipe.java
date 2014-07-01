@@ -1,6 +1,8 @@
 package cz.ondraster.oilcraft.entities;
 
 import cz.ondraster.oilcraft.FluidTank;
+import cz.ondraster.oilcraft.Helper;
+import cz.ondraster.oilcraft.OrientationSimple;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -36,6 +38,21 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
    @Override
    public void updateEntity() {
+      if (tank.getFluidAmount() > 0) {
+         if (tank.getFluid() == null || tank.getFluid().getFluid() == null) {
+            Helper.logWarn("Cleared " + tank.getFluidAmount() + " of NULL (!!) fluid! Prevented crash...");
+            tank.safeDrain();
+         }
+         for (int i = 0; i < OrientationSimple.Directions; i++) {
+            if ((connections & (1 << i)) != 0 && tank.getFluidAmount() > 0) {
+               IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + OrientationSimple.getX(i), yCoord + OrientationSimple.getY(i), zCoord + OrientationSimple.getZ(i));
+               if (handler.canFill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid().getFluid())) {
+                  int amount = handler.fill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid(), true);
+                  this.tank.drain(amount, true);
+               }
+            }
+         }
+      }
    }
 
 
@@ -79,6 +96,9 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
    @Override
    public boolean canFill(ForgeDirection from, Fluid fluid) {
+      if (tank.getFluid() == null || tank.getFluid().getFluid() == null)
+         return true;
+
       return tank.getFluid().getFluid() == fluid;
    }
 

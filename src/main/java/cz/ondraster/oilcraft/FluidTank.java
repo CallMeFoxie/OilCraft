@@ -23,7 +23,11 @@ public class FluidTank implements IFluidTank {
    public NBTTagCompound save(NBTTagCompound tag) {
       if (storedAmount != 0) {
          tag.setInteger("amount", storedAmount);
-         tag.setString("fluid", storedFluid.getUnlocalizedName());
+         if (storedFluid == null) {
+            Helper.logWarn("Had non-empty tank with null fluid! Would have crashed...");
+            tag.setInteger("amount", 0);
+         } else
+            tag.setString("fluid", storedFluid.getUnlocalizedName().substring(6));
       }
       return tag;
    }
@@ -34,6 +38,7 @@ public class FluidTank implements IFluidTank {
          storedFluid = FluidRegistry.getFluid(tag.getString("fluid"));
          if (storedFluid == null) {
             Helper.logWarn("Could not find fluid while loading tank (" + tag.getString("fluid") + ")");
+            storedAmount = 0;
          }
       }
    }
@@ -73,7 +78,7 @@ public class FluidTank implements IFluidTank {
          if (storedFluid == resource.getFluid() || (!doFill && storedFluid == null)) {
             int toFill = Math.min(capacity - storedAmount, resource.amount);
             if (doFill)
-               this.storedAmount = toFill;
+               this.storedAmount += toFill;
             return toFill;
          }
       } else if (filter != resource.getFluid())
@@ -110,5 +115,9 @@ public class FluidTank implements IFluidTank {
       }
 
       return toRet;
+   }
+
+   public void safeDrain() {
+      this.storedAmount = 0;
    }
 }

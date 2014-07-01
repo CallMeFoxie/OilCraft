@@ -9,6 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.IFluidHandler;
 
 public class BlockPipe extends BlockContainer {
 
@@ -27,12 +28,16 @@ public class BlockPipe extends BlockContainer {
       EntityPipe ourPipe = (EntityPipe) world.getTileEntity(x, y, z);
 
       for (int i = 0; i < OrientationSimple.Directions; i++) {
-         if (world.getBlock(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i)) == OilBlocks.pipe) {
+         if (world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i)) instanceof IFluidHandler) {
 
-            EntityPipe pipe = (EntityPipe) world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i));
-            pipe.changeState(OrientationSimple.getOpposite(i), true);
 
-            ourPipe.changeState(i, true);
+            TileEntity pipe = world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i));
+            if (pipe != null) {
+               if (pipe instanceof EntityPipe)
+                  ((EntityPipe) pipe).changeState(OrientationSimple.getOpposite(i), true);
+
+               ourPipe.changeState(i, true);
+            }
          } else {
             ourPipe.changeState(i, false);
          }
