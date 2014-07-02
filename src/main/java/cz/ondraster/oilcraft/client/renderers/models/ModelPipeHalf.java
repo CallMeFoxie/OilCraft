@@ -13,12 +13,12 @@ public class ModelPipeHalf extends ModelBase {
       textureHeight = 32;
 
       middle = new ModelRenderer(this, 0, 0);
-      middle.addBox(-4F, -4F, -8F, 8, 8, 4);
+      middle.addBox(-4F, -4F, -6F, 8, 8, 2);
       middle.setRotationPoint(0F, 0F, 0F);
       middle.setTextureSize(64, 32);
       middle.mirror = true;
       setRotation(middle, 0F, 0F, 0F);
-      edge = new ModelRenderer(this, 0, 0);
+      edge = new ModelRenderer(this, 0, 16);
       edge.addBox(-6F, -6F, -8F, 12, 12, 2);
       edge.setRotationPoint(0F, 0F, 0F);
       edge.setTextureSize(64, 32);

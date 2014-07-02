@@ -99,18 +99,14 @@ public class FluidTank implements IFluidTank {
    @Override
    public FluidStack drain(int maxDrain, boolean doDrain) {
       FluidStack toRet = null;
-      if (maxDrain == 0)
+      if (maxDrain == 0 || storedAmount == 0 || storedFluid == null)
          return null;
 
-      if (maxDrain > storedAmount) {
-         toRet = new FluidStack(storedFluid, storedAmount);
-      } else if (maxDrain <= storedAmount) {
-         toRet = new FluidStack(storedFluid, maxDrain);
-      }
+      toRet = new FluidStack(storedFluid, Math.min(storedAmount, maxDrain));
 
       if (doDrain) {
          this.storedAmount -= toRet.amount;
-         if (this.storedAmount == 0)
+         if (this.storedAmount <= 0)
             this.storedFluid = null;
       }
 

@@ -8,7 +8,7 @@ public class ModelPipeMiddle extends ModelBase {
    ModelRenderer Shape1;
 
    public ModelPipeMiddle() {
-      textureWidth = 64;
+      textureWidth = 32;
       textureHeight = 32;
 
       Shape1 = new ModelRenderer(this, 0, 0);

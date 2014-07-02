@@ -1,6 +1,5 @@
 package cz.ondraster.oilcraft.blocks;
 
-import cz.ondraster.oilcraft.OrientationSimple;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.block.BlockContainer;
@@ -9,6 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.IFluidHandler;
 
 public class BlockPipe extends BlockContainer {
@@ -26,20 +26,17 @@ public class BlockPipe extends BlockContainer {
 
    private void updateBlockStatus(World world, int x, int y, int z) {
       EntityPipe ourPipe = (EntityPipe) world.getTileEntity(x, y, z);
-
-      for (int i = 0; i < OrientationSimple.Directions; i++) {
-         if (world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i)) instanceof IFluidHandler) {
-
-
-            TileEntity pipe = world.getTileEntity(x + OrientationSimple.getX(i), y + OrientationSimple.getY(i), z + OrientationSimple.getZ(i));
+      for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
+         if (world.getTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ) instanceof IFluidHandler) {
+            TileEntity pipe = world.getTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
             if (pipe != null) {
                if (pipe instanceof EntityPipe)
-                  ((EntityPipe) pipe).changeState(OrientationSimple.getOpposite(i), true);
+                  ((EntityPipe) pipe).changeState(dir.getOpposite(), true);
 
-               ourPipe.changeState(i, true);
+               ourPipe.changeState(dir, true);
             }
          } else {
-            ourPipe.changeState(i, false);
+            ourPipe.changeState(dir, false);
          }
       }
       world.markBlockForUpdate(x, y, z);

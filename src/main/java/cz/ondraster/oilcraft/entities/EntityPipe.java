@@ -1,8 +1,7 @@
 package cz.ondraster.oilcraft.entities;
 
 import cz.ondraster.oilcraft.FluidTank;
-import cz.ondraster.oilcraft.pipe.PipeFluidNetwork;
-import cz.ondraster.oilcraft.pipe.PipeNode;
+import cz.ondraster.oilcraft.Helper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -14,30 +13,37 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
 
+import java.util.ArrayList;
+
 public class EntityPipe extends TileEntity implements IFluidHandler {
+   public static final int MAXMOVED = 500; // 500mB/10 ticks
    public int connections = 0;
-   public boolean hasDr = false;
+   //public boolean hasDr = false;
    FluidTank tank;
-   PipeFluidNetwork network = null;
-   private int drX;
-   private int drY;
-   private int drZ;
+   ForgeDirection fluidSourceSide;
+   //PipeFluidNetwork network = null;
+   //private int drX;
+   //private int drY;
+   //private int drZ;
+   int ticksSinceLastMove = 0;
 
    public EntityPipe() {
       tank = new FluidTank(2000);
    }
 
-   public PipeFluidNetwork getNetworkDr() {
+  /* public PipeFluidNetwork getNetworkDr() {
       if (xCoord == drX && yCoord == drY && zCoord == drZ)
          return this.network;
 
       return ((EntityPipe) worldObj.getTileEntity(drX, drY, drZ)).getNetworkDr();
-   }
+   }*/
 
    @Override
    public void readFromNBT(NBTTagCompound tag) {
       super.readFromNBT(tag);
       connections = tag.getInteger("connections");
+      fluidSourceSide = ForgeDirection.getOrientation(tag.getInteger("fluidSourceSide"));
+      ticksSinceLastMove = tag.getInteger("ticks");
       tank.load(tag);
    }
 
@@ -45,39 +51,79 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    public void writeToNBT(NBTTagCompound tag) {
       super.writeToNBT(tag);
       tag.setInteger("connections", connections);
+      if (fluidSourceSide != null)
+         tag.setInteger("fluidSourceSide", fluidSourceSide.ordinal());
+      tag.setInteger("ticks", ticksSinceLastMove);
       tank.save(tag);
    }
 
    @Override
    public void updateEntity() {
-      /*if (tank.getFluidAmount() > 0) {
+      if (tank.getFluidAmount() > 0)
+         ticksSinceLastMove++;
+
+      if (tank.getFluidAmount() > 0 && ticksSinceLastMove > 20) {
          if (tank.getFluid() == null || tank.getFluid().getFluid() == null) {
             Helper.logWarn("Cleared " + tank.getFluidAmount() + " of NULL (!!) fluid! Prevented crash...");
             tank.safeDrain();
          }
-         for (int i = 0; i < OrientationSimple.Directions; i++) {
-            if ((connections & (1 << i)) != 0 && tank.getFluidAmount() > 0) {
-               IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + OrientationSimple.getX(i), yCoord + OrientationSimple.getY(i), zCoord + OrientationSimple.getZ(i));
-               if (handler == null)
-                  continue;
-               if (handler.canFill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid().getFluid())) {
-                  int amount = handler.fill(ForgeDirection.getOrientation(OrientationSimple.getOpposite(i)), tank.getFluid(), true);
-                  this.tank.drain(amount, true);
+
+         ArrayList<ForgeDirection> possibleDirs = new ArrayList<ForgeDirection>();
+
+         for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
+            if (dir != fluidSourceSide) {
+               if ((connections & (1 << dir.ordinal())) != 0 && tank.getFluidAmount() > 0) {
+                  IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+                  if (handler == null)
+                     continue;
+                  if (handler.canFill(dir.getOpposite(), tank.getFluid().getFluid())) {
+                     possibleDirs.add(dir);
+                  }
                }
             }
          }
-      }*/
+
+         if (possibleDirs.size() == 0) {
+            // send it back?
+            if ((connections & (1 << fluidSourceSide.ordinal())) != 0) {
+               IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + fluidSourceSide.offsetX, yCoord + fluidSourceSide.offsetY, zCoord + fluidSourceSide.offsetZ);
+               if (handler == null)
+                  return; // wat? Safety check for random NULLs
+               if (handler.canFill(fluidSourceSide.getOpposite(), tank.getFluid().getFluid())) {
+                  FluidStack maxMove = new FluidStack(tank.getFluid().getFluid(), Math.min(tank.getFluidAmount(), MAXMOVED));
+                  int amount = handler.fill(fluidSourceSide.getOpposite(), maxMove, true);
+                  this.tank.drain(amount, true);
+               }
+            }
+         } else {
+            FluidStack fluidStack = new FluidStack(tank.getFluid(), Math.min(tank.getFluidAmount(), MAXMOVED) / possibleDirs.size());
+
+            for (int i = 0; i < possibleDirs.size(); i++) {
+               IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + possibleDirs.get(i).offsetX, yCoord + possibleDirs.get(i).offsetY, zCoord + possibleDirs.get(i).offsetZ);
+
+               int amount = 0;
+               if (possibleDirs.size() > 1)
+                  amount = handler.fill(possibleDirs.get(i).getOpposite(), fluidStack, true);
+               else
+                  amount = handler.fill(possibleDirs.get(i).getOpposite(), tank.getFluid(), true);
+               this.tank.drain(amount, true);
+               possibleDirs.remove(i);
+            }
+         }
+
+         ticksSinceLastMove = 0;
+      }
    }
 
 
-   public void changeState(int side, boolean nState) {
-      connections &= ~(1 << side);
+   public void changeState(ForgeDirection dir, boolean nState) {
+      connections &= ~(1 << dir.ordinal());
       if (nState)
-         connections |= (1 << side);
+         connections |= (1 << dir.ordinal());
    }
 
-   public boolean isConnected(int side) {
-      return (connections & (1 << side)) != 0;
+   public boolean isConnected(ForgeDirection dir) {
+      return (connections & (1 << dir.ordinal())) != 0;
    }
 
    @Override
@@ -96,10 +142,11 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    @Override
    public int fill(ForgeDirection from, FluidStack resource, boolean doFill) {
       int filled = tank.fill(resource, doFill);
-      if (doFill && filled > 0) {
-         getNetworkDr().fill(new FluidStack(resource.getFluid(), filled), true);
-         getNetworkDr().rebalance(worldObj);
-      }
+      //if (doFill && filled > 0) {
+      //   getNetworkDr().fill(new FluidStack(resource.getFluid(), filled), true);
+      //   getNetworkDr().rebalance(worldObj);
+      //}
+      fluidSourceSide = from;
       return filled;
 
    }
@@ -107,20 +154,20 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    @Override
    public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
       FluidStack drained = tank.drain(resource.amount, doDrain);
-      if (doDrain && drained.amount > 0) {
-         getNetworkDr().drain(drained.amount, true);
-         getNetworkDr().rebalance(worldObj);
-      }
+      //if (doDrain && drained.amount > 0) {
+      //   getNetworkDr().drain(drained.amount, true);
+      //   getNetworkDr().rebalance(worldObj);
+      //}
       return drained;
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
       FluidStack drained = tank.drain(maxDrain, doDrain);
-      if (doDrain && drained.amount > 0) {
-         getNetworkDr().drain(drained.amount, true);
-         getNetworkDr().rebalance(worldObj);
-      }
+      //if (doDrain && drained.amount > 0) {
+      //   getNetworkDr().drain(drained.amount, true);
+      //   getNetworkDr().rebalance(worldObj);
+      //}
       return drained;
 
    }
@@ -142,7 +189,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    public FluidTankInfo[] getTankInfo(ForgeDirection from) {
       return new FluidTankInfo[]{tank.getInfo()};
    }
-
+/*
    public void setFluidParams(Fluid storedFluid, int i) {
       this.tank.safeDrain();
       this.tank.fill(new FluidStack(storedFluid, i), true);
@@ -185,5 +232,5 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
    public void becomeDr(PipeFluidNetwork pipeFluidNetwork) {
       this.network = pipeFluidNetwork;
-   }
+   }*/
 }

@@ -1,11 +1,6 @@
 package cz.ondraster.oilcraft.pipe;
 
 import cz.ondraster.oilcraft.FluidTank;
-import cz.ondraster.oilcraft.Helper;
-import cz.ondraster.oilcraft.entities.EntityPipe;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +12,7 @@ public class PipeFluidNetwork extends FluidTank {
       super(0);
       nodes = new ArrayList<PipeNode>();
    }
-
+/*
    public boolean addNode(PipeNode node, World world) {
       TileEntity tileEntity = world.getTileEntity(node.x, node.y, node.z);
       if (!(tileEntity instanceof EntityPipe)) {
@@ -80,5 +75,5 @@ public class PipeFluidNetwork extends FluidTank {
          EntityPipe pipe = (EntityPipe) world.getTileEntity(node.x, node.y, node.z);
          pipe.setFluidParams(storedFluid, (int) (((double) storedAmount / capacity) * storedAmount));
       }
-   }
+   }*/
 }

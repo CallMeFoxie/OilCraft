@@ -16,6 +16,7 @@ public class OilBlocks {
    public static Block pipe;
    public static Block oiljackPipe;
 
+
    public static void init() {
       oiljack = new BlockOiljack();
       Registrator.registerBlock(oiljack);
@@ -30,6 +31,7 @@ public class OilBlocks {
       oiljackPipe = new BlockOiljackPipe();
       Registrator.registerBlock(oiljackPipe);
       Registrator.registerTileEntity(EntityOiljackPipe.class, References.UnlocalizedNames.ENTITYOILJACKPIPE);
+
 
    }
 }

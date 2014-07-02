@@ -1,14 +1,14 @@
 package cz.ondraster.oilcraft.entities;
 
-import cz.ondraster.oilcraft.OrientationSimple;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class EntityOiljack extends TileEntity {
 
    public int renderOffset = 0;
    private int lastUpdate = 0;
-   private int orientation = OrientationSimple.North;
+   private ForgeDirection orientation = ForgeDirection.NORTH;
 
    public EntityOiljack() {
 
@@ -17,21 +17,21 @@ public class EntityOiljack extends TileEntity {
    @Override
    public void readFromNBT(NBTTagCompound tag) {
       super.readFromNBT(tag);
-      orientation = tag.getInteger("orientation");
+      orientation = ForgeDirection.getOrientation(tag.getInteger("orientation"));
    }
 
    @Override
    public void writeToNBT(NBTTagCompound tag) {
       super.writeToNBT(tag);
-      tag.setInteger("orientation", orientation);
+      tag.setInteger("orientation", orientation.ordinal());
    }
 
    @Override
    public void updateEntity() {
       if (lastUpdate >= 40) {
          lastUpdate = 0;
-         if (worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation)) instanceof EntityOiljackPipe) {
-            ((EntityOiljackPipe) worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation))).digOil();
+         if (worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof EntityOiljackPipe) {
+            ((EntityOiljackPipe) worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ)).digOil();
          }
       }
 
@@ -40,7 +40,7 @@ public class EntityOiljack extends TileEntity {
 
    public boolean canWork() {
       // check for neighbour blocks. Should run client side only to help with server perfomance!
-      if (worldObj.getTileEntity(xCoord + OrientationSimple.getX(orientation), yCoord, zCoord + OrientationSimple.getZ(orientation)) instanceof EntityOiljackPipe)
+      if (worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof EntityOiljackPipe)
          return true;
 
       return false;
