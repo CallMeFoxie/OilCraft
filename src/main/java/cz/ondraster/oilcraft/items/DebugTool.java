@@ -1,10 +1,10 @@
 package cz.ondraster.oilcraft.items;
 
+import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,7 +19,7 @@ public class DebugTool extends Item {
    public DebugTool() {
       setUnlocalizedName(References.UnlocalizedNames.ITEMDEBUGTOOL);
       setTextureName(References.Textures.ITEMDEBUGTOOL);
-      setCreativeTab(CreativeTabs.tabMisc);
+      setCreativeTab(OilCraft.creativeTab);
    }
 
    public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {

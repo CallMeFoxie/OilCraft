@@ -7,8 +7,10 @@ import net.minecraft.block.Block;
 public class FactoryBlocks {
    public static Block blockMachineCasing;
    public static Block blockMachineCasingHT; // HT for High Temperature
-   public static Block blockHeater;
+   public static Block blockElectricHeater;
+   public static Block blockSolidHeater;
    public static Block blockWindow;
+   public static Block blockMeter;
 
    public static void init() {
 
@@ -22,14 +24,24 @@ public class FactoryBlocks {
       blockMachineCasingHT.setBlockTextureName(References.Textures.BLOCKMACHINECASINGHT);
       Registrator.registerBlock(blockMachineCasingHT);
 
-      blockHeater = new BlockMachineCasing();
-      blockHeater.setBlockName(References.UnlocalizedNames.BLOCKHEATER);
-      blockHeater.setBlockTextureName(References.Textures.BLOCKHEATER);
-      Registrator.registerBlock(blockHeater);
+      blockElectricHeater = new BlockMachineCasing();
+      blockElectricHeater.setBlockName(References.UnlocalizedNames.BLOCKELECTRICHEATER);
+      blockElectricHeater.setBlockTextureName(References.Textures.BLOCKELECTRICHEATER);
+      Registrator.registerBlock(blockElectricHeater);
+
+      blockSolidHeater = new BlockMachineCasing();
+      blockSolidHeater.setBlockName(References.UnlocalizedNames.BLOCKSOLIDHEATER);
+      blockSolidHeater.setBlockTextureName(References.Textures.BLOCKSOLIDHEATER);
+      Registrator.registerBlock(blockSolidHeater);
 
       blockWindow = new BlockMachineCasing();
       blockWindow.setBlockName(References.UnlocalizedNames.BLOCKWINDOW);
       blockWindow.setBlockTextureName(References.Textures.BLOCKWINDOW);
       Registrator.registerBlock(blockWindow);
+
+      blockMeter = new BlockMachineCasing();
+      blockMeter.setBlockName(References.UnlocalizedNames.BLOCKMETER);
+      blockMeter.setBlockTextureName(References.Textures.BLOCKMETER);
+      Registrator.registerBlock(blockMeter);
    }
 }

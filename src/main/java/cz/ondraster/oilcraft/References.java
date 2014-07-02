@@ -18,8 +18,11 @@ public class References {
       public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
       public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + "_block_machine_casinght";
-      public static final String BLOCKHEATER = MODID + "_block_machine_heater";
+      public static final String BLOCKELECTRICHEATER = MODID + "_block_machine_electric_heater";
       public static final String BLOCKWINDOW = MODID + "_block_machine_window";
+      public static final String BLOCKMETER = MODID + "_block_machine_meter";
+      public static final String BLOCKSOLIDHEATER = MODID + "_block_machine_solid_heater";
+      public static final String TABNAME = MODID + "_tabname";
    }
 
    public class Textures {
@@ -35,7 +38,13 @@ public class References {
       public static final String ITEMDEBUGTOOL = MODID + ":debugtool";
       public static final String BLOCKMACHINECASING = MODID + ":machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + ":machine_casinght";
-      public static final String BLOCKHEATER = MODID + ":machine_heater";
+      public static final String BLOCKELECTRICHEATER = MODID + ":machine_electric_heater";
       public static final String BLOCKWINDOW = MODID + ":machine_window";
+      public static final String BLOCKMETER = MODID + ":machine_meter";
+      public static final String BLOCKSOLIDHEATER = MODID + ":machine_solid_heater";
+   }
+
+   public class Icons {
+      public static final String TABICON = MODID + ":tab_oilcraft";
    }
 }

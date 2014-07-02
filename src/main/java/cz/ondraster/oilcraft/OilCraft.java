@@ -18,6 +18,8 @@ public class OilCraft {
 
    public static Network network;
 
+   public static CreativeTabOilCraft creativeTab;
+
    @Mod.EventHandler
    public void preinit(FMLPreInitializationEvent event) {
    }
@@ -25,6 +27,9 @@ public class OilCraft {
 
    @Mod.EventHandler
    public void init(FMLInitializationEvent event) {
+
+      creativeTab = new CreativeTabOilCraft();
+
 
       // register all the blocks
       OilBlocks.init();

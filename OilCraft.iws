@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa58e2e-b4b3-47a1-9a48-2a28978d86df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/BlockMachineCasing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/CreativeTabOilCraft.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemIcon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OilCraft.iws" afterPath="$PROJECT_DIR$/OilCraft.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
     </list>
     <ignored path="OilCraft.iws" />
@@ -80,31 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OilBlocks.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java">
+      <file leaf-file-name="BlockOiljackPipe.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="References.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="799">
-              <caret line="38" column="72" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FactoryBlocks.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24147727" vertical-offset="0" max-vertical-offset="704">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.53490657" vertical-offset="0" max-vertical-offset="1017">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -651,9 +629,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/ModelBeam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/ModelBridle.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mcmod.info" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/ModelLeg.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/cz/ondraster/oilcraft/client/renderers/ModelLegs.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/TEBeam.java" />
@@ -673,25 +648,19 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/api/IDangerousFluid.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/EntityOiljackPipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/network/Network.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OrientationSimple.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNetwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/PipeRenderer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityPipe.java" />
@@ -699,9 +668,18 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeMiddle.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelPipeHalf.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockMachineCasing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemIcon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/CreativeTabOilCraft.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
       </list>
     </option>
   </component>
@@ -977,6 +955,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oilcraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OilCraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oilcraft" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1560,8 +1594,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2660287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29952154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29952154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29952154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29952154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1647,7 +1681,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="27" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1655,64 +1689,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidTankInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4743025" vertical-offset="0" max-vertical-offset="681">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07244318" vertical-offset="0" max-vertical-offset="704">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/OiljackRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41051137" vertical-offset="0" max-vertical-offset="765">
-          <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14488636" vertical-offset="0" max-vertical-offset="704">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/FluidCrudeOil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12073863" vertical-offset="0" max-vertical-offset="704">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluidCrudeOil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31392047" vertical-offset="0" max-vertical-offset="918">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19318181" vertical-offset="0" max-vertical-offset="704">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1727,29 +1707,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4318182" vertical-offset="2" max-vertical-offset="884">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07244318" vertical-offset="0" max-vertical-offset="704">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38636363" vertical-offset="0" max-vertical-offset="704">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1767,14 +1729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="969">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09659091" vertical-offset="0" max-vertical-offset="3383">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1913,14 +1867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22141823" vertical-offset="0" max-vertical-offset="691">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/IFluidHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33238637" vertical-offset="208" max-vertical-offset="1479">
@@ -1929,28 +1875,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38636363" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/pipe/PipeFluidNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21732955" vertical-offset="0" max-vertical-offset="1445">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49289772" vertical-offset="112" max-vertical-offset="816">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1967,29 +1895,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25142047" vertical-offset="180" max-vertical-offset="884">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="3179">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1251" max-vertical-offset="1955">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2063,14 +1973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="799">
-          <caret line="38" column="72" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljackPipe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.7485795" vertical-offset="537" max-vertical-offset="2057">
@@ -2082,18 +1984,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1152/forgeSrc-1.7.10-10.13.0.1152-sources.jar!/net/minecraft/creativetab/CreativeTabs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33285093" vertical-offset="1351" max-vertical-offset="5372">
+          <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/factory/blocks/FactoryBlocks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24147727" vertical-offset="0" max-vertical-offset="704">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.48295453" vertical-offset="0" max-vertical-offset="901">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/OilCraft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5525568" vertical-offset="2" max-vertical-offset="969">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/CreativeTabOilCraft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31392047" vertical-offset="0" max-vertical-offset="704">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1690341" vertical-offset="0" max-vertical-offset="704">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77272725" vertical-offset="0" max-vertical-offset="952">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.024147727" vertical-offset="0" max-vertical-offset="704">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1071">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/renderers/models/ModelOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06686332" vertical-offset="0" max-vertical-offset="3383">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/entities/EntityOiljack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35103244" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/BucketCrudeOil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13372664" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18387415" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15239044" vertical-offset="0" max-vertical-offset="1004">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/FluidTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81612587" vertical-offset="938" max-vertical-offset="1955">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53490657" vertical-offset="0" max-vertical-offset="1017">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

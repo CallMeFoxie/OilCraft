@@ -1,10 +1,10 @@
 package cz.ondraster.oilcraft.blocks;
 
+import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.entities.EntityOiljackPipe;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -12,7 +12,7 @@ public class BlockOiljackPipe extends BlockContainer {
    protected BlockOiljackPipe() {
       super(Material.anvil);
       setBlockName(References.UnlocalizedNames.BLOCKOILJACKPIPE);
-      setCreativeTab(CreativeTabs.tabBlock);
+      setCreativeTab(OilCraft.creativeTab);
       setBlockTextureName(References.Textures.BLOCKOILJACKPIPE);
       setBlockBounds(0f, 0f, 0f, 1f, 1f, 1f);
    }
