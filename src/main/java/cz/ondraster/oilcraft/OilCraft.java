@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
+import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.items.OilItems;
 import cz.ondraster.oilcraft.network.Network;
@@ -33,6 +34,7 @@ public class OilCraft {
 
       // register all the blocks
       OilBlocks.init();
+      FactoryBlocks.init();
       Fluids.init();
       OilItems.init();
 

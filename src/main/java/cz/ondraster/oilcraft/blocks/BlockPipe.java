@@ -17,6 +17,7 @@ public class BlockPipe extends BlockContainer {
       super(Material.anvil);
       setBlockName(References.UnlocalizedNames.BLOCKPIPE);
       setCreativeTab(OilCraft.creativeTab);
+      setBlockTextureName(References.Icons.ICONPIPE);
    }
 
    @Override
@@ -70,5 +71,11 @@ public class BlockPipe extends BlockContainer {
 
    public void onBlockPreDestroy(World world, int x, int y, int z, int oldmeta) {
 
+   }
+
+
+   @Override
+   public int getRenderType() {
+      return 4;
    }
 }

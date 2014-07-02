@@ -19,7 +19,7 @@ public class BlockFluidCrudeOil extends BlockFluidClassic {
    protected IIcon flowingIcon;
 
    public BlockFluidCrudeOil() {
-      super(Fluids.fluidCrudeOil, Material.lava);
+      super(Fluids.fluidCrudeOil, Material.water);
       setCreativeTab(CreativeTabs.tabTools);
       setBlockName(References.UnlocalizedNames.FLUIDCRUDEOIL);
    }

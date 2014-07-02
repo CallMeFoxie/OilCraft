@@ -11,6 +11,8 @@ public class FactoryBlocks {
    public static Block blockSolidHeater;
    public static Block blockWindow;
    public static Block blockMeter;
+   public static Block blockValve;
+   public static Block blockValveHT;
 
    public static void init() {
 
@@ -43,5 +45,15 @@ public class FactoryBlocks {
       blockMeter.setBlockName(References.UnlocalizedNames.BLOCKMETER);
       blockMeter.setBlockTextureName(References.Textures.BLOCKMETER);
       Registrator.registerBlock(blockMeter);
+
+      blockValve = new BlockMachineCasing();
+      blockValve.setBlockName(References.UnlocalizedNames.BLOCKVALVE);
+      blockValve.setBlockTextureName(References.Textures.BLOCKVALVE);
+      Registrator.registerBlock(blockValve);
+
+      blockValveHT = new BlockMachineCasing();
+      blockValveHT.setBlockName(References.UnlocalizedNames.BLOCKVALVEHT);
+      blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
+      Registrator.registerBlock(blockValveHT);
    }
 }

@@ -13,7 +13,7 @@ public class BlockOiljack extends BlockContainer {
    public BlockOiljack() {
       super(Material.anvil);
       this.setCreativeTab(OilCraft.creativeTab);
-      this.setBlockTextureName(References.Textures.BLOCKOILJACK);
+      this.setBlockTextureName(References.Icons.ICONOILJACK);
       this.setBlockName(References.UnlocalizedNames.BLOCKOILJACK);
    }
 
@@ -35,5 +35,10 @@ public class BlockOiljack extends BlockContainer {
    @Override
    public boolean hasTileEntity(int metadata) {
       return true;
+   }
+
+   @Override
+   public int getRenderType() {
+      return 4;
    }
 }

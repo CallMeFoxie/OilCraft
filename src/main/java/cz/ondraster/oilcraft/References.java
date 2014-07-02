@@ -23,28 +23,32 @@ public class References {
       public static final String BLOCKMETER = MODID + "_block_machine_meter";
       public static final String BLOCKSOLIDHEATER = MODID + "_block_machine_solid_heater";
       public static final String TABNAME = MODID + "_tabname";
+      public static final String BLOCKVALVE = MODID + "_block_machine_valve";
+      public static final String BLOCKVALVEHT = MODID + "_block_machine_valveht";
    }
 
    public class Textures {
-      public static final String BLOCKOILJACK3D = "oiljack_texture.png";
+      public static final String BLOCKOILJACK3D = "oiljack.png";
       public static final String BLOCKPIPE3D = "pipe_front.png";
       public static final String BLOCKPIPEMIDDLE3D = "pipe_middle.png";
       public static final String BUCKETCRUDEOIL = MODID + ":bucket_crudeoil";
-      public static final String BLOCKOILJACK = MODID + ":oiljack";
-      public static final String BLOCKPIPE = MODID + ":pipe";
       public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe";
-      public static final String FLUIDCRUDEOILFLOWING = MODID + ":crudeoil_flowing";
-      public static final String FLUIDCRUDEOILSTILL = MODID + ":crudeoil_still";
-      public static final String ITEMDEBUGTOOL = MODID + ":debugtool";
+      public static final String FLUIDCRUDEOILFLOWING = MODID + ":fluid_crudeoil_flowing";
+      public static final String FLUIDCRUDEOILSTILL = MODID + ":fluid_crudeoil_still";
+      public static final String ITEMDEBUGTOOL = MODID + ":icon_debugger";
       public static final String BLOCKMACHINECASING = MODID + ":machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + ":machine_casinght";
       public static final String BLOCKELECTRICHEATER = MODID + ":machine_electric_heater";
       public static final String BLOCKWINDOW = MODID + ":machine_window";
       public static final String BLOCKMETER = MODID + ":machine_meter";
       public static final String BLOCKSOLIDHEATER = MODID + ":machine_solid_heater";
+      public static final String BLOCKVALVE = MODID + ":machine_valve";
+      public static final String BLOCKVALVEHT = MODID + ":machine_valveht";
    }
 
    public class Icons {
       public static final String TABICON = MODID + ":tab_oilcraft";
+      public static final String ICONOILJACK = MODID + ":icon_oiljack";
+      public static final String ICONPIPE = MODID + ":icon_pipe";
    }
 }
