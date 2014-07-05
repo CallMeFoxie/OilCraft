@@ -25,6 +25,9 @@ public class References {
       public static final String TABNAME = MODID + "_tabname";
       public static final String BLOCKVALVE = MODID + "_block_machine_valve";
       public static final String BLOCKVALVEHT = MODID + "_block_machine_valveht";
+      public static final String FLUIDHYDROGEN = MODID + "_hydrogen";
+      public static final String BUCKETHYDROVEN = MODID + "_bucket_hydrogen";
+      public static final String ITEMMATCHES = MODID + "_matches";
    }
 
    public class Textures {
@@ -44,6 +47,10 @@ public class References {
       public static final String BLOCKSOLIDHEATER = MODID + ":machine_solid_heater";
       public static final String BLOCKVALVE = MODID + ":machine_valve";
       public static final String BLOCKVALVEHT = MODID + ":machine_valveht";
+      public static final String FLUIDHYDROGENFLOWING = MODID + ":fluid_hydrogen_flowing";
+      public static final String FLUIDHYDROGENSTILL = MODID + ":fluid_hydrogen_still";
+      public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
+      public static final String ITEMMATCHES = MODID + ":matches";
    }
 
    public class Icons {
