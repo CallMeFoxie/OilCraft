@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa58e2e-b4b3-47a1-9a48-2a28978d86df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/BlockFluid.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemMatchBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/client/OilMaterials.java" />
-      <change type="DELETED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\fluids\BlockFluidCrudeOil.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\fluids\FluidCrudeOil.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OilCraft.iws" afterPath="$PROJECT_DIR$/OilCraft.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
-      <change type="MOVED" beforePath="E:\MCmodding\17\OilCraft\src\main\java\cz\ondraster\oilcraft\items\BucketCrudeOil.java" afterPath="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilCraftBucket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang" afterPath="$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang" />
     </list>
     <ignored path="OilCraft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,63 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Fluids.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemMatchBox.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemMatchBox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="References.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="References.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1139">
-              <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Registrator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OilCraftBucket.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilCraftBucket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OilItems.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5904486" vertical-offset="0" max-vertical-offset="691">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.82102275" vertical-offset="0" max-vertical-offset="1139">
+              <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -707,7 +646,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockMachineCasing.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemIcon.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/CreativeTabOilCraft.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/BlockOiljackPipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/DebugTool.java" />
@@ -729,6 +667,7 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemMatchBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilItems.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang" />
       </list>
     </option>
   </component>
@@ -1777,14 +1716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024147727" vertical-offset="0" max-vertical-offset="704">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/blocks/OilBlocks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1017">
@@ -2017,14 +1948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilCraftBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/fluids/Fluids.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
@@ -2049,22 +1972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="259" max-vertical-offset="1139">
-          <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/ItemMatchBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
@@ -2079,6 +1986,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5904486" vertical-offset="0" max-vertical-offset="691">
           <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/items/OilCraftBucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19318181" vertical-offset="0" max-vertical-offset="704">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/Registrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14488636" vertical-offset="0" max-vertical-offset="704">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/oilcraft/lang/en_US.lang">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4346591" vertical-offset="0" max-vertical-offset="704">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/ondraster/oilcraft/References.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82102275" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
           <folding />
         </state>
       </provider>
