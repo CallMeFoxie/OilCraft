@@ -14,6 +14,8 @@ public class FactoryBlocks {
    public static Block blockValve;
    public static Block blockValveHT;
 
+   public static Block controllerTreater;
+
    public static void init() {
 
       blockMachineCasing = new BlockMachineCasing();
@@ -55,5 +57,8 @@ public class FactoryBlocks {
       blockValveHT.setBlockName(References.UnlocalizedNames.BLOCKVALVEHT);
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
+
+      controllerTreater = new ControllerTreater();
+      Registrator.registerBlock(controllerTreater);
    }
 }

@@ -9,7 +9,7 @@ public class CreativeTabOilCraft extends CreativeTabs {
 
    public CreativeTabOilCraft() {
       super(References.UnlocalizedNames.TABNAME);
-      iconItem = new ItemIcon(References.Icons.TABICON);
+      iconItem = new ItemIcon(References.Icons.TABICON).setUnlocalizedName(References.UnlocalizedNames.ICONITEM);
       Registrator.registerItem(iconItem);
    }
 

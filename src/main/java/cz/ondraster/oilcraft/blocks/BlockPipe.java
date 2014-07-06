@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -18,6 +19,7 @@ public class BlockPipe extends BlockContainer {
       setBlockName(References.UnlocalizedNames.BLOCKPIPE);
       setCreativeTab(OilCraft.creativeTab);
       setBlockTextureName(References.Icons.ICONPIPE);
+      Registrator.registerTileEntity(EntityPipe.class, References.Entities.ENTITYPIPE);
    }
 
    @Override

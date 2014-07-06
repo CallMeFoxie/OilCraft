@@ -3,16 +3,15 @@ package cz.ondraster.oilcraft.fluids;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.client.OilMaterials;
-import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
 public class Fluids {
    public static Fluid fluidCrudeOil;
-   public static Block blockFluidCrudeOil;
+   public static BlockFluid blockFluidCrudeOil;
 
    public static Fluid fluidHydrogen;
-   public static Block blockFluidHydrogen;
+   public static BlockFluid blockFluidHydrogen;
 
    public static void init() {
       fluidCrudeOil = new Fluid(References.UnlocalizedNames.FLUIDCRUDEOIL);

@@ -4,6 +4,9 @@ import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.factory.blocks.MultiblockController;
+import cz.ondraster.oilcraft.factory.blocks.MultiblockPart;
+import cz.ondraster.oilcraft.factory.blocks.TileEntityController;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -27,6 +30,7 @@ public class DebugTool extends Item {
          return false;
 
       Block block = world.getBlock(x, y, z);
+      int meta = world.getBlockMetadata(x, y, z);
       if (block instanceof BlockPipe) {
          EntityPipe pipe = (EntityPipe) world.getTileEntity(x, y, z);
          if (pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid == null)
@@ -36,6 +40,16 @@ public class DebugTool extends Item {
                   pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid.getFluid().getUnlocalizedName() + ", amount: " +
                   pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid.amount + ", capacity: " +
                   pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].capacity));
+      }
+
+      if (block instanceof MultiblockPart) {
+         MultiblockPart part = (MultiblockPart) block;
+         player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta));
+      }
+      if (block instanceof MultiblockController) {
+         MultiblockPart part = (MultiblockPart) block;
+         TileEntityController tileEntityController = (TileEntityController) world.getTileEntity(x, y, z);
+         player.addChatComponentMessage(new ChatComponentText("Controller. Formed: " + tileEntityController.isFormed()));
       }
       return false;
    }

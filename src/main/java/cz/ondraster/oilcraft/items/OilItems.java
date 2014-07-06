@@ -15,20 +15,26 @@ public class OilItems {
 
    public static Item debugTool;
    public static Item itemMatches;
+   public static Item wrench;
 
    public static void init() {
       bucketCrudeOil = new OilCraftBucket(Fluids.blockFluidCrudeOil).setUnlocalizedName(References.UnlocalizedNames.BUCKETCRUDEOIL).setTextureName(References.Textures.BUCKETCRUDEOIL);
       Registrator.registerItem(bucketCrudeOil);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDCRUDEOIL, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketCrudeOil), new ItemStack(Items.bucket));
+      Fluids.blockFluidCrudeOil.setBucket((OilCraftBucket) bucketCrudeOil);
 
       bucketHydrogen = new OilCraftBucket(Fluids.blockFluidHydrogen).setUnlocalizedName(References.UnlocalizedNames.BUCKETHYDROVEN).setTextureName(References.Textures.BUCKETHYDROGEN);
       Registrator.registerItem(bucketHydrogen);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDHYDROGEN, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketHydrogen), new ItemStack(Items.bucket));
+      Fluids.blockFluidHydrogen.setBucket((OilCraftBucket) bucketHydrogen);
 
       debugTool = new DebugTool();
       Registrator.registerItem(debugTool);
 
       itemMatches = new ItemMatchBox();
       Registrator.registerItem(itemMatches);
+
+      wrench = new OilWrench();
+      Registrator.registerItem(wrench);
    }
 }

@@ -7,13 +7,10 @@ public class References {
 
 
    public class UnlocalizedNames {
-      public static final String ENTITYOILJACK = MODID + "_oiljack_te";
       public static final String BLOCKOILJACK = MODID + "_oiljack";
-      public static final String ENTITYPIPE = MODID + "_pipe_te";
       public static final String BLOCKPIPE = MODID + "_pipe";
       public static final String FLUIDCRUDEOIL = MODID + "_crude_oil";
       public static final String BLOCKOILJACKPIPE = MODID + "_oiljack_pipe";
-      public static final String ENTITYOILJACKPIPE = MODID + "_oiljack_pipe_te";
       public static final String BUCKETCRUDEOIL = MODID + "_bucket_crudeoil";
       public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
       public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
@@ -28,6 +25,9 @@ public class References {
       public static final String FLUIDHYDROGEN = MODID + "_hydrogen";
       public static final String BUCKETHYDROVEN = MODID + "_bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + "_matches";
+      public static final String ITEMWRENCH = MODID + "_wrench";
+      public static final String CONTROLLERTREATER = MODID + "_controller_treater";
+      public static final String ICONITEM = MODID + "_icon";
    }
 
    public class Textures {
@@ -51,11 +51,20 @@ public class References {
       public static final String FLUIDHYDROGENSTILL = MODID + ":fluid_hydrogen_still";
       public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + ":matches";
+      public static final String CONTROLLERTREATER = MODID + ":controller_treater";
    }
 
    public class Icons {
       public static final String TABICON = MODID + ":tab_oilcraft";
       public static final String ICONOILJACK = MODID + ":icon_oiljack";
       public static final String ICONPIPE = MODID + ":icon_pipe";
+      public static final String ITEMWRENCH = MODID + ":wrench";
+   }
+
+   public class Entities {
+      public static final String TREATER = MODID + "_treater";
+      public static final String ENTITYOILJACK = MODID + "_oiljack_te";
+      public static final String ENTITYOILJACKPIPE = MODID + "_oiljack_pipe_te";
+      public static final String ENTITYPIPE = MODID + "_pipe_te";
    }
 }

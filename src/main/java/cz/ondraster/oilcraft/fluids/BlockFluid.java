@@ -3,6 +3,7 @@ package cz.ondraster.oilcraft.fluids;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.OilCraft;
+import cz.ondraster.oilcraft.items.OilCraftBucket;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
@@ -19,6 +20,7 @@ public class BlockFluid extends BlockFluidClassic {
 
    private String iconStill;
    private String iconFlowing;
+   private OilCraftBucket bucket = null;
 
 
    public BlockFluid(Fluid fluid, Material material, String blockName, String iconStill, String iconFlowing) {
@@ -52,6 +54,14 @@ public class BlockFluid extends BlockFluidClassic {
    public void registerBlockIcons(IIconRegister register) {
       stillIcon = register.registerIcon(iconStill);
       flowingIcon = register.registerIcon(iconFlowing);
+   }
+
+   public OilCraftBucket getBucket() {
+      return this.bucket;
+   }
+
+   public void setBucket(OilCraftBucket bucket) {
+      this.bucket = bucket;
    }
 
 }

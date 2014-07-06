@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,6 +16,7 @@ public class BlockOiljack extends BlockContainer {
       this.setCreativeTab(OilCraft.creativeTab);
       this.setBlockTextureName(References.Icons.ICONOILJACK);
       this.setBlockName(References.UnlocalizedNames.BLOCKOILJACK);
+      Registrator.registerTileEntity(EntityOiljack.class, References.Entities.ENTITYOILJACK);
    }
 
    //This will tell minecraft not to render any side of our cube.

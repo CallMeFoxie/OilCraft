@@ -8,8 +8,10 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
+import cz.ondraster.oilcraft.handlers.Events;
 import cz.ondraster.oilcraft.items.OilItems;
 import cz.ondraster.oilcraft.network.Network;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = References.MODID, version = References.VERSION, name = References.MODNAME)
 public class OilCraft {
@@ -38,10 +40,9 @@ public class OilCraft {
       Fluids.init();
       OilItems.init();
 
+      MinecraftForge.EVENT_BUS.register(new Events());
 
       // register recipes
-
-      // register event buses
 
       network = new Network();
 
