@@ -47,7 +47,7 @@ public class DebugTool extends Item {
          player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta));
       }
       if (block instanceof MultiblockController) {
-         MultiblockPart part = (MultiblockPart) block;
+         MultiblockController part = (MultiblockController) block;
          TileEntityController tileEntityController = (TileEntityController) world.getTileEntity(x, y, z);
          player.addChatComponentMessage(new ChatComponentText("Controller. Formed: " + tileEntityController.isFormed()));
       }

@@ -5,6 +5,9 @@ public class References {
    public static final String VERSION = "@VERSION@";
    public static final String MODNAME = "OilCraft";
 
+   public class GUIs {
+      public static final int guiValve = 1;
+   }
 
    public class UnlocalizedNames {
       public static final String BLOCKOILJACK = MODID + "_oiljack";
@@ -66,5 +69,7 @@ public class References {
       public static final String ENTITYOILJACK = MODID + "_oiljack_te";
       public static final String ENTITYOILJACKPIPE = MODID + "_oiljack_pipe_te";
       public static final String ENTITYPIPE = MODID + "_pipe_te";
+      public static final String ENTITYVALVE = MODID + "_valve_te";
+      public static final String ENTITYVALVEHT = MODID + "_valve_ht_te";
    }
 }

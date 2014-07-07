@@ -5,7 +5,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
+import cz.ondraster.oilcraft.client.gui.GuiHandlers;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.handlers.Events;
@@ -46,7 +48,7 @@ public class OilCraft {
 
       network = new Network();
 
-      // register GUI handlers
+      NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandlers());
 
    }
 

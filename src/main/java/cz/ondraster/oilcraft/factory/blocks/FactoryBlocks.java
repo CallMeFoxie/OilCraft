@@ -48,12 +48,12 @@ public class FactoryBlocks {
       blockMeter.setBlockTextureName(References.Textures.BLOCKMETER);
       Registrator.registerBlock(blockMeter);
 
-      blockValve = new BlockMachineCasing();
+      blockValve = new BlockMachineValve();
       blockValve.setBlockName(References.UnlocalizedNames.BLOCKVALVE);
       blockValve.setBlockTextureName(References.Textures.BLOCKVALVE);
       Registrator.registerBlock(blockValve);
 
-      blockValveHT = new BlockMachineCasing();
+      blockValveHT = new BlockMachineValveHT();
       blockValveHT.setBlockName(References.UnlocalizedNames.BLOCKVALVEHT);
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
