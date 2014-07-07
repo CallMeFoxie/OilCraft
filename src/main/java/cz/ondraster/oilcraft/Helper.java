@@ -28,4 +28,14 @@ public class Helper {
 
       return null;
    }
+
+   public static ItemStack getFilled(ItemStack emptyContainer) {
+      FluidContainerRegistry.FluidContainerData[] datas = FluidContainerRegistry.getRegisteredFluidContainerData();
+      for (FluidContainerRegistry.FluidContainerData data : datas) {
+         if (data.emptyContainer.getItem() == emptyContainer.getItem())
+            return data.filledContainer;
+      }
+
+      return null;
+   }
 }

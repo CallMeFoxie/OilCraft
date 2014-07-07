@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public abstract class TileEntityWithInventory extends TileEntity implements IInventory {
    protected final ItemStack[] inventory;
-   protected Container         myContainer = null;
+   protected Container myContainer = null;
 
    public TileEntityWithInventory(int slots) {
       super();
@@ -36,6 +36,10 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
 
    @Override
    public ItemStack decrStackSize(int slot, int amount) {
+      return decrStackSize(slot, amount, true);
+   }
+
+   public ItemStack decrStackSize(int slot, int amount, boolean notify) {
       ItemStack stack = null;
 
       if (inventory[slot] != null) {
@@ -50,7 +54,8 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
          }
       }
 
-      onInventoryChanged(slot);
+      if (notify)
+         onInventoryChanged(slot);
 
       return stack;
 
@@ -121,7 +126,10 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
          NBTTagCompound tag = list.getCompoundTagAt(i);
          byte slot = tag.getByte("Slot");
          if (slot >= 0 && slot < inventory.length) {
-            inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
+            if (tag.getBoolean("Empty") == true)
+               inventory[slot] = null;
+            else
+               inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
          }
       }
 
@@ -141,6 +149,11 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
             tag.setByte("Slot", (byte) i);
             stack.writeToNBT(tag);
             itemList.appendTag(tag);
+         } else {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setByte("Slot", (byte) i);
+            tag.setBoolean("Empty", true);
+            itemList.appendTag(tag);
          }
       }
       nbt.setTag("Inventory", itemList);
@@ -148,9 +161,8 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
 
    /**
     * Called when inventory slot has been changed
-    * 
-    * @param slot
-    *           Slot that has been changed, -1 for whole inventory
+    *
+    * @param slot Slot that has been changed, -1 for whole inventory
     */
 
    protected void onInventoryChanged(int slot) {
@@ -158,10 +170,9 @@ public abstract class TileEntityWithInventory extends TileEntity implements IInv
 
    /**
     * Called when an item is being pulled from the inventory
-    * 
+    *
     * @param slot
-    * @param stack
-    *           ItemStack of the item
+    * @param stack ItemStack of the item
     * @return new ItemStack
     */
    protected ItemStack onItemPulledOut(int slot, ItemStack stack) {

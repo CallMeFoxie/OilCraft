@@ -108,40 +108,55 @@ public class TileEntityValve extends TileEntityWithInventory implements IFluidHa
 
    @Override
    protected void onInventoryChanged(int slot) {
+      if (worldObj == null)
+         return;
+
       if (worldObj.isRemote)
          return;
 
       if (slot == 0 && getStackInSlot(0) != null) { // input
-         ItemStack itemStack = getStackInSlot(0);
-         if (FluidContainerRegistry.isFilledContainer(itemStack)) {
-            FluidStack content = FluidContainerRegistry.getFluidForFilledItem(itemStack);
-            if (tank.getFluid() == null || (content.getFluid() == tank.getFluid().getFluid() && tank.getFluidAmount() + content.amount <= tank.getCapacity() && Helper.canMergeStacks(itemStack, getStackInSlot(1)))) {
+         ItemStack inputSlot = getStackInSlot(0);
+         ItemStack outputSlot = getStackInSlot(1);
+         if (FluidContainerRegistry.isFilledContainer(inputSlot)) {
+            ItemStack empty = Helper.getEmptyContainer(inputSlot);
+            empty.stackSize = 1;
+            boolean allow = false;
 
-               tank.fill(content, true);
+            // check for all the possible output scenarios
+            if (outputSlot == null)
+               allow = true;
+            else if (empty == null)
+               allow = true;
+            else if (Helper.canMergeStacks(outputSlot, empty))
+               allow = true;
 
-               ItemStack output = getStackInSlot(1);
-               itemStack.stackSize--;
+            if (allow) {
 
-               if (output == null) {
-                  output = Helper.getEmptyContainer(itemStack);
+               FluidStack fluidStack = FluidContainerRegistry.getFluidForFilledItem(inputSlot);
+               if (tank.fill(fluidStack, false) == fluidStack.amount)
+                  tank.fill(fluidStack, true);
+               else
+                  return;
+
+
+               decrStackSize(0, 1, false);
+
+               if (outputSlot == null)
+                  setInventorySlotContents(1, empty);
+               else if (empty != null) {
+                  ++outputSlot.stackSize;
+                  setInventorySlotContents(1, outputSlot);
+
                }
-
-               if (itemStack.stackSize == 0)
-                  itemStack = null;
-               setInventorySlotContents(0, itemStack);
-
-               if (output != null)
-                  output.stackSize += 1;
-
-               setInventorySlotContents(1, output);
-
-
             }
          }
       }
 
       this.markDirty();
-      worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+      if (worldObj != null)
+         worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+
    }
 
    public enum TankDirection {
