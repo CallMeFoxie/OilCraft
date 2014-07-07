@@ -1,0 +1,2 @@
+Fuel "cans" - will be able to put down fuel (< bucket) and ignite it (flint and steel, MATCHES!)
+   - will spread fire faster than normal flint & steel fire without gasoline
