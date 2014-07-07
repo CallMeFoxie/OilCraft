@@ -1,16 +1,15 @@
 package cz.ondraster.oilcraft.factory.blocks;
 
+import cz.ondraster.oilcraft.Helper;
 import cz.ondraster.oilcraft.TileEntityWithInventory;
 import cz.ondraster.oilcraft.fluids.FluidTank;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.FluidTankInfo;
-import net.minecraftforge.fluids.IFluidHandler;
+import net.minecraftforge.fluids.*;
 
 
 public class TileEntityValve extends TileEntityWithInventory implements IFluidHandler {
@@ -105,6 +104,44 @@ public class TileEntityValve extends TileEntityWithInventory implements IFluidHa
    @Override
    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
       readFromNBT(pkt.func_148857_g());
+   }
+
+   @Override
+   protected void onInventoryChanged(int slot) {
+      if (worldObj.isRemote)
+         return;
+
+      if (slot == 0 && getStackInSlot(0) != null) { // input
+         ItemStack itemStack = getStackInSlot(0);
+         if (FluidContainerRegistry.isFilledContainer(itemStack)) {
+            FluidStack content = FluidContainerRegistry.getFluidForFilledItem(itemStack);
+            if (tank.getFluid() == null || (content.getFluid() == tank.getFluid().getFluid() && tank.getFluidAmount() + content.amount <= tank.getCapacity() && Helper.canMergeStacks(itemStack, getStackInSlot(1)))) {
+
+               tank.fill(content, true);
+
+               ItemStack output = getStackInSlot(1);
+               itemStack.stackSize--;
+
+               if (output == null) {
+                  output = Helper.getEmptyContainer(itemStack);
+               }
+
+               if (itemStack.stackSize == 0)
+                  itemStack = null;
+               setInventorySlotContents(0, itemStack);
+
+               if (output != null)
+                  output.stackSize += 1;
+
+               setInventorySlotContents(1, output);
+
+
+            }
+         }
+      }
+
+      this.markDirty();
+      worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
    }
 
    public enum TankDirection {
