@@ -1,5 +1,6 @@
-package cz.ondraster.oilcraft;
+package cz.ondraster.oilcraft.fluids;
 
+import cz.ondraster.oilcraft.Helper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.*;
 

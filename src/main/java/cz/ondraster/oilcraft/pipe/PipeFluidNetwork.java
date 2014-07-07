@@ -1,6 +1,6 @@
 package cz.ondraster.oilcraft.pipe;
 
-import cz.ondraster.oilcraft.FluidTank;
+import cz.ondraster.oilcraft.fluids.FluidTank;
 
 import java.util.ArrayList;
 import java.util.List;

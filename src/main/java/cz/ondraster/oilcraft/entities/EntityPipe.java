@@ -1,6 +1,6 @@
 package cz.ondraster.oilcraft.entities;
 
-import cz.ondraster.oilcraft.FluidTank;
+import cz.ondraster.oilcraft.fluids.FluidTank;
 import cz.ondraster.oilcraft.Helper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
