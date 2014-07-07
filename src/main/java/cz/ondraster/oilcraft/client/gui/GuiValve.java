@@ -31,10 +31,10 @@ public class GuiValve extends GuiContainer {
       // FontRenderer, x, y, colour
       FluidStack fluidStack = valve.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid;
       if (fluidStack == null)
-         this.drawCenteredString(fontRendererObj, "Empty", this.width / 2, (this.height - this.ySize) / 2 + 10, 0xFFFFFF);
+         this.drawCenteredString(fontRendererObj, "Empty", this.width / 2, (this.height - this.ySize) / 2 + 35, 0xFFFFFF);
       else {
-         this.drawCenteredString(fontRendererObj, "Fluid: " + fluidStack.getFluid().getLocalizedName(fluidStack), this.width / 2, 10, 0xFFFFFF);
-         this.drawCenteredString(fontRendererObj, "Amount: " + fluidStack.amount, this.width / 2, 26, 0xFFFFFF);
+         this.drawCenteredString(fontRendererObj, "Fluid: " + fluidStack.getFluid().getLocalizedName(fluidStack), this.width / 2 + 10, (this.height - this.ySize) / 2 + 27, 0xFFFFFF);
+         this.drawCenteredString(fontRendererObj, "Amount: " + fluidStack.amount + "mB", this.width / 2 + 10, (this.height - this.ySize) / 2 + 43, 0xFFFFFF);
       }
    }
 }
