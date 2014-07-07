@@ -28,12 +28,12 @@ public class FactoryBlocks {
       blockMachineCasingHT.setBlockTextureName(References.Textures.BLOCKMACHINECASINGHT);
       Registrator.registerBlock(blockMachineCasingHT);
 
-      blockElectricHeater = new BlockMachineCasing();
+      blockElectricHeater = new BlockMachineHeater();
       blockElectricHeater.setBlockName(References.UnlocalizedNames.BLOCKELECTRICHEATER);
       blockElectricHeater.setBlockTextureName(References.Textures.BLOCKELECTRICHEATER);
       Registrator.registerBlock(blockElectricHeater);
 
-      blockSolidHeater = new BlockMachineCasing();
+      blockSolidHeater = new BlockMachineHeater();
       blockSolidHeater.setBlockName(References.UnlocalizedNames.BLOCKSOLIDHEATER);
       blockSolidHeater.setBlockTextureName(References.Textures.BLOCKSOLIDHEATER);
       Registrator.registerBlock(blockSolidHeater);

@@ -31,7 +31,6 @@ public abstract class MultiblockController extends BlockContainer {
    public void onPostBlockPlaced(World world, int x, int y, int z, int meta) {
       TileEntityController tec = (TileEntityController) world.getTileEntity(x, y, z);
       tec.checkMultiblock();
-
    }
 
    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {
