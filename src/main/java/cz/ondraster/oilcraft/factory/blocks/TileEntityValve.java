@@ -1,7 +1,6 @@
 package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.Helper;
-import cz.ondraster.oilcraft.TileEntityWithInventory;
 import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,7 +11,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
 
-public class TileEntityValve extends TileEntityWithInventory implements IFluidHandler {
+public class TileEntityValve extends TileEntityPartWithInventory implements IFluidHandler {
    private FluidTank tank;
    private TankDirection direction;
 
@@ -27,14 +26,14 @@ public class TileEntityValve extends TileEntityWithInventory implements IFluidHa
    }
 
    @Override
-   public void readFromNBT(NBTTagCompound tag) {
-      super.readFromNBT(tag);
+   public void load(NBTTagCompound tag) {
+      super.load(tag);
       tank.load(tag);
    }
 
    @Override
-   public void writeToNBT(NBTTagCompound tag) {
-      super.writeToNBT(tag);
+   public void save(NBTTagCompound tag) {
+      super.save(tag);
       tank.save(tag);
    }
 

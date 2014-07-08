@@ -71,5 +71,16 @@ public class References {
       public static final String ENTITYPIPE = MODID + "_pipe_te";
       public static final String ENTITYVALVE = MODID + "_valve_te";
       public static final String ENTITYVALVEHT = MODID + "_valve_ht_te";
+      public static final String ENTITYBASE = MODID + "_base_te";
+      public static final String ENTITYTREATER = MODID + "_treater_te";
+   }
+
+   public class FactoryControllers {
+      public static final int MEROXTREATER = 0;
+      public static final int GASPROC = 1;
+      public static final int HYDROTREATER = 2;
+      public static final int CROCKER = 3;
+      public static final int COKER = 4;
+      public static final int ASPHALT = 5;
    }
 }

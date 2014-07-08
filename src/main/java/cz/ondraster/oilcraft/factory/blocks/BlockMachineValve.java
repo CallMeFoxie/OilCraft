@@ -2,7 +2,6 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
-import cz.ondraster.oilcraft.Registrator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -10,7 +9,7 @@ import net.minecraft.world.World;
 public class BlockMachineValve extends MultiblockPartEntity {
    public BlockMachineValve() {
       super(RotationsAllowed.SIDEONLY);
-      Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
+
    }
 
    protected BlockMachineValve(boolean noRegister) {

@@ -18,6 +18,12 @@ public class FactoryBlocks {
 
    public static void init() {
 
+      Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
+      Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
+      Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
+      Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYTREATER);
+
+
       blockMachineCasing = new BlockMachineCasing();
       blockMachineCasing.setBlockName(References.UnlocalizedNames.BLOCKMACHINECASING);
       blockMachineCasing.setBlockTextureName(References.Textures.BLOCKMACHINECASING);
@@ -58,7 +64,7 @@ public class FactoryBlocks {
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
 
-      controllerTreater = new ControllerTreater();
+      controllerTreater = new MultiblockController().setBlockName(References.UnlocalizedNames.CONTROLLERTREATER).setBlockTextureName(References.Textures.CONTROLLERTREATER);
       Registrator.registerBlock(controllerTreater);
    }
 }

@@ -49,7 +49,7 @@ public class DebugTool extends Item {
       if (block instanceof MultiblockController) {
          MultiblockController part = (MultiblockController) block;
          TileEntityController tileEntityController = (TileEntityController) world.getTileEntity(x, y, z);
-         player.addChatComponentMessage(new ChatComponentText("Controller. Formed: " + tileEntityController.isFormed()));
+         player.addChatComponentMessage(new ChatComponentText("Controller. Formed: " + tileEntityController.isFormed() + ", Meta: " + meta));
       }
       return false;
    }

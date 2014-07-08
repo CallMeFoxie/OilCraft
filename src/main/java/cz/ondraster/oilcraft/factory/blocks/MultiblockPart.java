@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public abstract class MultiblockPart extends Block {
+public abstract class MultiblockPart extends BlockContainer {
 
    private RotationsAllowed allowRotation = RotationsAllowed.IGNORE;
 

@@ -3,7 +3,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityTreater extends TileEntityController {
+public class TileEntityMeroxTreater extends TileEntityController {
    // this multiblock is 2 deep, 2 high and 3 deep:
    /*
       (back)
@@ -104,6 +104,9 @@ public class TileEntityTreater extends TileEntityController {
       if (isOk) {
          isFormed = true;
          System.out.println("FORMED!");
+      } else {
+         isFormed = false;
+         System.out.println("NOT formed.");
       }
 
    }
