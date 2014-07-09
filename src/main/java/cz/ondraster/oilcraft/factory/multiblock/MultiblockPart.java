@@ -2,14 +2,15 @@ package cz.ondraster.oilcraft.factory.multiblock;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityController;
-import net.minecraft.block.Block;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public abstract class MultiblockPart extends BlockContainer {
 
@@ -33,34 +34,16 @@ public abstract class MultiblockPart extends BlockContainer {
       return meta;
    }
 
-   public void resetStatus(World world, int x, int y, int z) {
-      int meta = world.getBlockMetadata(x, y, z);
-      world.setBlockMetadataWithNotify(x, y, z, 0, 3);
-
-      for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
-         Block block = world.getBlock(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-         if (block instanceof MultiblockPart) {
-            if (world.getBlockMetadata(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ) == meta + 1)
-               ((MultiblockPart) block).resetStatus(world, x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-         }
-      }
-   }
-
    public void notifyController(World world, int x, int y, int z) {
-      int meta = world.getBlockMetadata(x, y, z);
-      world.setBlockMetadataWithNotify(x, y, z, 0, 0);
+      TileEntity tileEntity = world.getTileEntity(x, y, z);
+      TileEntity master = null;
+      if (tileEntity instanceof TileEntityPart)
+         master = ((TileEntityPart) tileEntity).getMaster();
+      else if (tileEntity instanceof TileEntityPartWithInventory)
+         master = ((TileEntityPartWithInventory) tileEntity).getMaster();
 
-      for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
-         Block block = world.getBlock(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-         if (block instanceof MultiblockPart) {
-            int blockmeta = world.getBlockMetadata(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-            if ((blockmeta == meta - 1 && meta != 0) || blockmeta == 0)
-               ((MultiblockPart) block).resetStatus(world, x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-         } else if (block instanceof MultiblockController) {
-            TileEntityController tec = (TileEntityController) world.getTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
-            tec.reset();
-         }
-      }
+      if (master != null && master instanceof TileEntityController)
+         ((TileEntityController) master).reset();
    }
 
    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {

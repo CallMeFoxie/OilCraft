@@ -55,6 +55,9 @@ public class References {
       public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + ":matches";
       public static final String CONTROLLERTREATER = MODID + ":controller_treater";
+      public static final String VALVEOUTLET = MODID + ":machine_valve_out";
+      public static final String VALVEOUTLETHT = MODID + ":machine_valve_out_ht";
+      public static final String SOLIDTOP = MODID + ":machine_top_ht";
    }
 
    public class Icons {

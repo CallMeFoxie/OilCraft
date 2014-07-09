@@ -17,3 +17,5 @@ item.oilcraft_debugtool.name=OilCraft Debug Tool
 item.oilcraft_bucket_hydrogen.name=Bucket of Hydrogen
 item.oilcraft_matches.name=Match box
 fluid.oilcraft_crude_oil=Crude Oil
+tile.oilcraft_controller_treater.name=Merox Treater
+item.oilcraft_wrench.name=Wrench

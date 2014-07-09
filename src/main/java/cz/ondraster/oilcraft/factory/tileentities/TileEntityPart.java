@@ -10,6 +10,7 @@ public class TileEntityPart extends TileEntity {
    protected boolean isComplete = false;
 
    private int lastTick = 0;
+   private Object master;
 
 
    @Override
@@ -68,5 +69,12 @@ public class TileEntityPart extends TileEntity {
 
    public boolean isComplete() {
       return isComplete;
+   }
+
+   public TileEntity getMaster() {
+      if (!isComplete())
+         return null;
+
+      return worldObj.getTileEntity(xMaster, yMaster, zMaster);
    }
 }

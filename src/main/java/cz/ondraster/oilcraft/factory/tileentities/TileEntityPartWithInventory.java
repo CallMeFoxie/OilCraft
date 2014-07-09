@@ -72,4 +72,11 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
    public boolean isComplete() {
       return isComplete;
    }
+
+   public TileEntity getMaster() {
+      if (!isComplete)
+         return null;
+
+      return worldObj.getTileEntity(xMaster, yMaster, zMaster);
+   }
 }

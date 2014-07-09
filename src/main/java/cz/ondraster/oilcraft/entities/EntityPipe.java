@@ -1,7 +1,7 @@
 package cz.ondraster.oilcraft.entities;
 
-import cz.ondraster.oilcraft.fluids.FluidTank;
 import cz.ondraster.oilcraft.Helper;
+import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -76,7 +76,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
                   IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
                   if (handler == null)
                      continue;
-                  if (handler.canFill(dir.getOpposite(), tank.getFluid().getFluid())) {
+                  if (handler.canFill(dir.getOpposite(), tank.getFluid().getFluid()) && (handler.fill(dir.getOpposite(), tank.getFluid(), false) > 0)) {
                      possibleDirs.add(dir);
                   }
                }
@@ -102,12 +102,12 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
                IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + possibleDirs.get(i).offsetX, yCoord + possibleDirs.get(i).offsetY, zCoord + possibleDirs.get(i).offsetZ);
 
                int amount = 0;
-               if (possibleDirs.size() > 1)
+               if (i < possibleDirs.size() - 1)
                   amount = handler.fill(possibleDirs.get(i).getOpposite(), fluidStack, true);
                else
                   amount = handler.fill(possibleDirs.get(i).getOpposite(), tank.getFluid(), true);
                this.tank.drain(amount, true);
-               possibleDirs.remove(i);
+               //possibleDirs.remove(i);
             }
          }
 
@@ -146,7 +146,8 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
       //   getNetworkDr().fill(new FluidStack(resource.getFluid(), filled), true);
       //   getNetworkDr().rebalance(worldObj);
       //}
-      fluidSourceSide = from;
+      if (resource.amount > tank.getFluidAmount() && doFill)
+         fluidSourceSide = from;
       return filled;
 
    }
