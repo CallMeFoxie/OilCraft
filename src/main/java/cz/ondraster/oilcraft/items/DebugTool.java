@@ -4,20 +4,20 @@ import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
-import cz.ondraster.oilcraft.factory.blocks.MultiblockController;
-import cz.ondraster.oilcraft.factory.blocks.MultiblockPart;
-import cz.ondraster.oilcraft.factory.blocks.TileEntityController;
+import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
+import cz.ondraster.oilcraft.factory.multiblock.MultiblockPart;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityController;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-/**
- * Created by Ondra on 1.7.2014.
- */
 public class DebugTool extends Item {
    public DebugTool() {
       setUnlocalizedName(References.UnlocalizedNames.ITEMDEBUGTOOL);
@@ -44,7 +44,15 @@ public class DebugTool extends Item {
 
       if (block instanceof MultiblockPart) {
          MultiblockPart part = (MultiblockPart) block;
-         player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta));
+         TileEntity te = world.getTileEntity(x, y, z);
+         if (te instanceof TileEntityPart) {
+            TileEntityPart tep = (TileEntityPart) world.getTileEntity(x, y, z);
+            player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta + ", part of multiblock: " + tep.isComplete()));
+         } else if (te instanceof TileEntityPartWithInventory) {
+            TileEntityPartWithInventory tep = (TileEntityPartWithInventory) world.getTileEntity(x, y, z);
+            player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta + ", part of multiblock: " + tep.isComplete()));
+         }
+
       }
       if (block instanceof MultiblockController) {
          MultiblockController part = (MultiblockController) block;

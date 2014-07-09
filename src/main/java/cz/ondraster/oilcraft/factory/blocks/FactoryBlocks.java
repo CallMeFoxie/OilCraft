@@ -2,6 +2,11 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.factory.controllers.ControllerMeroxTreater;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityMeroxTreater;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValveHT;
 import net.minecraft.block.Block;
 
 public class FactoryBlocks {
@@ -21,7 +26,7 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
       Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
       Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
-      Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYTREATER);
+      Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYMEROXTREATER);
 
 
       blockMachineCasing = new BlockMachineCasing();
@@ -64,7 +69,7 @@ public class FactoryBlocks {
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
 
-      controllerTreater = new MultiblockController().setBlockName(References.UnlocalizedNames.CONTROLLERTREATER).setBlockTextureName(References.Textures.CONTROLLERTREATER);
+      controllerTreater = new ControllerMeroxTreater();
       Registrator.registerBlock(controllerTreater);
    }
 }

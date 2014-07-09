@@ -2,6 +2,8 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import cz.ondraster.oilcraft.factory.multiblock.MultiblockPart;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

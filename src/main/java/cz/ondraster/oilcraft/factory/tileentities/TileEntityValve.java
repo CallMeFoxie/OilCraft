@@ -1,6 +1,7 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.Helper;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
 import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

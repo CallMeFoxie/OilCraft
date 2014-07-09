@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory.multiblock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;

@@ -1,6 +1,7 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory.multiblock;
 
 import cz.ondraster.oilcraft.OilCraft;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityController;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPistonBase;

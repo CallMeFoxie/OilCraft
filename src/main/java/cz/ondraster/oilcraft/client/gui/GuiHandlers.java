@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.client.gui;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import cz.ondraster.oilcraft.containers.ContainerValve;
-import cz.ondraster.oilcraft.factory.blocks.TileEntityValve;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;

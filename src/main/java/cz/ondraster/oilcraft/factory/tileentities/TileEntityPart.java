@@ -1,19 +1,16 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory.tileentities;
 
-import cz.ondraster.oilcraft.TileEntityWithInventory;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityPartWithInventory extends TileEntityWithInventory {
+public class TileEntityPart extends TileEntity {
    protected int xMaster;
    protected int yMaster;
    protected int zMaster;
-   protected boolean isComplete;
+   protected boolean isComplete = false;
+
    private int lastTick = 0;
 
-   public TileEntityPartWithInventory(int slots) {
-      super(slots);
-   }
 
    @Override
    public void updateEntity() {
@@ -67,5 +64,9 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
    public void readFromNBT(NBTTagCompound nbt) {
       super.readFromNBT(nbt);
       load(nbt);
+   }
+
+   public boolean isComplete() {
+      return isComplete;
    }
 }

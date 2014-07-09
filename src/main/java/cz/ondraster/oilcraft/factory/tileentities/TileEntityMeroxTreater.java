@@ -1,7 +1,13 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory.tileentities;
 
+import cz.ondraster.oilcraft.factory.blocks.BlockMachineHeater;
+import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TileEntityMeroxTreater extends TileEntityController {
    // this multiblock is 2 deep, 2 high and 3 deep:
@@ -17,6 +23,7 @@ public class TileEntityMeroxTreater extends TileEntityController {
     */
    @Override
    public void checkMultiblock() {
+      List<TileEntity> checked = new ArrayList<TileEntity>();
       if (worldObj.isRemote)
          return;
 
@@ -40,25 +47,33 @@ public class TileEntityMeroxTreater extends TileEntityController {
                   isOk = false;
                } else {
                   bottomHeater = block;
+                  checked.add(worldObj.getTileEntity(x, yCoord - 1, z));
                }
             }
 
             // check for solid blocks behind, left and right
-
+            checked.add(worldObj.getTileEntity(xCoord, yCoord, zCoord - 1));
             Block block = worldObj.getBlock(xCoord, yCoord, zCoord - 1);
             if (block != FactoryBlocks.blockMachineCasingHT)
                isOk = false;
+
+            checked.add(worldObj.getTileEntity(xCoord, yCoord, zCoord + 1));
             block = worldObj.getBlock(xCoord, yCoord, zCoord + 1);
             if (block != FactoryBlocks.blockMachineCasingHT)
                isOk = false;
+
+            checked.add(worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord));
             block = worldObj.getBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord);
             if (block != FactoryBlocks.blockMachineCasingHT)
                isOk = false;
 
             // check for HT valves on the behind left and right
+            checked.add(worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord - 1));
             block = worldObj.getBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord - 1);
             if (block != FactoryBlocks.blockValveHT)
                isOk = false;
+
+            checked.add(worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + 1));
             block = worldObj.getBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + 1);
             if (block != FactoryBlocks.blockValveHT)
                isOk = false;
@@ -75,38 +90,55 @@ public class TileEntityMeroxTreater extends TileEntityController {
                } else if (!(block instanceof BlockMachineHeater)) {
                   isOk = false;
                } else {
+                  checked.add(worldObj.getTileEntity(x, yCoord - 1, z));
                   bottomHeater = block;
                }
             }
          }
 
          // check for solid blocks behind, left and right
-
+         checked.add(worldObj.getTileEntity(xCoord - 1, yCoord, zCoord));
          Block block = worldObj.getBlock(xCoord - 1, yCoord, zCoord);
          if (block != FactoryBlocks.blockMachineCasingHT)
             isOk = false;
+
+         checked.add(worldObj.getTileEntity(xCoord + 1, yCoord, zCoord));
          block = worldObj.getBlock(xCoord + 1, yCoord, zCoord);
          if (block != FactoryBlocks.blockMachineCasingHT)
             isOk = false;
+
+         checked.add(worldObj.getTileEntity(xCoord, yCoord, zCoord + orientationController.getOpposite().offsetZ));
          block = worldObj.getBlock(xCoord, yCoord, zCoord + orientationController.getOpposite().offsetZ);
          if (block != FactoryBlocks.blockMachineCasingHT)
             isOk = false;
 
          // check for HT valves on the behind left and right
+         checked.add(worldObj.getTileEntity(xCoord - 1, yCoord, zCoord + orientationController.getOpposite().offsetZ));
          block = worldObj.getBlock(xCoord - 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
          if (block != FactoryBlocks.blockValveHT)
             isOk = false;
+
+         checked.add(worldObj.getTileEntity(xCoord + 1, yCoord, zCoord + orientationController.getOpposite().offsetZ));
          block = worldObj.getBlock(xCoord + 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
          if (block != FactoryBlocks.blockValveHT)
             isOk = false;
       }
 
+      for (TileEntity te : checked) {
+         if (te instanceof TileEntityPart) {
+            if (((TileEntityPart) te).isComplete())
+               isOk = false;
+         } else if (te instanceof TileEntityPartWithInventory)
+            if (((TileEntityPartWithInventory) te).isComplete)
+               isOk = false;
+      }
+
       if (isOk) {
-         isFormed = true;
-         System.out.println("FORMED!");
+         isComplete();
+         markBlocks(checked);
       } else {
-         isFormed = false;
-         System.out.println("NOT formed.");
+         reset();
+         // blocks will reset on their own within a second
       }
 
    }

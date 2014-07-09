@@ -65,14 +65,19 @@ public class References {
    }
 
    public class Entities {
-      public static final String TREATER = MODID + "_treater";
       public static final String ENTITYOILJACK = MODID + "_oiljack_te";
       public static final String ENTITYOILJACKPIPE = MODID + "_oiljack_pipe_te";
       public static final String ENTITYPIPE = MODID + "_pipe_te";
       public static final String ENTITYVALVE = MODID + "_valve_te";
       public static final String ENTITYVALVEHT = MODID + "_valve_ht_te";
       public static final String ENTITYBASE = MODID + "_base_te";
-      public static final String ENTITYTREATER = MODID + "_treater_te";
+      public static final String ENTITYMEROXTREATER = MODID + "_treater_te";
+      public static final String ENTITYGASPROC = MODID + "_gasproc_te";
+      public static final String ENTITYHYDROTREATER = MODID + "_hydrotreater_te";
+      public static final String ENTITYCROCKER = MODID + "_crocker_te";
+      public static final String ENTITYCOKER = MODID + "_coker_te";
+      public static final String ENTITYASPHALT = MODID + "_asphalt_te";
+      public static final String ENTITYDISTILLATOR = MODID + "_distillator_te";
    }
 
    public class FactoryControllers {
@@ -82,5 +87,6 @@ public class References {
       public static final int CROCKER = 3;
       public static final int COKER = 4;
       public static final int ASPHALT = 5;
+      public static final int DISTILLATOR = 6;
    }
 }

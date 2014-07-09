@@ -1,7 +1,7 @@
 package cz.ondraster.oilcraft.containers;
 
 import cz.ondraster.oilcraft.client.gui.slot.SlotReadOnly;
-import cz.ondraster.oilcraft.factory.blocks.TileEntityValve;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 

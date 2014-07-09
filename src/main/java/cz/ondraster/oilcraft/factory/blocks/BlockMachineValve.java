@@ -2,6 +2,8 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.factory.multiblock.MultiblockPartEntity;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;

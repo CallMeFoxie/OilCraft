@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.client.gui;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.containers.ContainerValve;
-import cz.ondraster.oilcraft.factory.blocks.TileEntityValve;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;

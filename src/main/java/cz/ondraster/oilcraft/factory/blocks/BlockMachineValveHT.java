@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.factory.blocks;
 
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityValveHT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
