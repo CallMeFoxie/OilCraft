@@ -10,6 +10,8 @@ public abstract class TileEntityController extends TileEntity {
 
    public abstract void checkMultiblock();
 
+   public abstract void doWork();
+
    public boolean isFormed() {
       return isFormed;
    }
@@ -32,6 +34,12 @@ public abstract class TileEntityController extends TileEntity {
             ((TileEntityPartWithInventory) te).setMaster(xCoord, yCoord, zCoord);
 
       }
+   }
+
+   @Override
+   public void updateEntity() {
+      super.updateEntity();
+      doWork();
    }
 
    protected void save(NBTTagCompound nbt) {

@@ -2,31 +2,30 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
-import cz.ondraster.oilcraft.factory.controllers.ControllerMeroxTreater;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityMeroxTreater;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityValveHT;
+import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
+import cz.ondraster.oilcraft.factory.tileentities.*;
 import net.minecraft.block.Block;
 
 public class FactoryBlocks {
    public static Block blockMachineCasing;
    public static Block blockMachineCasingHT; // HT for High Temperature
-   public static Block blockElectricHeater;
-   public static Block blockSolidHeater;
+   public static Block blockElectricFirebox;
+   public static Block blockSolidFirebox;
    public static Block blockWindow;
    public static Block blockMeter;
    public static Block blockValve;
    public static Block blockValveHT;
 
-   public static Block controllerTreater;
+   public static Block controllerHeater;
 
    public static void init() {
 
       Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
       Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
       Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
-      Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYMEROXTREATER);
+      Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
+      Registrator.registerTileEntity(TileEntityFireboxElectric.class, References.Entities.FIREBOXELECTRIC);
+      Registrator.registerTileEntity(TileEntityFireboxSolid.class, References.Entities.FIREBOXSOLID);
 
 
       blockMachineCasing = new BlockMachineCasing();
@@ -39,15 +38,15 @@ public class FactoryBlocks {
       blockMachineCasingHT.setBlockTextureName(References.Textures.BLOCKMACHINECASINGHT);
       Registrator.registerBlock(blockMachineCasingHT);
 
-      blockElectricHeater = new BlockMachineHeater();
-      blockElectricHeater.setBlockName(References.UnlocalizedNames.BLOCKELECTRICHEATER);
-      blockElectricHeater.setBlockTextureName(References.Textures.BLOCKELECTRICHEATER);
-      Registrator.registerBlock(blockElectricHeater);
+      blockElectricFirebox = new BlockMachineFirebox();
+      blockElectricFirebox.setBlockName(References.UnlocalizedNames.BLOCKELECTRICFIREBOX);
+      blockElectricFirebox.setBlockTextureName(References.Textures.BLOCKELECTRICFIREBOX);
+      Registrator.registerBlock(blockElectricFirebox);
 
-      blockSolidHeater = new BlockMachineHeater();
-      blockSolidHeater.setBlockName(References.UnlocalizedNames.BLOCKSOLIDHEATER);
-      blockSolidHeater.setBlockTextureName(References.Textures.BLOCKSOLIDHEATER);
-      Registrator.registerBlock(blockSolidHeater);
+      blockSolidFirebox = new BlockMachineFireboxSolid();
+      blockSolidFirebox.setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
+      blockSolidFirebox.setBlockTextureName(References.Textures.BLOCKSOLIDFIREBOX);
+      Registrator.registerBlock(blockSolidFirebox);
 
       blockWindow = new BlockMachineCasing();
       blockWindow.setBlockName(References.UnlocalizedNames.BLOCKWINDOW);
@@ -69,7 +68,7 @@ public class FactoryBlocks {
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
 
-      controllerTreater = new ControllerMeroxTreater();
-      Registrator.registerBlock(controllerTreater);
+      controllerHeater = new ControllerHeater();
+      Registrator.registerBlock(controllerHeater);
    }
 }

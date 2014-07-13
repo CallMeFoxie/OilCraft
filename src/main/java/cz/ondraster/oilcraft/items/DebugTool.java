@@ -4,6 +4,7 @@ import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockPart;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityController;
@@ -11,6 +12,7 @@ import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -31,6 +33,7 @@ public class DebugTool extends Item {
 
       Block block = world.getBlock(x, y, z);
       int meta = world.getBlockMetadata(x, y, z);
+      TileEntity te = world.getTileEntity(x, y, z);
       if (block instanceof BlockPipe) {
          EntityPipe pipe = (EntityPipe) world.getTileEntity(x, y, z);
          if (pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid == null)
@@ -44,7 +47,6 @@ public class DebugTool extends Item {
 
       if (block instanceof MultiblockPart) {
          MultiblockPart part = (MultiblockPart) block;
-         TileEntity te = world.getTileEntity(x, y, z);
          if (te instanceof TileEntityPart) {
             TileEntityPart tep = (TileEntityPart) world.getTileEntity(x, y, z);
             player.addChatComponentMessage(new ChatComponentText("part. Meta: " + meta + ", part of multiblock: " + tep.isComplete()));
@@ -59,6 +61,17 @@ public class DebugTool extends Item {
          TileEntityController tileEntityController = (TileEntityController) world.getTileEntity(x, y, z);
          player.addChatComponentMessage(new ChatComponentText("Controller. Formed: " + tileEntityController.isFormed() + ", Meta: " + meta));
       }
+
+      if (te instanceof IMachineRequiresPower) {
+         player.addChatComponentMessage(new ChatComponentText("Machine power: " + ((IMachineRequiresPower) te).getPower()));
+      }
+
+      if (te instanceof IInventory) {
+         IInventory inv = (IInventory) te;
+         player.addChatComponentMessage(new ChatComponentText("Inventories: " + inv.getSizeInventory()));
+      }
+
+
       return false;
    }
 }

@@ -9,8 +9,8 @@ import net.minecraft.world.World;
 public class ControllerMeroxTreater extends MultiblockController {
    public ControllerMeroxTreater() {
       super();
-      setBlockName(References.UnlocalizedNames.CONTROLLERTREATER);
-      setBlockTextureName(References.Textures.CONTROLLERTREATER);
+      setBlockName(References.UnlocalizedNames.CONTROLLERMEROXTREATER);
+      setBlockTextureName(References.Textures.CONTROLLERMEROXTREATER);
    }
 
    @Override
