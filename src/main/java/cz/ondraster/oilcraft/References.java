@@ -32,6 +32,7 @@ public class References {
       public static final String CONTROLLERHEATER = MODID + "_controller_heater";
       public static final String ICONITEM = MODID + "_icon";
       public static final String CONTROLLERMEROXTREATER = MODID + "_controller_merox_treater";
+      public static final String FLUIDHEATEDOIL = MODID + "_heated_oil";
    }
 
    public class Textures {

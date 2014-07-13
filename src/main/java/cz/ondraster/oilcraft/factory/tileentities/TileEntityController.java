@@ -39,7 +39,8 @@ public abstract class TileEntityController extends TileEntity {
    @Override
    public void updateEntity() {
       super.updateEntity();
-      doWork();
+      if (isFormed)
+         doWork();
    }
 
    protected void save(NBTTagCompound nbt) {

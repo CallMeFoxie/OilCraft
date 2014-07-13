@@ -1,19 +1,25 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
+import cz.ondraster.oilcraft.Helper;
 import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineFirebox;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxSolid;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.fluids.Fluids;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTankInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TileEntityHeater extends TileEntityController implements IMachineRequiresPower {
    private final static int POWER_MAX = 100000;
+   private static final int PROCESS_MAX = 200;
+   private static final int POWER_PER_MB = 1000;
    private int power;
 
    // this multiblock is 2 deep, 2 high and 3 deep:
@@ -27,6 +33,9 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
       HEATER     HEATER        HEATER
 
     */
+
+   private int ticksSinceWork = 0;
+
    @Override
    public void checkMultiblock() {
       List<TileEntity> checked = new ArrayList<TileEntity>();
@@ -175,8 +184,63 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
       power = nbtTagCompound.getInteger("power");
    }
 
+   private TileEntity getInputTE() {
+      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+      if (orientationController == ForgeDirection.EAST || orientationController == ForgeDirection.WEST) {
+         return worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord - 1);
+      } else
+         return worldObj.getTileEntity(xCoord - 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+   }
+
+   private TileEntity getOutputTE() {
+      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+      if (orientationController == ForgeDirection.EAST || orientationController == ForgeDirection.WEST) {
+         return worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + 1);
+      } else
+         return worldObj.getTileEntity(xCoord + 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+   }
+
    @Override
    public void doWork() {
 
+      if (ticksSinceWork > 10) {
+         if (power > 10) {
+            TileEntity input = getInputTE();
+            TileEntity output = getOutputTE();
+            if (!(input instanceof TileEntityValveHT) || !(output instanceof TileEntityValveHT)) {
+               Helper.logWarn("Multiblock formed but valve is not the one? WAT");
+               return;
+            }
+
+            TileEntityValveHT valve = (TileEntityValveHT) input;
+            FluidTankInfo tiInput = valve.getTankInfo(ForgeDirection.UNKNOWN)[0];
+            FluidTankInfo tiOutput = ((TileEntityValveHT) output).getTankInfo(ForgeDirection.UNKNOWN)[0];
+
+            if (tiOutput != null && tiOutput.fluid != null && tiOutput.fluid.getFluid() != Fluids.fluidHeatedOil)
+               return;
+
+            if (tiInput != null && tiInput.fluid != null && tiInput.fluid.getFluid() == Fluids.fluidCrudeOil) {
+               int maxOut = tiOutput.capacity;
+
+               if (tiOutput.fluid != null)
+                  maxOut -= tiOutput.fluid.amount;
+
+               int amount = Math.min(Math.min(Math.min(tiInput.fluid.amount, PROCESS_MAX), power / POWER_PER_MB), maxOut);
+               valve.drain(ForgeDirection.UNKNOWN, amount, true);
+               drainPower(amount * POWER_PER_MB);
+               ((TileEntityValveHT) output).fill(ForgeDirection.UNKNOWN, new FluidStack(Fluids.fluidHeatedOil, amount), true);
+            }
+         }
+
+         ticksSinceWork = 0;
+      }
+
+      ticksSinceWork++;
+   }
+
+   private void drainPower(int i) {
+      this.power -= i;
+      if (power < 0)
+         power = 0;
    }
 }

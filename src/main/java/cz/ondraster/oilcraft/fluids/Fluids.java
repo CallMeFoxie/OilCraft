@@ -10,6 +10,9 @@ public class Fluids {
    public static Fluid fluidCrudeOil;
    public static BlockFluid blockFluidCrudeOil;
 
+   public static Fluid fluidHeatedOil;
+   public static BlockFluid blockFluidHeatedOil;
+
    public static Fluid fluidHydrogen;
    public static BlockFluid blockFluidHydrogen;
 
@@ -25,6 +28,12 @@ public class Fluids {
 
       blockFluidHydrogen = new BlockFluid(fluidHydrogen, OilMaterials.materialHydrogen, References.UnlocalizedNames.FLUIDHYDROGEN, References.Textures.FLUIDHYDROGENSTILL, References.Textures.FLUIDHYDROGENFLOWING);
       Registrator.registerBlock(blockFluidHydrogen);
+
+      fluidHeatedOil = new Fluid(References.UnlocalizedNames.FLUIDHEATEDOIL).setTemperature(671);
+      FluidRegistry.registerFluid(fluidHeatedOil);
+
+      blockFluidHeatedOil = new BlockFluid(fluidHeatedOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDHEATEDOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
+      Registrator.registerBlock(blockFluidHeatedOil);
 
    }
 }

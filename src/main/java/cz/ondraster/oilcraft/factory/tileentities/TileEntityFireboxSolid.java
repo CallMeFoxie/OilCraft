@@ -17,7 +17,6 @@ public class TileEntityFireboxSolid extends TileEntityPartWithInventory {
       if (slot >= 1 || item == null || item.stackSize == 0)
          return false;
 
-      //if (GameRegistry.getFuelValue(item) > 0)
       if (TileEntityFurnace.getItemBurnTime(item) > 0)
          return true;
 
