@@ -22,11 +22,13 @@ public class BlockMachineValveHT extends BlockMachineValve {
 
 
    @SideOnly(Side.CLIENT)
+   @Override
    public void registerBlockIcons(IIconRegister icreg) {
       iconOutlet = icreg.registerIcon(References.Textures.VALVEOUTLETHT);
    }
 
    @SideOnly(Side.CLIENT)
+   @Override
    public IIcon getIcon(int side, int meta) {
       if (side == meta)
          return iconOutlet;

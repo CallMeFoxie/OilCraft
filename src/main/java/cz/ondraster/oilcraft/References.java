@@ -7,6 +7,7 @@ public class References {
 
    public class GUIs {
       public static final int guiValve = 1;
+      public static final int guiHatch = 2;
    }
 
    public class UnlocalizedNames {
@@ -47,6 +48,7 @@ public class References {
       public static final String FLUIDASPHALTRAW = MODID + "_fluid_asphalt_raw";
       public static final String FLUIDASPHALT = MODID + "_fluid_asphalt";
       public static final String FLUIDPARAFFIN = MODID + "_fluid_paraffin";
+      public static final String BLOCKHATCH = MODID + "_block_machine_hatch";
    }
 
    public class Textures {
@@ -70,11 +72,12 @@ public class References {
       public static final String FLUIDHYDROGENSTILL = MODID + ":fluid_hydrogen_still";
       public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + ":matches";
-      public static final String CONTROLLERHEATER = MODID + ":controller_heater";
+      public static final String CONTROLLERHEATER = MODID + ":machine_heater";
       public static final String VALVEOUTLET = MODID + ":machine_valve_out";
       public static final String VALVEOUTLETHT = MODID + ":machine_valve_out_ht";
       public static final String SOLIDTOP = MODID + ":machine_top_ht";
       public static final String CONTROLLERMEROXTREATER = MODID + ":controller_merox_treater";
+      public static final String BLOCKHATCH = MODID + ":machine_hatch";
    }
 
    public class Icons {
@@ -101,6 +104,7 @@ public class References {
       public static final String ENTITYDISTILLATOR = MODID + "_distillator_te";
       public static final String FIREBOXSOLID = MODID + "_firebox_solid";
       public static final String FIREBOXELECTRIC = MODID + "_firebox_electric";
+      public static final String HATCH = MODID + "_hatch";
    }
 
    public class FactoryControllers {

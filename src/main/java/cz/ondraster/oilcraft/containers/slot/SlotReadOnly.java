@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.client.gui.slot;
+package cz.ondraster.oilcraft.containers.slot;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

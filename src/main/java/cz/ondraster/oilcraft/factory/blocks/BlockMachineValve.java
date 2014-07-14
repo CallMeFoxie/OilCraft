@@ -42,11 +42,13 @@ public class BlockMachineValve extends MultiblockPartEntity {
    }
 
    @SideOnly(Side.CLIENT)
+   @Override
    public void registerBlockIcons(IIconRegister icreg) {
       iconOutlet = icreg.registerIcon(References.Textures.VALVEOUTLET);
    }
 
    @SideOnly(Side.CLIENT)
+   @Override
    public IIcon getIcon(int side, int meta) {
       if (side == meta)
          return iconOutlet;

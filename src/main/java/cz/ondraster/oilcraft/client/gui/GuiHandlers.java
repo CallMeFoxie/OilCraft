@@ -1,7 +1,9 @@
 package cz.ondraster.oilcraft.client.gui;
 
 import cpw.mods.fml.common.network.IGuiHandler;
+import cz.ondraster.oilcraft.containers.ContainerHatch;
 import cz.ondraster.oilcraft.containers.ContainerValve;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityHatch;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -14,6 +16,8 @@ public class GuiHandlers implements IGuiHandler {
       TileEntity te = world.getTileEntity(x, y, z);
       if (te instanceof TileEntityValve)
          return new ContainerValve(player.inventory, (TileEntityValve) te);
+      if (te instanceof TileEntityHatch)
+         return new ContainerHatch(player.inventory, (TileEntityHatch) te);
 
       return null;
    }
@@ -23,6 +27,8 @@ public class GuiHandlers implements IGuiHandler {
       TileEntity te = world.getTileEntity(x, y, z);
       if (te instanceof TileEntityValve)
          return new GuiValve(player.inventory, (TileEntityValve) te);
+      else if (te instanceof TileEntityHatch)
+         return new GuiHatch(player.inventory, (TileEntityHatch) te);
 
       return null;
    }

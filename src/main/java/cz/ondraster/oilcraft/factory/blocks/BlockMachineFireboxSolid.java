@@ -26,6 +26,7 @@ public class BlockMachineFireboxSolid extends MultiblockPart {
    }
 
    @SideOnly(Side.CLIENT)
+   @Override
    public IIcon getIcon(int side, int meta) {
       if (side == ForgeDirection.UP.ordinal() || side == ForgeDirection.DOWN.ordinal())
          return iconTop;
@@ -34,6 +35,7 @@ public class BlockMachineFireboxSolid extends MultiblockPart {
    }
 
    @SideOnly(Side.CLIENT)
+   @Override
    public void registerBlockIcons(IIconRegister icreg) {
       iconSide = icreg.registerIcon(References.Textures.BLOCKSOLIDFIREBOX);
       iconTop = icreg.registerIcon(References.Textures.SOLIDTOP);

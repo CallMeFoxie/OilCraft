@@ -18,7 +18,6 @@ public abstract class TileEntityController extends TileEntity {
 
    public void reset() {
       isFormed = false;
-      System.out.println("DEformed");
    }
 
    public void isComplete() {
