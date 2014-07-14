@@ -33,6 +33,20 @@ public class References {
       public static final String ICONITEM = MODID + "_icon";
       public static final String CONTROLLERMEROXTREATER = MODID + "_controller_merox_treater";
       public static final String FLUIDHEATEDOIL = MODID + "_heated_oil";
+      public static final String FLUIDBUTANERAW = MODID + "_fluid_butane_raw";
+      public static final String FLUIDBUTANE = MODID + "_fluid_butane";
+      public static final String FLUIDPETROLRAW = MODID + "_fluid_petrol_raw";
+      public static final String FLUIDPETROL = MODID + "_fluid_petrol";
+      public static final String FLUIDKEROSENERAW = MODID + "_fluid_kerosene_raw";
+      public static final String FLUIDKEROSENE = MODID + "_fluid_kerosene";
+      public static final String FLUIDDIESELRAW = MODID + "_fluid_diesel_raw";
+      public static final String FLUIDDIESEL = MODID + "_fluid_diesel";
+      public static final String FLUIDFUELRAW = MODID + "_fluid_fuel_raw";
+      public static final String FLUIDFUEL = MODID + "_fluid_fuel";
+      public static final String FLUIDLUBRICANT = MODID + "_fluid_lubricant";
+      public static final String FLUIDASPHALTRAW = MODID + "_fluid_asphalt_raw";
+      public static final String FLUIDASPHALT = MODID + "_fluid_asphalt";
+      public static final String FLUIDPARAFFIN = MODID + "_fluid_paraffin";
    }
 
    public class Textures {

@@ -23,10 +23,10 @@ public class OilItems {
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDCRUDEOIL, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketCrudeOil), new ItemStack(Items.bucket));
       Fluids.blockFluidCrudeOil.setBucket((OilCraftBucket) bucketCrudeOil);
 
-      bucketHydrogen = new OilCraftBucket(Fluids.blockFluidHydrogen).setUnlocalizedName(References.UnlocalizedNames.BUCKETHYDROVEN).setTextureName(References.Textures.BUCKETHYDROGEN);
+      /*bucketHydrogen = new OilCraftBucket(Fluids.blockFluidHydrogen).setUnlocalizedName(References.UnlocalizedNames.BUCKETHYDROVEN).setTextureName(References.Textures.BUCKETHYDROGEN);
       Registrator.registerItem(bucketHydrogen);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDHYDROGEN, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketHydrogen), new ItemStack(Items.bucket));
-      Fluids.blockFluidHydrogen.setBucket((OilCraftBucket) bucketHydrogen);
+      Fluids.blockFluidHydrogen.setBucket((OilCraftBucket) bucketHydrogen);    */
 
       debugTool = new DebugTool();
       Registrator.registerItem(debugTool);

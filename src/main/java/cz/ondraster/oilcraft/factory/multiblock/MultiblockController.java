@@ -36,6 +36,9 @@ public abstract class MultiblockController extends BlockContainer {
    }
 
    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+      if (player.getCurrentEquippedItem() == null)
+         return false;
+
       if (player.getCurrentEquippedItem().getItem() == OilItems.wrench) {
          TileEntityController tec = (TileEntityController) world.getTileEntity(x, y, z);
          if (!tec.isFormed())
