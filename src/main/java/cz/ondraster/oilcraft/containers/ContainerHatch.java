@@ -8,7 +8,7 @@ public class ContainerHatch extends SmartContainer {
    public ContainerHatch(InventoryPlayer inv, TileEntityHatch te) {
       super(inv, te, 1);
 
-      addSlotToContainer(new SlotReadOnly(te, 0, 27, 38));
+      addSlotToContainer(new SlotReadOnly(te, 0, 81, 32));
 
       bindPlayerInventory(inv);
    }
