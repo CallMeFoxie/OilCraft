@@ -55,6 +55,7 @@ public class References {
       public static final String FLUIDPBUTANE = MODID + "_fluid_processed_butane";
       public static final String FLUIDLPG = MODID + "_fluid_lpg";
       public static final String CONTROLLERDISTILLATOR = MODID + "_controller_distillator";
+      public static final String DUSTPARAFFIN = MODID + "_dust_paraffin";
    }
 
    public class Textures {
@@ -92,6 +93,7 @@ public class References {
       public static final String ICONOILJACK = MODID + ":icon_oiljack";
       public static final String ICONPIPE = MODID + ":icon_pipe";
       public static final String ITEMWRENCH = MODID + ":wrench";
+      public static final String DUSTPARAFFIN = MODID + ":dust_paraffin";
    }
 
    public class Entities {

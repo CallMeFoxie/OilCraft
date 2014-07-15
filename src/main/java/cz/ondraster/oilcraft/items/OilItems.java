@@ -16,6 +16,7 @@ public class OilItems {
    public static Item debugTool;
    public static Item itemMatches;
    public static Item wrench;
+   public static Item dustParaffin;
 
    public static void init() {
       bucketCrudeOil = new OilCraftBucket(Fluids.blockFluidCrudeOil).setUnlocalizedName(References.UnlocalizedNames.BUCKETCRUDEOIL).setTextureName(References.Textures.BUCKETCRUDEOIL);
@@ -36,5 +37,10 @@ public class OilItems {
 
       wrench = new OilWrench();
       Registrator.registerItem(wrench);
+
+      dustParaffin = new Item();
+      dustParaffin.setUnlocalizedName(References.UnlocalizedNames.DUSTPARAFFIN);
+      dustParaffin.setTextureName(References.Icons.DUSTPARAFFIN);
+      Registrator.registerItem(dustParaffin);
    }
 }

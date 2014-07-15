@@ -69,7 +69,7 @@ public class FluidTank implements IFluidTank {
 
    @Override
    public int fill(FluidStack resource, boolean doFill) {
-      if (!canAccept)
+      if (!canAccept || resource == null)
          return 0;
 
       if (filter == null) {
