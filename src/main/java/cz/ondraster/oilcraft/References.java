@@ -49,6 +49,12 @@ public class References {
       public static final String FLUIDASPHALT = MODID + "_fluid_asphalt";
       public static final String FLUIDPARAFFIN = MODID + "_fluid_paraffin";
       public static final String BLOCKHATCH = MODID + "_block_machine_hatch";
+      public static final String FLUIDPPETROLEUM = MODID + "_fluid_processed_petroleum";
+      public static final String FLUIDNAPHTA = MODID + "_fluid_naphta";
+      public static final String FLUIDGASOLINE = MODID + "_fluid_gasoline";
+      public static final String FLUIDPBUTANE = MODID + "_fluid_processed_butane";
+      public static final String FLUIDLPG = MODID + "_fluid_lpg";
+      public static final String CONTROLLERDISTILLATOR = MODID + "_controller_distillator";
    }
 
    public class Textures {
@@ -78,6 +84,7 @@ public class References {
       public static final String SOLIDTOP = MODID + ":machine_top_ht";
       public static final String CONTROLLERMEROXTREATER = MODID + ":controller_merox_treater";
       public static final String BLOCKHATCH = MODID + ":machine_hatch";
+      public static final String CONTROLLERDISTILLATOR = MODID + ":machine_distillator";
    }
 
    public class Icons {

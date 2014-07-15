@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.factory.controllers.ControllerDistillator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
 import cz.ondraster.oilcraft.factory.tileentities.*;
 import net.minecraft.block.Block;
@@ -18,6 +19,13 @@ public class FactoryBlocks {
    public static Block blockHatch;
 
    public static Block controllerHeater;
+   public static Block controllerDistillator;
+   public static Block controllerHydrotreater;
+   public static Block controllerMeroxTreater;
+   public static Block controllerGasProcessor;
+   public static Block controllerCatalyticReformer;
+   public static Block controllerCrocker;
+   public static Block controllerAsphaltBlower;
 
    public static void init() {
 
@@ -29,8 +37,6 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityFireboxSolid.class, References.Entities.FIREBOXSOLID);
       Registrator.registerTileEntity(TileEntityHatch.class, References.Entities.HATCH);
 
-      // Register all the controller machines
-      Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
 
       blockMachineCasing = new BlockMachineCasing();
       blockMachineCasing.setBlockName(References.UnlocalizedNames.BLOCKMACHINECASING);
@@ -75,7 +81,14 @@ public class FactoryBlocks {
       blockHatch = new BlockHatch();
       Registrator.registerBlock(blockHatch);
 
+      // register all the controllers
       controllerHeater = new ControllerHeater();
       Registrator.registerBlock(controllerHeater);
+      controllerDistillator = new ControllerDistillator();
+      Registrator.registerBlock(controllerDistillator);
+
+      // Register all the controller machines
+      Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
+      Registrator.registerTileEntity(TileEntityDistillator.class, References.Entities.ENTITYDISTILLATOR);
    }
 }

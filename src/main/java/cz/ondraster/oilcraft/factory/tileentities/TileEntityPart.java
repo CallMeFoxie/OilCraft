@@ -26,7 +26,8 @@ public class TileEntityPart extends TileEntity {
             if (!((TileEntityController) x).isFormed) {
                this.isComplete = false;
             }
-         }
+         } else
+            this.isComplete = false;
 
          lastTick = 0;
       }

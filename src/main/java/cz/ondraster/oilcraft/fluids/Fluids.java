@@ -14,27 +14,36 @@ public class Fluids {
 
    public static Fluid fluidHydrogen;
 
-   public static Fluid fluidButaneRaw;
+   public static Fluid fluidRButane;
    public static Fluid fluidButane;
 
-   public static Fluid fluidPetrolRaw;
-   public static Fluid fluidPetrol;
+   public static Fluid fluidRPetroleum;
+   public static Fluid fluidPetroleum;
+   public static Fluid fluidPPetroleum;
 
-   public static Fluid fluidKeroseneRaw;
+   public static Fluid fluidRKerosene;
    public static Fluid fluidKerosene;
 
-   public static Fluid fluidDieselRaw;
+   public static Fluid fluidRDiesel;
    public static Fluid fluidDiesel;
 
-   public static Fluid fluidFuelRaw;
+   public static Fluid fluidRFuel;
    public static Fluid fluidFuel;
 
    public static Fluid fluidLubricant;
 
-   public static Fluid fluidAsphaltRaw;
+   public static Fluid fluidRAsphalt;
    public static Fluid fluidAsphalt;
 
    public static Fluid fluidParaffin;
+
+   public static Fluid fluidNaphta;
+
+   public static Fluid fluidGasoline;
+
+   public static Fluid fluidPButane;
+   public static Fluid fluidLPG;
+
 
    public static void init() {
       fluidCrudeOil = new Fluid(References.UnlocalizedNames.FLUIDCRUDEOIL);
@@ -43,34 +52,44 @@ public class Fluids {
       FluidRegistry.registerFluid(fluidHydrogen);
       fluidHeatedOil = new Fluid(References.UnlocalizedNames.FLUIDHEATEDOIL).setTemperature(671);
       FluidRegistry.registerFluid(fluidHeatedOil);
-      fluidButaneRaw = new Fluid(References.UnlocalizedNames.FLUIDBUTANERAW).setGaseous(true);
-      FluidRegistry.registerFluid(fluidButaneRaw);
+      fluidRButane = new Fluid(References.UnlocalizedNames.FLUIDBUTANERAW).setGaseous(true);
+      FluidRegistry.registerFluid(fluidRButane);
       fluidButane = new Fluid(References.UnlocalizedNames.FLUIDBUTANE).setGaseous(true);
       FluidRegistry.registerFluid(fluidButane);
-      fluidPetrolRaw = new Fluid(References.UnlocalizedNames.FLUIDPETROLRAW);
-      FluidRegistry.registerFluid(fluidPetrolRaw);
-      fluidPetrol = new Fluid(References.UnlocalizedNames.FLUIDPETROL);
-      FluidRegistry.registerFluid(fluidPetrol);
-      fluidKeroseneRaw = new Fluid(References.UnlocalizedNames.FLUIDKEROSENERAW);
-      FluidRegistry.registerFluid(fluidKeroseneRaw);
+      fluidRPetroleum = new Fluid(References.UnlocalizedNames.FLUIDPETROLRAW);
+      FluidRegistry.registerFluid(fluidRPetroleum);
+      fluidPPetroleum = new Fluid(References.UnlocalizedNames.FLUIDPPETROLEUM);
+      FluidRegistry.registerFluid(fluidPPetroleum);
+      fluidPetroleum = new Fluid(References.UnlocalizedNames.FLUIDPETROL);
+      FluidRegistry.registerFluid(fluidPetroleum);
+      fluidRKerosene = new Fluid(References.UnlocalizedNames.FLUIDKEROSENERAW);
+      FluidRegistry.registerFluid(fluidRKerosene);
       fluidKerosene = new Fluid(References.UnlocalizedNames.FLUIDKEROSENE);
       FluidRegistry.registerFluid(fluidKerosene);
-      fluidDieselRaw = new Fluid(References.UnlocalizedNames.FLUIDDIESELRAW);
-      FluidRegistry.registerFluid(fluidDieselRaw);
+      fluidRDiesel = new Fluid(References.UnlocalizedNames.FLUIDDIESELRAW);
+      FluidRegistry.registerFluid(fluidRDiesel);
       fluidDiesel = new Fluid(References.UnlocalizedNames.FLUIDDIESEL);
       FluidRegistry.registerFluid(fluidDiesel);
-      fluidFuelRaw = new Fluid(References.UnlocalizedNames.FLUIDFUELRAW);
-      FluidRegistry.registerFluid(fluidFuelRaw);
+      fluidRFuel = new Fluid(References.UnlocalizedNames.FLUIDFUELRAW);
+      FluidRegistry.registerFluid(fluidRFuel);
       fluidFuel = new Fluid(References.UnlocalizedNames.FLUIDFUEL);
       FluidRegistry.registerFluid(fluidFuel);
       fluidLubricant = new Fluid(References.UnlocalizedNames.FLUIDLUBRICANT);
       FluidRegistry.registerFluid(fluidLubricant);
-      fluidAsphaltRaw = new Fluid(References.UnlocalizedNames.FLUIDASPHALTRAW);
-      FluidRegistry.registerFluid(fluidAsphaltRaw);
+      fluidRAsphalt = new Fluid(References.UnlocalizedNames.FLUIDASPHALTRAW);
+      FluidRegistry.registerFluid(fluidRAsphalt);
       fluidAsphalt = new Fluid(References.UnlocalizedNames.FLUIDASPHALT);
       FluidRegistry.registerFluid(fluidAsphalt);
       fluidParaffin = new Fluid(References.UnlocalizedNames.FLUIDPARAFFIN);
       FluidRegistry.registerFluid(fluidParaffin);
+      fluidNaphta = new Fluid(References.UnlocalizedNames.FLUIDNAPHTA);
+      FluidRegistry.registerFluid(fluidNaphta);
+      fluidGasoline = new Fluid(References.UnlocalizedNames.FLUIDGASOLINE);
+      FluidRegistry.registerFluid(fluidGasoline);
+      fluidPButane = new Fluid(References.UnlocalizedNames.FLUIDPBUTANE);
+      FluidRegistry.registerFluid(fluidPButane);
+      fluidLPG = new Fluid(References.UnlocalizedNames.FLUIDLPG);
+      FluidRegistry.registerFluid(fluidLPG);
 
       blockFluidCrudeOil = new BlockFluid(fluidCrudeOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDCRUDEOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
       Registrator.registerBlock(blockFluidCrudeOil);

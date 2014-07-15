@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 public abstract class MultiblockController extends BlockContainer {
@@ -36,13 +37,18 @@ public abstract class MultiblockController extends BlockContainer {
    }
 
    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-      if (player.getCurrentEquippedItem() == null)
+      if (player.getCurrentEquippedItem() == null || world.isRemote)
          return false;
 
       if (player.getCurrentEquippedItem().getItem() == OilItems.wrench) {
          TileEntityController tec = (TileEntityController) world.getTileEntity(x, y, z);
          if (!tec.isFormed())
             tec.checkMultiblock();
+
+         if (tec.isFormed())
+            player.addChatComponentMessage(new ChatComponentText("Multiblock successfuly formed!"));
+         else
+            player.addChatComponentMessage(new ChatComponentText("Multiblock formation failed."));
       }
 
       return false;
