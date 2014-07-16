@@ -8,7 +8,19 @@ import java.util.List;
 public abstract class TileEntityController extends TileEntity {
    protected boolean isFormed = false;
 
+   protected void resetBlock(int x, int y, int z) {
+      TileEntity te = worldObj.getTileEntity(x, y, z);
+      if (te instanceof TileEntityPart) {
+         ((TileEntityPart) te).unmarkComplete();
+      }
+      if (te instanceof TileEntityPartWithInventory) {
+         ((TileEntityPartWithInventory) te).unmarkComplete();
+      }
+   }
+
    public abstract void checkMultiblock();
+
+   public abstract void resetMultiblock();
 
    public abstract void doWork();
 
@@ -17,13 +29,15 @@ public abstract class TileEntityController extends TileEntity {
    }
 
    public void reset() {
-      isFormed = false;
+      if (isFormed) {
+         isFormed = false;
+         resetMultiblock();
+      }
    }
 
    public void isComplete() {
       this.isFormed = true;
    }
-
 
    protected void markBlocks(List<TileEntity> checked) {
       for (TileEntity te : checked) {

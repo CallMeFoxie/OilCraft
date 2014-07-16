@@ -8,6 +8,11 @@ public class TileEntityMeroxTreater extends TileEntityController {
    }
 
    @Override
+   public void resetMultiblock() {
+      // TODO Merox Treater resetMultiblock
+   }
+
+   @Override
    public void doWork() {
       // TODO Merox Treater doWork
    }

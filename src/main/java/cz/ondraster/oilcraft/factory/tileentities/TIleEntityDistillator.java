@@ -4,6 +4,7 @@ import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -156,6 +157,24 @@ public class TileEntityDistillator extends TileEntityController {
 
    }
 
+   @Override
+   public void resetMultiblock() {
+      if (worldObj.isRemote)
+         return;
+
+      ForgeDirection orientation = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+      ForgeDirection opposite = orientation.getOpposite();
+
+      int xMiddle = xCoord + opposite.offsetX;
+      int yMiddle = yCoord;
+      int zMiddle = zCoord + opposite.offsetZ;
+
+      for (int i = 0; i < 9; i++) {
+         resetLevel(xMiddle, yMiddle + i, zMiddle);
+         resetBlock(xMiddle, yMiddle + i, zMiddle);
+      }
+   }
+
    private boolean checkLevel(int xMaster, int yLevel, int zMaster, boolean isHT, List<TileEntity> checked) {
       boolean isOk = true;
       boolean foundValve = false;
@@ -174,6 +193,12 @@ public class TileEntityDistillator extends TileEntityController {
       }
 
       return isOk && worldObj.isAirBlock(xMaster, yLevel, zMaster);
+   }
+
+   private void resetLevel(int xMaster, int yLevel, int zMaster) {
+      for (DirectionsExpanded dir : DirectionsExpanded.DIRECTIONS) {
+         resetBlock(xMaster + dir.offsetX, yLevel, zMaster + dir.offsetZ);
+      }
    }
 
    private TileEntityValve findValve(int yLevel) {
@@ -243,6 +268,14 @@ public class TileEntityDistillator extends TileEntityController {
                   input.drain(ForgeDirection.UNKNOWN, IN_MB_PER_OPERATION, true);
                   worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
                   bufferParaffin += PARAFFIN_PER_OPERATION;
+                  if (bufferParaffin >= 1000) {
+                     if (hatch.getStackInSlot(0) == null)
+                        hatch.setInventorySlotContents(0, new ItemStack(OilItems.dustParaffin, 1));
+                     else
+                        hatch.setInventorySlotContents(0, new ItemStack(OilItems.dustParaffin, hatch.getStackInSlot(0).stackSize + 1));
+
+                     bufferParaffin -= 1000;
+                  }
                }
             }
          }

@@ -21,7 +21,7 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
    }
 
    protected void ticker() {
-      if (lastTick >= 20 && isComplete && worldObj != null) {
+      /*if (lastTick >= 20 && isComplete && worldObj != null) {
          // check if master structure is still complete
          TileEntity x = worldObj.getTileEntity(xMaster, yMaster, zMaster);
          if (x instanceof TileEntityController) {
@@ -33,7 +33,7 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
          lastTick = 0;
       }
 
-      lastTick++;
+      lastTick++;   */
    }
 
    public void setMaster(int x, int y, int z) {
@@ -70,6 +70,15 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
    }
 
    public boolean isComplete() {
+      if (!isComplete)
+         return false;
+
+      TileEntity master = worldObj.getTileEntity(xMaster, yMaster, zMaster);
+      if (!(master instanceof TileEntityController))
+         isComplete = false;
+      else if (!((TileEntityController) master).isFormed())
+         isComplete = false;
+
       return isComplete;
    }
 
@@ -78,5 +87,9 @@ public class TileEntityPartWithInventory extends TileEntityWithInventory {
          return null;
 
       return worldObj.getTileEntity(xMaster, yMaster, zMaster);
+   }
+
+   public void unmarkComplete() {
+      isComplete = false;
    }
 }

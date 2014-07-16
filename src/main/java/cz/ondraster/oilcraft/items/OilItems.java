@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.items;
 
+import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.fluids.Fluids;
@@ -41,6 +42,7 @@ public class OilItems {
       dustParaffin = new Item();
       dustParaffin.setUnlocalizedName(References.UnlocalizedNames.DUSTPARAFFIN);
       dustParaffin.setTextureName(References.Icons.DUSTPARAFFIN);
+      dustParaffin.setCreativeTab(OilCraft.creativeTab);
       Registrator.registerItem(dustParaffin);
    }
 }

@@ -159,6 +159,43 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
    }
 
    @Override
+   public void resetMultiblock() {
+      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+      ForgeDirection opposite = orientationController.getOpposite();
+
+      if (orientationController == ForgeDirection.EAST || orientationController == ForgeDirection.WEST) {
+         for (int z = zCoord - 1; z <= zCoord + 1; z++) {
+            int a = xCoord + opposite.offsetX;
+            int b = xCoord;
+            for (int x = Math.min(a, b); x <= Math.max(a, b); x++) {
+               resetBlock(x, yCoord - 1, z);
+            }
+
+            resetBlock(xCoord, yCoord, zCoord - 1);
+            resetBlock(xCoord, yCoord, zCoord + 1);
+
+            resetBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord);
+            resetBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord - 1);
+            resetBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + 1);
+         }
+      } else {
+         for (int x = xCoord - 1; x <= xCoord + 1; x++) {
+            int a = zCoord + opposite.offsetZ;
+            int b = zCoord;
+            for (int z = Math.min(a, b); z <= Math.max(a, b); z++) {
+               resetBlock(x, yCoord - 1, z);
+            }
+         }
+         resetBlock(xCoord - 1, yCoord, zCoord);
+         resetBlock(xCoord + 1, yCoord, zCoord);
+
+         resetBlock(xCoord, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+         resetBlock(xCoord - 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+         resetBlock(xCoord + 1, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+      }
+   }
+
+   @Override
    public boolean addPower(int amount) {
       if (amount + power <= POWER_MAX) {
          power += amount;
