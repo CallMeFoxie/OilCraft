@@ -6,7 +6,9 @@ import net.minecraft.tileentity.TileEntity;
 import java.util.List;
 
 public abstract class TileEntityController extends TileEntity {
+
    protected boolean isFormed = false;
+
 
    protected void resetBlock(int x, int y, int z) {
       TileEntity te = worldObj.getTileEntity(x, y, z);
@@ -75,5 +77,11 @@ public abstract class TileEntityController extends TileEntity {
       super.readFromNBT(nbt);
       load(nbt);
    }
+
+   protected abstract TileEntityValve[] findInputValves();
+
+   protected abstract TileEntityValve[] findOutputValves();
+
+   protected abstract TileEntityHatch[] findOutputHatches();
 
 }

@@ -221,6 +221,21 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
       power = nbtTagCompound.getInteger("power");
    }
 
+   @Override
+   protected TileEntityValve[] findInputValves() {
+      return new TileEntityValve[]{(TileEntityValve) getInputTE()};
+   }
+
+   @Override
+   protected TileEntityValve[] findOutputValves() {
+      return new TileEntityValve[]{(TileEntityValve) getOutputTE()};
+   }
+
+   @Override
+   protected TileEntityHatch[] findOutputHatches() {
+      return null;
+   }
+
    private TileEntity getInputTE() {
       ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
       if (orientationController == ForgeDirection.EAST || orientationController == ForgeDirection.WEST) {

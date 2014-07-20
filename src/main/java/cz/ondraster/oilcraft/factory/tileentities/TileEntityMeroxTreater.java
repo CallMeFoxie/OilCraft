@@ -16,4 +16,21 @@ public class TileEntityMeroxTreater extends TileEntityController {
    public void doWork() {
       // TODO Merox Treater doWork
    }
+
+   @Override
+   protected TileEntityValve[] findInputValves() {
+      // TODO Merox Treater findInputValves
+      return null;
+   }
+
+   @Override
+   protected TileEntityValve[] findOutputValves() {
+      // TODO Merox Treater findOutputValves
+      return null;
+   }
+
+   @Override
+   protected TileEntityHatch[] findOutputHatches() {
+      return null;
+   }
 }

@@ -1,8 +1,10 @@
 package cz.ondraster.oilcraft;
 
 import cpw.mods.fml.common.FMLLog;
+import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 public class Helper {
    public static void logWarn(String message) {
@@ -37,5 +39,20 @@ public class Helper {
       }
 
       return null;
+   }
+
+   public static boolean canFitIntoTank(FluidTank tank, FluidStack stack) {
+      if (tank.getFluid() == null && tank.getCapacity() <= stack.amount)
+         return true;
+      if (tank.getFluid() == null)
+         return false;
+
+      if (tank.getFluid().getFluid() != stack.getFluid())
+         return false;
+
+      if (tank.getFluid().amount + stack.amount > tank.getCapacity())
+         return false;
+
+      return true;
    }
 }

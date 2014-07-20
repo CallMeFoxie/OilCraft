@@ -11,11 +11,27 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.FluidStack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class MultiblockController extends BlockContainer {
+   protected List<ProcessingFluid> processingFluids;
+
    public MultiblockController() {
       super(Material.iron);
       setCreativeTab(OilCraft.creativeTab);
+      processingFluids = new ArrayList<ProcessingFluid>();
+
+   }
+
+   public void addProcessingFluid(ProcessingFluid e) {
+      processingFluids.add(e);
+   }
+
+   public List<ProcessingFluid> getProcessingFluids() {
+      return processingFluids;
    }
 
    public void onBlockPreDestroy(World world, int x, int y, int z, int meta) {
@@ -52,5 +68,23 @@ public abstract class MultiblockController extends BlockContainer {
       }
 
       return false;
+   }
+
+   public static class ProcessingFluid {
+      public FluidStack[] fluidInputs;
+      public FluidStack[] fluidOutputs;
+      public ItemStack[] itemOutputs;
+
+      public ProcessingFluid(FluidStack[] input, FluidStack[] output, ItemStack[] item) {
+         fluidInputs = input;
+         fluidOutputs = output;
+         itemOutputs = item;
+      }
+
+      public ProcessingFluid(FluidStack[] input, FluidStack[] output) {
+         fluidInputs = input;
+         fluidOutputs = output;
+         itemOutputs = null;
+      }
    }
 }

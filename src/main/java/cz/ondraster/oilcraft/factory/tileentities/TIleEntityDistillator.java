@@ -297,6 +297,24 @@ public class TileEntityDistillator extends TileEntityController {
 
    }
 
+   @Override
+   protected TileEntityValve[] findInputValves() {
+      return new TileEntityValve[]{findValve(0)};
+   }
+
+   @Override
+   protected TileEntityValve[] findOutputValves() {
+      TileEntityValve[] valves = new TileEntityValve[additions.length];
+      for (int i = 0; i < additions.length; i++)
+         valves[i] = findValve(i + 1);
+      return valves;
+   }
+
+   @Override
+   protected TileEntityHatch[] findOutputHatches() {
+      return new TileEntityHatch[]{findHatch(1)};
+   }
+
    private enum DirectionsExpanded {
 
       EAST(1, 0),

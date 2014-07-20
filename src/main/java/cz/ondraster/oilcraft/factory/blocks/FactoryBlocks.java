@@ -4,8 +4,13 @@ import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerDistillator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
+import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.tileentities.*;
+import cz.ondraster.oilcraft.fluids.Fluids;
+import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 public class FactoryBlocks {
    public static Block blockMachineCasing;
@@ -18,14 +23,14 @@ public class FactoryBlocks {
    public static Block blockValveHT;
    public static Block blockHatch;
 
-   public static Block controllerHeater;
-   public static Block controllerDistillator;
-   public static Block controllerHydrotreater;
-   public static Block controllerMeroxTreater;
-   public static Block controllerGasProcessor;
-   public static Block controllerCatalyticReformer;
-   public static Block controllerCrocker;
-   public static Block controllerAsphaltBlower;
+   public static MultiblockController controllerHeater;
+   public static MultiblockController controllerDistillator;
+   public static MultiblockController controllerHydrotreater;
+   public static MultiblockController controllerMeroxTreater;
+   public static MultiblockController controllerGasProcessor;
+   public static MultiblockController controllerCatalyticReformer;
+   public static MultiblockController controllerCrocker;
+   public static MultiblockController controllerAsphaltBlower;
 
    public static void init() {
 
@@ -90,5 +95,20 @@ public class FactoryBlocks {
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
       Registrator.registerTileEntity(TileEntityDistillator.class, References.Entities.ENTITYDISTILLATOR);
+   }
+
+   public static void addFactoryRecipes() {
+      controllerHeater.addProcessingFluid(
+            new MultiblockController.ProcessingFluid(
+                  new FluidStack[]{new FluidStack(Fluids.fluidCrudeOil, 100)},
+                  new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)}));
+
+      controllerDistillator.addProcessingFluid(
+            new MultiblockController.ProcessingFluid(
+                  new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)},
+                  new FluidStack[]{new FluidStack(Fluids.fluidRAsphalt, 20), new FluidStack(Fluids.fluidLubricant, 5), new FluidStack(Fluids.fluidRFuel, 35), new FluidStack(Fluids.fluidRDiesel, 10), new FluidStack(Fluids.fluidRKerosene, 10), new FluidStack(Fluids.fluidRPetroleum, 10), new FluidStack(Fluids.fluidRButane, 10)},
+                  new ItemStack[]{new ItemStack(OilItems.dustParaffin, 1)}
+            )
+      );
    }
 }
