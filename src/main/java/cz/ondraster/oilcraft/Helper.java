@@ -1,10 +1,10 @@
 package cz.ondraster.oilcraft;
 
 import cpw.mods.fml.common.FMLLog;
-import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTankInfo;
 
 public class Helper {
    public static void logWarn(String message) {
@@ -19,6 +19,11 @@ public class Helper {
          return true;
 
       return false;
+   }
+
+   public static ItemStack mergeStacks(ItemStack a, ItemStack b) {
+      a.stackSize += b.stackSize;
+      return a;
    }
 
    public static ItemStack getEmptyContainer(ItemStack filledContainer) {
@@ -41,16 +46,27 @@ public class Helper {
       return null;
    }
 
-   public static boolean canFitIntoTank(FluidTank tank, FluidStack stack) {
-      if (tank.getFluid() == null && tank.getCapacity() <= stack.amount)
+   public static boolean canFitIntoTank(FluidTankInfo tank, FluidStack stack) {
+      if (tank.fluid == null && tank.capacity <= stack.amount)
          return true;
-      if (tank.getFluid() == null)
+      if (tank.fluid == null)
          return false;
 
-      if (tank.getFluid().getFluid() != stack.getFluid())
+      if (tank.fluid.getFluid() != stack.getFluid())
          return false;
 
-      if (tank.getFluid().amount + stack.amount > tank.getCapacity())
+      if (tank.fluid.amount + stack.amount > tank.capacity)
+         return false;
+
+      return true;
+   }
+
+   public static boolean isProperFluid(FluidTankInfo tankInfo, FluidStack stack) {
+      if (tankInfo.fluid == null)
+         return false;
+      if (tankInfo.fluid.getFluid() != stack.getFluid())
+         return false;
+      if (tankInfo.fluid.amount < stack.amount)
          return false;
 
       return true;

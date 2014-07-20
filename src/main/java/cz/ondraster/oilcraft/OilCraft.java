@@ -50,6 +50,9 @@ public class OilCraft {
 
       NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandlers());
 
+      // add recipes
+      FactoryBlocks.addFactoryRecipes();
+
    }
 
    @Mod.EventHandler

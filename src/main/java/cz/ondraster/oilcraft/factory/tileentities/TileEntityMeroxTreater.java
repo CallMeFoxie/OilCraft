@@ -13,6 +13,21 @@ public class TileEntityMeroxTreater extends TileEntityController {
    }
 
    @Override
+   public boolean canWork() {
+      return false;
+   }
+
+   @Override
+   public void beforeWork() {
+
+   }
+
+   @Override
+   public void afterWork(boolean success) {
+
+   }
+
+   @Override
    public void doWork() {
       // TODO Merox Treater doWork
    }

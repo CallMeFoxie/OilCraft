@@ -175,6 +175,21 @@ public class TileEntityDistillator extends TileEntityController {
       }
    }
 
+   @Override
+   public boolean canWork() {
+      return true;
+   }
+
+   @Override
+   public void beforeWork() {
+
+   }
+
+   @Override
+   public void afterWork(boolean success) {
+
+   }
+
    private boolean checkLevel(int xMaster, int yLevel, int zMaster, boolean isHT, List<TileEntity> checked) {
       boolean isOk = true;
       boolean foundValve = false;
