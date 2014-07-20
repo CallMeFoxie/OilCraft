@@ -10,6 +10,7 @@ import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 public class FactoryBlocks {
@@ -102,6 +103,14 @@ public class FactoryBlocks {
             new MultiblockController.ProcessingFluid(
                   new FluidStack[]{new FluidStack(Fluids.fluidCrudeOil, 100)},
                   new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)}));
+
+      // Buildcraft compatibility
+      if (FluidRegistry.isFluidRegistered("oil")) {
+         controllerHeater.addProcessingFluid(
+               new MultiblockController.ProcessingFluid(
+                     new FluidStack[]{new FluidStack(FluidRegistry.getFluid("oil"), 100)},
+                     new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)}));
+      }
 
       controllerDistillator.addProcessingFluid(
             new MultiblockController.ProcessingFluid(
