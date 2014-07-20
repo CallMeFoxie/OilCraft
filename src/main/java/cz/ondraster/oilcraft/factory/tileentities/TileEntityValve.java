@@ -1,7 +1,6 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.Helper;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
 import cz.ondraster.oilcraft.fluids.FluidTank;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -44,6 +43,8 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       if (doFill)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 
+      markDirty();
+
       return tank.fill(resource, doFill);
 
       //return 0;
@@ -54,6 +55,9 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       //if (direction == TankDirection.DRAIN)
       if (doDrain)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+      markDirty();
+
       return tank.drain(resource.amount, doDrain);
 
       // return null;
@@ -64,6 +68,8 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       //if (direction == TankDirection.DRAIN)
       if (doDrain)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+      markDirty();
       return tank.drain(maxDrain, doDrain);
 
       //return null;

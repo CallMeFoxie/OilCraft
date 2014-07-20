@@ -78,6 +78,8 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
                if (dir != fluidSourceSide) {
                   if ((connections & (1 << dir.ordinal())) != 0 && tank.getFluidAmount() > 0) {
                      IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+                     if (!(handler instanceof EntityPipe) && worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))
+                        continue;
                      if (handler == null)
                         continue;
                      if (handler.canFill(dir.getOpposite(), tank.getFluid().getFluid()) && (handler.fill(dir.getOpposite(), tank.getFluid(), false) > 0)) {
@@ -104,6 +106,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
 
                for (int i = 0; i < possibleDirs.size(); i++) {
                   IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + possibleDirs.get(i).offsetX, yCoord + possibleDirs.get(i).offsetY, zCoord + possibleDirs.get(i).offsetZ);
+
 
                   int amount = 0;
                   if (i < possibleDirs.size() - 1)
@@ -134,6 +137,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
             }
          }
          ticksSinceLastMove = 0;
+         markDirty();
       }
    }
 
@@ -169,8 +173,10 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
       //   getNetworkDr().rebalance(worldObj);
       //}
       if (resource != null)
-         if (resource.amount > tank.getFluidAmount() && doFill)
+         if (/*resource.amount > tank.getFluidAmount() && */doFill)
             fluidSourceSide = from;
+
+      markDirty();
       return filled;
 
    }
@@ -182,6 +188,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
       //   getNetworkDr().drain(drained.amount, true);
       //   getNetworkDr().rebalance(worldObj);
       //}
+      markDirty();
       return drained;
    }
 
@@ -192,6 +199,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
       //   getNetworkDr().drain(drained.amount, true);
       //   getNetworkDr().rebalance(worldObj);
       //}
+      markDirty();
       return drained;
 
    }

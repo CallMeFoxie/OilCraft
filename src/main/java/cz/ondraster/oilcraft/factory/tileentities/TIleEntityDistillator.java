@@ -1,15 +1,10 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
-import cz.ondraster.oilcraft.fluids.Fluids;
-import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,24 +16,7 @@ public class TileEntityDistillator extends TileEntityController {
    // any bottom middle.           Sides can be made out of HT/normal blocks or valves, nobody cares.
    // middle column has to be empty.
 
-   private static final int IN_MB_PER_OPERATION = 100;
-   private static final int BUTANE_PER_OPERATION = 5;
-   private static final int PETROLEUM_PER_OPERATION = 10;
-   private static final int KEROSENE_PER_OPERATION = 10;
-   private static final int DIESEL_PER_OPERATION = 10;
-   private static final int FUEL_PER_OPERATION = 35;
-   private static final int LUBRICANT_PER_OPERATION = 5;
-   private static final int ASPHALT_PER_OPERATION = 20;
-   private static final int[] additions = {ASPHALT_PER_OPERATION, LUBRICANT_PER_OPERATION,
-         FUEL_PER_OPERATION, DIESEL_PER_OPERATION, KEROSENE_PER_OPERATION,
-         PETROLEUM_PER_OPERATION, BUTANE_PER_OPERATION};
-   private static final int PARAFFIN_PER_OPERATION = 5;
-
-   private static final Fluid[] addFluids = {Fluids.fluidRAsphalt, Fluids.fluidLubricant, Fluids.fluidRFuel, Fluids.fluidRDiesel,
-         Fluids.fluidRKerosene, Fluids.fluidRPetroleum, Fluids.fluidRButane};
-
-   private int bufferParaffin = 0;
-   private int ticksSinceUpdate = 0;
+   private static final int LEVELS = 7;
 
    @Override
    public void checkMultiblock() {
@@ -252,64 +230,13 @@ public class TileEntityDistillator extends TileEntityController {
    }
 
    @Override
-   public void doWork() {
-      if (ticksSinceUpdate >= 10) {
-         ticksSinceUpdate = 0;
-         boolean isOk = true;
-
-         TileEntityValve input = findValve(0);
-         TileEntityHatch hatch = findHatch(1);
-
-         if (!(hatch.getStackInSlot(0) == null || (hatch.getStackInSlot(0).stackSize < 64 && hatch.getStackInSlot(0).getItem() == OilItems.dustParaffin))) {
-
-         } else {
-            if (input.drain(ForgeDirection.UNKNOWN, IN_MB_PER_OPERATION, false).amount == IN_MB_PER_OPERATION) {
-
-               // pre-flight checks for all the valves... *yawn*
-               for (int i = 0; i < additions.length; i++) {
-                  TileEntityValve valve = findValve(i + 1);
-                  if (valve.fill(ForgeDirection.UNKNOWN, new FluidStack(addFluids[i], additions[i]), false) < additions[i]) {
-                     isOk = false;
-                  }
-               }
-
-               if (isOk) {
-                  for (int i = 0; i < additions.length; i++) {
-                     TileEntityValve valve = findValve(i + 1);
-                     valve.fill(ForgeDirection.UNKNOWN, new FluidStack(addFluids[i], additions[i]), true);
-                     worldObj.markBlockForUpdate(valve.xCoord, valve.yCoord, valve.zCoord);
-                  }
-
-                  input.drain(ForgeDirection.UNKNOWN, IN_MB_PER_OPERATION, true);
-                  worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-                  bufferParaffin += PARAFFIN_PER_OPERATION;
-                  if (bufferParaffin >= 1000) {
-                     if (hatch.getStackInSlot(0) == null)
-                        hatch.setInventorySlotContents(0, new ItemStack(OilItems.dustParaffin, 1));
-                     else
-                        hatch.setInventorySlotContents(0, new ItemStack(OilItems.dustParaffin, hatch.getStackInSlot(0).stackSize + 1));
-
-                     bufferParaffin -= 1000;
-                  }
-               }
-            }
-         }
-      }
-
-      ticksSinceUpdate++;
-   }
-
-   @Override
    protected void save(NBTTagCompound nbt) {
       super.save(nbt);
-      nbt.setInteger("bufferParaffin", bufferParaffin);
    }
 
    @Override
    protected void load(NBTTagCompound nbt) {
       super.load(nbt);
-      nbt.setInteger("bufferParaffin", bufferParaffin);
-
    }
 
    @Override
@@ -319,8 +246,8 @@ public class TileEntityDistillator extends TileEntityController {
 
    @Override
    protected TileEntityValve[] findOutputValves() {
-      TileEntityValve[] valves = new TileEntityValve[additions.length];
-      for (int i = 0; i < additions.length; i++)
+      TileEntityValve[] valves = new TileEntityValve[LEVELS];
+      for (int i = 0; i < LEVELS; i++)
          valves[i] = findValve(i + 1);
       return valves;
    }

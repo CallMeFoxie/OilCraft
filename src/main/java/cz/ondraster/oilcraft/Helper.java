@@ -15,13 +15,15 @@ public class Helper {
       if (a == null || b == null)
          return true;
 
-      if (a == b && a.getMaxStackSize() >= a.stackSize + b.stackSize)
+      if (a.getItem() == b.getItem() && a.getMaxStackSize() >= a.stackSize + b.stackSize)
          return true;
 
       return false;
    }
 
    public static ItemStack mergeStacks(ItemStack a, ItemStack b) {
+      if (a == null)
+         return b.copy();
       a.stackSize += b.stackSize;
       return a;
    }
@@ -50,7 +52,7 @@ public class Helper {
       if (tank.fluid == null && tank.capacity <= stack.amount)
          return true;
       if (tank.fluid == null)
-         return false;
+         return true;
 
       if (tank.fluid.getFluid() != stack.getFluid())
          return false;

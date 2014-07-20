@@ -107,7 +107,7 @@ public class FactoryBlocks {
             new MultiblockController.ProcessingFluid(
                   new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)},
                   new FluidStack[]{new FluidStack(Fluids.fluidRAsphalt, 20), new FluidStack(Fluids.fluidLubricant, 5), new FluidStack(Fluids.fluidRFuel, 35), new FluidStack(Fluids.fluidRDiesel, 10), new FluidStack(Fluids.fluidRKerosene, 10), new FluidStack(Fluids.fluidRPetroleum, 10), new FluidStack(Fluids.fluidRButane, 10)},
-                  new ItemStack[]{new ItemStack(OilItems.dustParaffin, 1)}
+                  new ItemStack[]{new ItemStack(OilItems.dustParaffin)}
             )
       );
    }
