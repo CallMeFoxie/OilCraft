@@ -13,6 +13,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 public class OilItems {
    public static Item bucketCrudeOil;
    public static Item bucketHydrogen;
+   public static Item bucketAsphalt;
 
    public static Item debugTool;
    public static Item itemMatches;
@@ -24,6 +25,11 @@ public class OilItems {
       Registrator.registerItem(bucketCrudeOil);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDCRUDEOIL, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketCrudeOil), new ItemStack(Items.bucket));
       Fluids.blockFluidCrudeOil.setBucket((OilCraftBucket) bucketCrudeOil);
+
+      bucketAsphalt = new OilCraftBucket(Fluids.blockFluidAsphalt).setUnlocalizedName(References.UnlocalizedNames.BUCKETASPHALT).setTextureName(References.Textures.BUCKETASPHALT);
+      Registrator.registerItem(bucketAsphalt);
+      FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDASPHALT, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketAsphalt), new ItemStack(Items.bucket));
+      Fluids.blockFluidAsphalt.setBucket((OilCraftBucket) bucketAsphalt);
 
       /*bucketHydrogen = new OilCraftBucket(Fluids.blockFluidHydrogen).setUnlocalizedName(References.UnlocalizedNames.BUCKETHYDROVEN).setTextureName(References.Textures.BUCKETHYDROGEN);
       Registrator.registerItem(bucketHydrogen);

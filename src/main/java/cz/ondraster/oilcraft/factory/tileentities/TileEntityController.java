@@ -63,8 +63,6 @@ public abstract class TileEntityController extends TileEntity {
             if (canApplyRecipe(recipes[lastRecipe])) {
                applyRecipe(recipes[lastRecipe]);
                didWork = true;
-               System.out.println("Did cached work!");
-
             }
          }
 
@@ -73,7 +71,6 @@ public abstract class TileEntityController extends TileEntity {
                applyRecipe(recipes[i]);
                lastRecipe = i;
                didWork = true;
-               System.out.println("Did work!");
             }
          }
 

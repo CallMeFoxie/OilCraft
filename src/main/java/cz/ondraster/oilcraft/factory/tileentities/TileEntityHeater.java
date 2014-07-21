@@ -30,8 +30,6 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
 
     */
 
-   private int ticksSinceWork = 0;
-
    @Override
    public void checkMultiblock() {
       List<TileEntity> checked = new ArrayList<TileEntity>();

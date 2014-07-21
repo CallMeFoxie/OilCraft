@@ -56,6 +56,8 @@ public class References {
       public static final String FLUIDLPG = MODID + "_fluid_lpg";
       public static final String CONTROLLERDISTILLATOR = MODID + "_controller_distillator";
       public static final String DUSTPARAFFIN = MODID + "_dust_paraffin";
+      public static final String CONTROLLERASPHALTBLOWER = MODID + "_controller_asphalt_blower";
+      public static final String BUCKETASPHALT = MODID + "_bucket_asphalt";
    }
 
    public class Textures {
@@ -86,6 +88,10 @@ public class References {
       public static final String CONTROLLERMEROXTREATER = MODID + ":controller_merox_treater";
       public static final String BLOCKHATCH = MODID + ":machine_hatch";
       public static final String CONTROLLERDISTILLATOR = MODID + ":machine_distillator";
+      public static final String CONTROLLERASPHALTBLOWER = MODID + ":machine_asphalt_blower";
+      public static final String FLUIDASPHALTSTILL = MODID + ":fluid_asphalt_still";
+      public static final String FLUIDASPHALTFLOWING = MODID + ":fluid_asphalt_flowing";
+      public static final String BUCKETASPHALT = MODID + ":bucket_asphalt";
    }
 
    public class Icons {
@@ -114,6 +120,7 @@ public class References {
       public static final String FIREBOXSOLID = MODID + "_firebox_solid";
       public static final String FIREBOXELECTRIC = MODID + "_firebox_electric";
       public static final String HATCH = MODID + "_hatch";
+      public static final String ENTITYASPHALTBLOWER = MODID + "_asphalt_blower_te";
    }
 
    public class FactoryControllers {

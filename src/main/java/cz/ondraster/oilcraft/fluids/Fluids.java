@@ -34,6 +34,7 @@ public class Fluids {
 
    public static Fluid fluidRAsphalt;
    public static Fluid fluidAsphalt;
+   public static BlockFluid blockFluidAsphalt;
 
    public static Fluid fluidParaffin;
 
@@ -97,6 +98,8 @@ public class Fluids {
       Registrator.registerBlock(blockFluidHydrogen);
       blockFluidHeatedOil = new BlockFluid(fluidHeatedOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDHEATEDOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
       Registrator.registerBlock(blockFluidHeatedOil);*/
+      blockFluidAsphalt = new BlockFluid(fluidAsphalt, OilMaterials.materialAsphalt, References.UnlocalizedNames.FLUIDASPHALT, References.Textures.FLUIDASPHALTSTILL, References.Textures.FLUIDASPHALTFLOWING);
+      Registrator.registerBlock(blockFluidAsphalt);
 
    }
 }

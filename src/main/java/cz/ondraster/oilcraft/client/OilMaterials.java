@@ -8,4 +8,5 @@ public class OilMaterials {
 
    public static Material materialOil = (new MaterialLiquid(MapColor.blackColor));
    public static Material materialHydrogen = (new MaterialLiquid(MapColor.iceColor));
+   public static Material materialAsphalt = (new MaterialLiquid(MapColor.blackColor));
 }

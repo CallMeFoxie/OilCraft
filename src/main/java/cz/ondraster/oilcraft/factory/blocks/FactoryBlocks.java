@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.factory.controllers.ControllerAsphaltBlower;
 import cz.ondraster.oilcraft.factory.controllers.ControllerDistillator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
@@ -92,10 +93,13 @@ public class FactoryBlocks {
       Registrator.registerBlock(controllerHeater);
       controllerDistillator = new ControllerDistillator();
       Registrator.registerBlock(controllerDistillator);
+      controllerAsphaltBlower = new ControllerAsphaltBlower();
+      Registrator.registerBlock(controllerAsphaltBlower);
 
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
       Registrator.registerTileEntity(TileEntityDistillator.class, References.Entities.ENTITYDISTILLATOR);
+      Registrator.registerTileEntity(TileEntityAsphaltBlower.class, References.Entities.ENTITYASPHALTBLOWER);
    }
 
    public static void addFactoryRecipes() {
@@ -117,6 +121,13 @@ public class FactoryBlocks {
                   new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)},
                   new FluidStack[]{new FluidStack(Fluids.fluidRAsphalt, 20), new FluidStack(Fluids.fluidLubricant, 5), new FluidStack(Fluids.fluidRFuel, 35), new FluidStack(Fluids.fluidRDiesel, 10), new FluidStack(Fluids.fluidRKerosene, 10), new FluidStack(Fluids.fluidRPetroleum, 10), new FluidStack(Fluids.fluidRButane, 10)},
                   new ItemStack[]{new ItemStack(OilItems.dustParaffin)}
+            )
+      );
+
+      controllerAsphaltBlower.addProcessingFluid(
+            new MultiblockController.ProcessingFluid(
+                  new FluidStack[]{new FluidStack(Fluids.fluidRAsphalt, 20)},
+                  new FluidStack[]{new FluidStack(Fluids.fluidAsphalt, 20)}
             )
       );
    }
