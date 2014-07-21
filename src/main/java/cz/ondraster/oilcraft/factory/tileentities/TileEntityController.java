@@ -88,14 +88,14 @@ public abstract class TileEntityController extends TileEntity {
       TileEntityHatch[] itemOutputs = findOutputHatches();
 
       for (int i = 0; i < recipe.fluidInputs.length; i++) {
-         inputs[i].drain(ForgeDirection.UNKNOWN, recipe.fluidInputs[i], true);
+         inputs[i].machineDrain(recipe.fluidInputs[i], true);
          inputs[i].markDirty();
          worldObj.markBlockForUpdate(inputs[i].xCoord, inputs[i].yCoord, inputs[i].zCoord);
       }
 
 
       for (int i = 0; i < recipe.fluidOutputs.length; i++) {
-         outputs[i].fill(ForgeDirection.UNKNOWN, recipe.fluidOutputs[i], true);
+         outputs[i].machineFill(recipe.fluidOutputs[i], true);
          outputs[i].markDirty();
          worldObj.markBlockForUpdate(outputs[i].xCoord, outputs[i].yCoord, outputs[i].zCoord);
       }
@@ -111,11 +111,11 @@ public abstract class TileEntityController extends TileEntity {
 
    protected boolean canApplyRecipe(MultiblockController.ProcessingFluid recipe) {
       TileEntityValve[] inputs = findInputValves();
-      if (inputs.length != 0 && inputs.length != recipe.fluidInputs.length)
+      if ((inputs == null && recipe.fluidInputs != null) || inputs.length != 0 && inputs.length != recipe.fluidInputs.length)
          return false; // do not have enough inputs or have too many
 
       TileEntityValve[] outputs = findOutputValves();
-      if (outputs.length != 0 && outputs.length != recipe.fluidOutputs.length)
+      if ((outputs == null && recipe.fluidOutputs != null) || outputs.length != 0 && outputs.length != recipe.fluidOutputs.length)
          return false;
 
       TileEntityHatch[] itemOutputs = findOutputHatches();

@@ -82,8 +82,8 @@ public class References {
       public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + ":matches";
       public static final String CONTROLLERHEATER = MODID + ":machine_heater";
-      public static final String VALVEOUTLET = MODID + ":machine_valve_out";
-      public static final String VALVEOUTLETHT = MODID + ":machine_valve_out_ht";
+      public static final String VALVEOUTLET = MODID + ":machine_valve_export";
+      public static final String VALVEOUTLETHT = MODID + ":machine_valve_ht_export";
       public static final String SOLIDTOP = MODID + ":machine_top_ht";
       public static final String CONTROLLERMEROXTREATER = MODID + ":controller_merox_treater";
       public static final String BLOCKHATCH = MODID + ":machine_hatch";
@@ -92,6 +92,8 @@ public class References {
       public static final String FLUIDASPHALTSTILL = MODID + ":fluid_asphalt_still";
       public static final String FLUIDASPHALTFLOWING = MODID + ":fluid_asphalt_flowing";
       public static final String BUCKETASPHALT = MODID + ":bucket_asphalt";
+      public static final String VALVEINLET = MODID + ":machine_valve";
+      public static final String VALVEINLETHT = MODID + ":machine_valve_ht";
    }
 
    public class Icons {

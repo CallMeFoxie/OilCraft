@@ -15,7 +15,6 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
    private FluidTank tank;
    private TankDirection direction;
 
-
    public TileEntityValve() {
       super(2);
       tank = new FluidTank(2000);
@@ -39,59 +38,93 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
 
    @Override
    public int fill(ForgeDirection from, FluidStack resource, boolean doFill) {
-      //if (direction == TankDirection.FILL)
+      if (isExport())
+         return 0;
       if (doFill)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 
       markDirty();
 
       return tank.fill(resource, doFill);
+   }
 
-      //return 0;
+   public int machineFill(FluidStack resource, boolean doFill) {
+      if (doFill)
+         worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+      markDirty();
+
+      return tank.fill(resource, doFill);
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
-      //if (direction == TankDirection.DRAIN)
+      if (!isExport())
+         return null;
       if (doDrain)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 
       markDirty();
 
       return tank.drain(resource.amount, doDrain);
-
-      // return null;
    }
 
-   @Override
-   public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
-      //if (direction == TankDirection.DRAIN)
+   public FluidStack machineDrain(FluidStack resource, boolean doDrain) {
+      if (doDrain)
+         worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+      markDirty();
+
+      return tank.drain(resource.amount, doDrain);
+   }
+
+   public FluidStack machineDrain(int maxDrain, boolean doDrain) {
       if (doDrain)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 
       markDirty();
       return tank.drain(maxDrain, doDrain);
-
-      //return null;
    }
 
    @Override
-   public boolean canFill(ForgeDirection from, Fluid fluid) {
-      //if (direction == TankDirection.FILL)
+   public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
+      if (!isExport())
+         return null;
+      if (doDrain)
+         worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+
+      markDirty();
+      return tank.drain(maxDrain, doDrain);
+   }
+
+   public boolean machineCanFill(Fluid fluid) {
       if (tank.getFluid() == null || tank.getFluid().getFluid() == null)
          return true;
       else
          return tank.getFluid().getFluid() == fluid;
+   }
 
-      //return false;
+   @Override
+   public boolean canFill(ForgeDirection from, Fluid fluid) {
+      if (isExport())
+         return false;
+
+      if (tank.getFluid() == null || tank.getFluid().getFluid() == null)
+         return true;
+      else
+         return tank.getFluid().getFluid() == fluid;
+   }
+
+   public boolean machineCanDrain(Fluid fluid) {
+      return tank.getFluidAmount() > 0 && tank.getFluid().getFluid() == fluid;
    }
 
    @Override
    public boolean canDrain(ForgeDirection from, Fluid fluid) {
-      //if (direction == TankDirection.DRAIN)
-      return tank.getFluidAmount() > 0 && tank.getFluid().getFluid() == fluid;
+      if (!isExport())
+         return false;
 
-      //return false;
+      return tank.getFluidAmount() > 0 && tank.getFluid().getFluid() == fluid;
    }
 
    @Override
@@ -161,8 +194,11 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       this.markDirty();
       if (worldObj != null)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+   }
 
-
+   public boolean isExport() {
+      int meta = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
+      return (meta & 0x4) != 0;
    }
 
    public enum TankDirection {

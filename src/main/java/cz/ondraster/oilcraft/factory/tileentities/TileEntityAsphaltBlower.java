@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
+import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -15,13 +16,13 @@ public class TileEntityAsphaltBlower extends TileEntityController {
 
       boolean isOk = true;
 
-      TileEntity xte = getInputTE();
+      TileEntity xte = findInputValves()[0];
       checked.add(xte);
       if (!(xte instanceof TileEntityValve)) {
          isOk = false;
       }
 
-      xte = getOutputTE();
+      xte = findOutputValves()[0];
       checked.add(xte);
       if (!(xte instanceof TileEntityValve)) {
          isOk = false;
@@ -69,43 +70,44 @@ public class TileEntityAsphaltBlower extends TileEntityController {
    public void afterWork(boolean success) {
    }
 
-   private TileEntity getInputTE() {
+   private TileEntity[] getValves() {
+      TileEntity[] valves = new TileEntity[2];
       ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
-      if (orientationController == ForgeDirection.EAST)
-         return worldObj.getTileEntity(xCoord, yCoord, zCoord - 1);
-      else if (orientationController == ForgeDirection.WEST)
-         return worldObj.getTileEntity(xCoord, yCoord, zCoord + 1);
-      else if (orientationController == ForgeDirection.NORTH)
-         return worldObj.getTileEntity(xCoord - 1, yCoord, zCoord);
-      else if (orientationController == ForgeDirection.SOUTH)
-         return worldObj.getTileEntity(xCoord + 1, yCoord, zCoord);
+      if (orientationController == ForgeDirection.EAST) {
+         valves[0] = worldObj.getTileEntity(xCoord, yCoord, zCoord - 1);
+         valves[1] = worldObj.getTileEntity(xCoord, yCoord, zCoord + 1);
+      } else if (orientationController == ForgeDirection.WEST) {
+         valves[0] = worldObj.getTileEntity(xCoord, yCoord, zCoord + 1);
+         valves[1] = worldObj.getTileEntity(xCoord, yCoord, zCoord - 1);
+      } else if (orientationController == ForgeDirection.NORTH) {
+         valves[0] = worldObj.getTileEntity(xCoord - 1, yCoord, zCoord);
+         valves[1] = worldObj.getTileEntity(xCoord + 1, yCoord, zCoord);
+      } else if (orientationController == ForgeDirection.SOUTH) {
+         valves[0] = worldObj.getTileEntity(xCoord + 1, yCoord, zCoord);
+         valves[1] = worldObj.getTileEntity(xCoord - 1, yCoord, zCoord);
+      }
 
-      return null;
+      return valves;
    }
-
-   private TileEntity getOutputTE() {
-      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
-      if (orientationController == ForgeDirection.EAST)
-         return worldObj.getTileEntity(xCoord, yCoord, zCoord + 1);
-      else if (orientationController == ForgeDirection.WEST)
-         return worldObj.getTileEntity(xCoord, yCoord, zCoord - 1);
-      else if (orientationController == ForgeDirection.NORTH)
-         return worldObj.getTileEntity(xCoord + 1, yCoord, zCoord);
-      else if (orientationController == ForgeDirection.SOUTH)
-         return worldObj.getTileEntity(xCoord - 1, yCoord, zCoord);
-
-      return null;
-   }
-
 
    @Override
    protected TileEntityValve[] findInputValves() {
-      return new TileEntityValve[]{(TileEntityValve) getInputTE()};
+      TileEntity[] valves = getValves();
+      for (TileEntity valve : valves)
+         if (!BlockMachineValve.isExport(worldObj.getBlockMetadata(valve.xCoord, valve.yCoord, valve.zCoord)))
+            return new TileEntityValve[]{(TileEntityValve) valve};
+
+      return null;
    }
 
    @Override
    protected TileEntityValve[] findOutputValves() {
-      return new TileEntityValve[]{(TileEntityValve) getOutputTE()};
+      TileEntity[] valves = getValves();
+      for (TileEntity valve : valves)
+         if (BlockMachineValve.isExport(worldObj.getBlockMetadata(valve.xCoord, valve.yCoord, valve.zCoord)))
+            return new TileEntityValve[]{(TileEntityValve) valve};
+
+      return null;
    }
 
    @Override

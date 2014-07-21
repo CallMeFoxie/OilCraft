@@ -13,6 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public abstract class MultiblockPart extends BlockContainer {
 
@@ -49,15 +50,18 @@ public abstract class MultiblockPart extends BlockContainer {
    }
 
    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {
-      if (allowRotation == RotationsAllowed.IGNORE)
+      if (allowRotation == RotationsAllowed.IGNORE || world.isRemote)
          return;
 
       int l = BlockPistonBase.determineOrientation(world, x, y, z, player);
 
-      if (allowRotation == RotationsAllowed.SIDEONLY)
+      if (allowRotation == RotationsAllowed.SIDEONLY) {
          if (l == 1 || l == 0)
             l = 2;
-
+         world.setBlockMetadataWithNotify(x, y, z, l - 2, 3);
+         return;
+      }
+      // RotationsAllowed.ALL
       world.setBlockMetadataWithNotify(x, y, z, l, 3);
    }
 
@@ -74,6 +78,11 @@ public abstract class MultiblockPart extends BlockContainer {
       return false;
    }
 
+   public ForgeDirection getDirection(int meta) {
+      meta &= 0x3;
+      meta += 2;
+      return ForgeDirection.getOrientation(meta);
+   }
 
    public enum RotationsAllowed {
       ALL,

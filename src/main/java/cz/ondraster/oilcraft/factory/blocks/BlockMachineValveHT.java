@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 public class BlockMachineValveHT extends BlockMachineValve {
    public BlockMachineValveHT() {
       super(true);
-
    }
 
    @Override
@@ -25,14 +24,17 @@ public class BlockMachineValveHT extends BlockMachineValve {
    @Override
    public void registerBlockIcons(IIconRegister icreg) {
       iconOutlet = icreg.registerIcon(References.Textures.VALVEOUTLETHT);
+      iconInlet = icreg.registerIcon(References.Textures.VALVEINLETHT);
    }
 
    @SideOnly(Side.CLIENT)
    @Override
    public IIcon getIcon(int side, int meta) {
-      if (side == meta)
-         return iconOutlet;
-      else
+      if (side == getDirection(meta).ordinal()) {
+         if (isExport(meta))
+            return iconOutlet;
+         return iconInlet;
+      } else
          return FactoryBlocks.blockMachineCasingHT.getIcon(side, meta);
    }
 }
