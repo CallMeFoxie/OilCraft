@@ -33,3 +33,7 @@ fluid.oilcraft_fluid_fuel_raw=Raw Fuel
 fluid.oilcraft_fluid_lubricant=Lubricant Oil
 fluid.oilcraft_fluid_asphalt_raw=Raw Asphalt
 fluid.oilcraft_heated_oil=Hot Crude Oil
+fluid.oilcraft_fluid_asphalt=Asphalt
+tile.oilcraft_fluid_asphalt.name=Asphalt
+tile.oilcraft_controller_asphalt_blower.name=Asphalt Blower
+item.oilcraft_bucket_asphalt.name=Bucket O' Asphalt
