@@ -16,17 +16,16 @@ public class TileEntityAsphaltBlower extends TileEntityController {
 
       boolean isOk = true;
 
-      TileEntity xte = findInputValves()[0];
-      checked.add(xte);
-      if (!(xte instanceof TileEntityValve)) {
-         isOk = false;
-      }
+      //TODO CRASH!
 
-      xte = findOutputValves()[0];
-      checked.add(xte);
-      if (!(xte instanceof TileEntityValve)) {
+      TileEntity[] valves = getValves();
+      if (valves[0] == null || valves[1] == null)
          isOk = false;
-      }
+      else if (!(valves[0] instanceof TileEntityValve) || !(valves[0] instanceof TileEntityValve))
+         isOk = false;
+
+      checked.add(valves[0]);
+      checked.add(valves[1]);
 
       for (TileEntity te : checked) {
          if (te instanceof TileEntityPart) {
