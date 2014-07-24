@@ -197,4 +197,8 @@ public abstract class TileEntityController extends TileEntity {
 
    protected abstract TileEntityHatch[] findOutputHatches();
 
+   protected ForgeDirection getOrientation() {
+      return ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+   }
+
 }

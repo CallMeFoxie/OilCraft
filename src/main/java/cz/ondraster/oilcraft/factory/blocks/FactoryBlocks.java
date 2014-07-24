@@ -2,10 +2,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
-import cz.ondraster.oilcraft.factory.controllers.ControllerAsphaltBlower;
-import cz.ondraster.oilcraft.factory.controllers.ControllerDistillator;
-import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
-import cz.ondraster.oilcraft.factory.controllers.ControllerMeroxTreater;
+import cz.ondraster.oilcraft.factory.controllers.*;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.tileentities.*;
 import cz.ondraster.oilcraft.fluids.Fluids;
@@ -28,9 +25,9 @@ public class FactoryBlocks {
 
    public static MultiblockController controllerHeater;
    public static MultiblockController controllerDistillator;
-   public static MultiblockController controllerHydrotreater;
-   public static MultiblockController controllerMeroxTreater;
    public static MultiblockController controllerGasProcessor;
+   public static MultiblockController controllerMeroxTreater;
+   public static MultiblockController controllerHydrotreater;
    public static MultiblockController controllerCatalyticReformer;
    public static MultiblockController controllerCrocker;
    public static MultiblockController controllerAsphaltBlower;
@@ -98,12 +95,15 @@ public class FactoryBlocks {
       Registrator.registerBlock(controllerAsphaltBlower);
       controllerMeroxTreater = new ControllerMeroxTreater();
       Registrator.registerBlock(controllerMeroxTreater);
+      controllerGasProcessor = new ControllerGasProcessor();
+      Registrator.registerBlock(controllerGasProcessor);
 
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
       Registrator.registerTileEntity(TileEntityDistillator.class, References.Entities.ENTITYDISTILLATOR);
       Registrator.registerTileEntity(TileEntityAsphaltBlower.class, References.Entities.ENTITYASPHALTBLOWER);
       Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYMEROXTREATER);
+      Registrator.registerTileEntity(TileEntityGasProcessor.class, References.Entities.ENTITYGASPROC);
    }
 
    public static void addFactoryRecipes() {
@@ -143,6 +143,12 @@ public class FactoryBlocks {
       controllerMeroxTreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
             new FluidStack[]{new FluidStack(Fluids.fluidRKerosene, 20)},
             new FluidStack[]{new FluidStack(Fluids.fluidKerosene, 20)}
+      ));
+
+      controllerGasProcessor.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidRButane, 10)},
+            new FluidStack[]{new FluidStack(Fluids.fluidPButane, 10)},
+            new ItemStack[]{new ItemStack(OilItems.dustSulfur)}
       ));
    }
 }

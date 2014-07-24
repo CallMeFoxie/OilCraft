@@ -9,8 +9,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TileEntityMeroxTreater extends TileEntityController {
-
+public class TileEntityGasProcessor extends TileEntityController {
    @Override
    public void checkMultiblock() {
       List<TileEntity> checked = new ArrayList<TileEntity>();
@@ -28,7 +27,7 @@ public class TileEntityMeroxTreater extends TileEntityController {
       checked.add(valves[0]);
       checked.add(valves[1]);
 
-      ForgeDirection orientationController = getOrientation();
+      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
       Block block;
 
       if (orientationController == ForgeDirection.NORTH || orientationController == ForgeDirection.SOUTH) {
@@ -52,6 +51,16 @@ public class TileEntityMeroxTreater extends TileEntityController {
          if (block != FactoryBlocks.blockMachineCasing)
             isOk = false;
       }
+
+      checked.add(worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + orientationController.getOpposite().offsetZ));
+      block = worldObj.getBlock(xCoord + orientationController.getOpposite().offsetX, yCoord, zCoord + orientationController.getOpposite().offsetZ);
+      if (block != FactoryBlocks.blockMachineCasing)
+         isOk = false;
+
+      checked.add(worldObj.getTileEntity(xCoord + orientationController.getOpposite().offsetX, yCoord + 1, zCoord + orientationController.getOpposite().offsetZ));
+      block = worldObj.getBlock(xCoord + orientationController.getOpposite().offsetX, yCoord + 1, zCoord + orientationController.getOpposite().offsetZ);
+      if (block != FactoryBlocks.blockHatch)
+         isOk = false;
 
       for (TileEntity te : checked) {
          if (te instanceof TileEntityPart) {
@@ -84,6 +93,9 @@ public class TileEntityMeroxTreater extends TileEntityController {
          resetBlock(xCoord, yCoord + 1, zCoord + 1);
          resetBlock(xCoord, yCoord + 1, zCoord - 1);
       }
+
+      resetBlock(getOrientation().getOpposite().offsetX + xCoord, yCoord, zCoord + getOrientation().getOpposite().offsetZ);
+      resetBlock(getOrientation().getOpposite().offsetX + xCoord, yCoord + 1, zCoord + getOrientation().getOpposite().offsetZ);
    }
 
    @Override
@@ -103,7 +115,8 @@ public class TileEntityMeroxTreater extends TileEntityController {
 
    private TileEntity[] getValves() {
       TileEntity[] valves = new TileEntity[2];
-      ForgeDirection orientationController = ForgeDirection.getOrientation(worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
+      ForgeDirection orientationController = getOrientation();
+
       if (orientationController == ForgeDirection.EAST) {
          valves[0] = worldObj.getTileEntity(xCoord, yCoord + 1, zCoord - 1);
          valves[1] = worldObj.getTileEntity(xCoord, yCoord + 1, zCoord + 1);
@@ -143,6 +156,7 @@ public class TileEntityMeroxTreater extends TileEntityController {
 
    @Override
    protected TileEntityHatch[] findOutputHatches() {
-      return null;
+      ForgeDirection orientation = getOrientation().getOpposite();
+      return new TileEntityHatch[]{(TileEntityHatch) worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord + 1, zCoord + orientation.offsetZ)};
    }
 }

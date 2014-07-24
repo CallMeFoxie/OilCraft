@@ -59,6 +59,8 @@ public class References {
       public static final String CONTROLLERASPHALTBLOWER = MODID + "_controller_asphalt_blower";
       public static final String BUCKETASPHALT = MODID + "_bucket_asphalt";
       public static final String DUSTSULFUR = MODID + "_dust_sulfur";
+      public static final String CONTROLLERHYDROTREATER = MODID + "_controller_hydrotreater";
+      public static final String CONTROLLERGASPROCESSOR = MODID + "_controller_gas_processor";
    }
 
    public class Textures {
@@ -95,6 +97,8 @@ public class References {
       public static final String BUCKETASPHALT = MODID + ":bucket_asphalt";
       public static final String VALVEINLET = MODID + ":machine_valve";
       public static final String VALVEINLETHT = MODID + ":machine_valve_ht";
+      public static final String CONTROLLERHYDROTREATER = MODID + ":controller_hydrotreater";
+      public static final String CONTROLLERGASPROCESSOR = MODID + ":controller_gasproc";
    }
 
    public class Icons {
