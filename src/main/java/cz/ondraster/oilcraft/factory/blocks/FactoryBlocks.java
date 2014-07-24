@@ -5,6 +5,7 @@ import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerAsphaltBlower;
 import cz.ondraster.oilcraft.factory.controllers.ControllerDistillator;
 import cz.ondraster.oilcraft.factory.controllers.ControllerHeater;
+import cz.ondraster.oilcraft.factory.controllers.ControllerMeroxTreater;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.tileentities.*;
 import cz.ondraster.oilcraft.fluids.Fluids;
@@ -95,11 +96,14 @@ public class FactoryBlocks {
       Registrator.registerBlock(controllerDistillator);
       controllerAsphaltBlower = new ControllerAsphaltBlower();
       Registrator.registerBlock(controllerAsphaltBlower);
+      controllerMeroxTreater = new ControllerMeroxTreater();
+      Registrator.registerBlock(controllerMeroxTreater);
 
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
       Registrator.registerTileEntity(TileEntityDistillator.class, References.Entities.ENTITYDISTILLATOR);
       Registrator.registerTileEntity(TileEntityAsphaltBlower.class, References.Entities.ENTITYASPHALTBLOWER);
+      Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYMEROXTREATER);
    }
 
    public static void addFactoryRecipes() {
@@ -130,5 +134,15 @@ public class FactoryBlocks {
                   new FluidStack[]{new FluidStack(Fluids.fluidAsphalt, 20)}
             )
       );
+
+      controllerMeroxTreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidPButane, 20)},
+            new FluidStack[]{new FluidStack(Fluids.fluidLPG, 20)}
+      ));
+
+      controllerMeroxTreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidRKerosene, 20)},
+            new FluidStack[]{new FluidStack(Fluids.fluidKerosene, 20)}
+      ));
    }
 }

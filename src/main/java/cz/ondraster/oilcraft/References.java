@@ -58,6 +58,7 @@ public class References {
       public static final String DUSTPARAFFIN = MODID + "_dust_paraffin";
       public static final String CONTROLLERASPHALTBLOWER = MODID + "_controller_asphalt_blower";
       public static final String BUCKETASPHALT = MODID + "_bucket_asphalt";
+      public static final String DUSTSULFUR = MODID + "_dust_sulfur";
    }
 
    public class Textures {
@@ -102,6 +103,7 @@ public class References {
       public static final String ICONPIPE = MODID + ":icon_pipe";
       public static final String ITEMWRENCH = MODID + ":wrench";
       public static final String DUSTPARAFFIN = MODID + ":dust_paraffin";
+      public static final String DUSTSULFUR = MODID + ":dust_sulfur";
    }
 
    public class Entities {
