@@ -188,6 +188,13 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
 
                }
             }
+         } else if (FluidContainerRegistry.isEmptyContainer(inputSlot)) {
+            outputSlot = FluidContainerRegistry.fillFluidContainer(this.tank.getFluid(), inputSlot);
+            if (outputSlot != null && Helper.canMergeStacks(outputSlot, getStackInSlot(1))) {
+               decrStackSize(0, 1);
+               setInventorySlotContents(1, Helper.mergeStacks(getStackInSlot(1), outputSlot));
+               this.tank.drain(FluidContainerRegistry.getFluidForFilledItem(outputSlot).amount, true);
+            }
          }
       }
 

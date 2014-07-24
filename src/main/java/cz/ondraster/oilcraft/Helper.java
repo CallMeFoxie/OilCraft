@@ -22,8 +22,13 @@ public class Helper {
    }
 
    public static ItemStack mergeStacks(ItemStack a, ItemStack b) {
-      if (a == null)
+      if (a == null && b != null)
          return b.copy();
+      else if (b == null && a != null)
+         return a.copy();
+      else if (a == null && b == null)
+         return null;
+
       a.stackSize += b.stackSize;
       return a;
    }
