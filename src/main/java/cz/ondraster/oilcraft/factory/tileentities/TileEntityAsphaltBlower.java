@@ -16,8 +16,6 @@ public class TileEntityAsphaltBlower extends TileEntityController {
 
       boolean isOk = true;
 
-      //TODO CRASH!
-
       TileEntity[] valves = getValves();
       if (valves[0] == null || valves[1] == null)
          isOk = false;
