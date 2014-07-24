@@ -27,7 +27,7 @@ public class BlockHatch extends MultiblockPartEntity {
    @SideOnly(Side.CLIENT)
    @Override
    public IIcon getIcon(int side, int meta) {
-      if (side == meta)
+      if (side == getDirection(meta).ordinal())
          return blockIcon;
       else
          return FactoryBlocks.blockMachineCasing.getIcon(side, meta);
