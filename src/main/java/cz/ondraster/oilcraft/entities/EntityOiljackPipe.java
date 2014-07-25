@@ -7,15 +7,12 @@ import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.FluidTankInfo;
-import net.minecraftforge.fluids.IFluidHandler;
+import net.minecraftforge.fluids.*;
 
 public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
 
    public final static int MAXIMUM_SIZE = 2000;
-   public final static int RANGE = 16;
+   public final static int RANGE = 8;
    int depth = 0;
    private FluidTank tank;
    private int ticksSinceOutput = 0;
@@ -37,9 +34,13 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
          for (int z = -RANGE; z <= RANGE; z++) {
             if (!didDig) {
                Block block = worldObj.getBlock(xCoord + x, yCoord - depth - 1, zCoord + z);
-               if (block == Fluids.blockFluidCrudeOil && worldObj.getBlockMetadata(xCoord + x, yCoord - depth - 1, zCoord + z) == 0) {
-                  didDig = true;
-                  worldObj.setBlock(xCoord + x, yCoord - depth - 1, zCoord + z, Blocks.air, 0, 3);
+               if (block instanceof IFluidBlock && worldObj.getBlockMetadata(xCoord + x, yCoord - depth - 1, zCoord + z) == 0) {
+                  IFluidBlock fluid = (IFluidBlock) block;
+                  if (fluid.getFluid() == Fluids.fluidCrudeOil || fluid.getFluid().getUnlocalizedName().equals("fluid.oil")) // BC compatibility)
+                  {
+                     didDig = true;
+                     worldObj.setBlock(xCoord + x, yCoord - depth - 1, zCoord + z, Blocks.air, 0, 3);
+                  }
                }
             }
          }
@@ -49,7 +50,7 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
          tank.fill(new FluidStack(Fluids.fluidCrudeOil, 1000), true);
          return true;
       } else {
-         Block block = worldObj.getBlock(xCoord, yCoord - depth - 2, zCoord);
+         Block block = worldObj.getBlock(xCoord, yCoord - depth - 1, zCoord);
          if (block == Blocks.air) {
             depth++;
          } else if (block == Fluids.blockFluidCrudeOil) {
