@@ -101,6 +101,8 @@ public class FactoryBlocks {
       Registrator.registerBlock(controllerCrocker);
       controllerHydrotreater = new ControllerHydrotreater();
       Registrator.registerBlock(controllerHydrotreater);
+      controllerCatalyticReformer = new ControllerCatalyticReformer();
+      Registrator.registerBlock(controllerCatalyticReformer);
 
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
@@ -110,6 +112,7 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityGasProcessor.class, References.Entities.ENTITYGASPROC);
       Registrator.registerTileEntity(TileEntityCrocker.class, References.Entities.ENTITYCROCKER);
       Registrator.registerTileEntity(TileEntityHydrotreater.class, References.Entities.ENTITYHYDROTREATER);
+      Registrator.registerTileEntity(TileEntityCatalyticReformer.class, References.Entities.ENTITYCATALYTICREFORMER);
    }
 
    public static void addFactoryRecipes() {
@@ -175,6 +178,16 @@ public class FactoryBlocks {
       controllerHydrotreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
             new FluidStack[]{new FluidStack(Fluids.fluidNaphta, 10), new FluidStack(Fluids.fluidHydrogen, 5)},
             new FluidStack[]{new FluidStack(Fluids.fluidGasoline, 8), new FluidStack(Fluids.fluidGas, 7)}
+      ));
+
+      controllerHydrotreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidRPetroleum, 10), new FluidStack(Fluids.fluidHydrogen, 5)},
+            new FluidStack[]{new FluidStack(Fluids.fluidPPetroleum, 8), new FluidStack(Fluids.fluidGas, 2)}
+      ));
+
+      controllerCatalyticReformer.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidPPetroleum, 15)},
+            new FluidStack[]{new FluidStack(Fluids.fluidGas, 2), new FluidStack(Fluids.fluidHydrogen, 6), new FluidStack(Fluids.fluidPetroleum, 7)}
       ));
    }
 }

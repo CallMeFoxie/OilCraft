@@ -65,6 +65,7 @@ public class References {
       public static final String FLUIDALKALYTE = MODID + "_alkalyte";
       public static final String FLUIDALKALYTICFUEL = MODID + "_alkalytic_fuel";
       public static final String FLUIDGAS = MODID + "_fluid_gas";
+      public static final String CONTROLLERCATALYTICREFORMER = MODID + "_controller_catalytic_reformer";
    }
 
    public class Textures {
@@ -104,6 +105,7 @@ public class References {
       public static final String CONTROLLERHYDROTREATER = MODID + ":controller_hydrotreater";
       public static final String CONTROLLERGASPROCESSOR = MODID + ":controller_gasproc";
       public static final String CONTROLLERCROCKER = MODID + ":controller_crocker";
+      public static final String CONTROLLERCATALYTICREFORMER = MODID + ":controller_catalytic_reformer";
    }
 
    public class Icons {
@@ -134,6 +136,7 @@ public class References {
       public static final String FIREBOXELECTRIC = MODID + "_firebox_electric";
       public static final String HATCH = MODID + "_hatch";
       public static final String ENTITYASPHALTBLOWER = MODID + "_asphalt_blower_te";
+      public static final String ENTITYCATALYTICREFORMER = MODID + "_catalytic_reformer_te";
    }
 
    public class FactoryControllers {
