@@ -5,21 +5,21 @@ import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
-import cz.ondraster.oilcraft.factory.tileentities.TileEntityCrocker;
+import cz.ondraster.oilcraft.factory.tileentities.TileEntityHydrotreater;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class ControllerCrocker extends MultiblockController {
-   public ControllerCrocker() {
+public class ControllerHydrotreater extends MultiblockController {
+   public ControllerHydrotreater() {
       super();
-      setBlockName(References.UnlocalizedNames.CONTROLLERCROCKER);
-      setBlockTextureName(References.Textures.CONTROLLERCROCKER);
+      setBlockName(References.UnlocalizedNames.CONTROLLERHYDROTREATER);
+      setBlockTextureName(References.Textures.CONTROLLERHYDROTREATER);
    }
 
    @Override
-   public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-      return new TileEntityCrocker();
+   public TileEntity createNewTileEntity(World world, int meta) {
+      return new TileEntityHydrotreater();
    }
 
    @SideOnly(Side.CLIENT)

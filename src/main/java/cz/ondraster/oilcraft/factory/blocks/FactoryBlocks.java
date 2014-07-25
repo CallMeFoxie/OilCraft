@@ -97,6 +97,10 @@ public class FactoryBlocks {
       Registrator.registerBlock(controllerMeroxTreater);
       controllerGasProcessor = new ControllerGasProcessor();
       Registrator.registerBlock(controllerGasProcessor);
+      controllerCrocker = new ControllerCrocker();
+      Registrator.registerBlock(controllerCrocker);
+      controllerHydrotreater = new ControllerHydrotreater();
+      Registrator.registerBlock(controllerHydrotreater);
 
       // Register all the controller machines
       Registrator.registerTileEntity(TileEntityHeater.class, References.Entities.ENTITYHEATER);
@@ -104,6 +108,8 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityAsphaltBlower.class, References.Entities.ENTITYASPHALTBLOWER);
       Registrator.registerTileEntity(TileEntityMeroxTreater.class, References.Entities.ENTITYMEROXTREATER);
       Registrator.registerTileEntity(TileEntityGasProcessor.class, References.Entities.ENTITYGASPROC);
+      Registrator.registerTileEntity(TileEntityCrocker.class, References.Entities.ENTITYCROCKER);
+      Registrator.registerTileEntity(TileEntityHydrotreater.class, References.Entities.ENTITYHYDROTREATER);
    }
 
    public static void addFactoryRecipes() {
@@ -149,6 +155,26 @@ public class FactoryBlocks {
             new FluidStack[]{new FluidStack(Fluids.fluidRButane, 10)},
             new FluidStack[]{new FluidStack(Fluids.fluidPButane, 10)},
             new ItemStack[]{new ItemStack(OilItems.dustSulfur)}
+      ));
+
+      controllerCrocker.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidAlkalyticFuel, 10)},
+            new FluidStack[]{new FluidStack(Fluids.fluidNaphta, 8), new FluidStack(Fluids.fluidAlkalyte, 2)}
+      ));
+
+      controllerHydrotreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidRDiesel, 10), new FluidStack(Fluids.fluidHydrogen, 5)},
+            new FluidStack[]{new FluidStack(Fluids.fluidDiesel, 8), new FluidStack(Fluids.fluidGas, 7)}
+      ));
+
+      controllerHydrotreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidRFuel, 10), new FluidStack(Fluids.fluidHydrogen, 5)},
+            new FluidStack[]{new FluidStack(Fluids.fluidFuel, 8), new FluidStack(Fluids.fluidGas, 7)}
+      ));
+
+      controllerHydrotreater.addProcessingFluid(new MultiblockController.ProcessingFluid(
+            new FluidStack[]{new FluidStack(Fluids.fluidNaphta, 10), new FluidStack(Fluids.fluidHydrogen, 5)},
+            new FluidStack[]{new FluidStack(Fluids.fluidGasoline, 8), new FluidStack(Fluids.fluidGas, 7)}
       ));
    }
 }

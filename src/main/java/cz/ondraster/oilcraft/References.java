@@ -61,6 +61,10 @@ public class References {
       public static final String DUSTSULFUR = MODID + "_dust_sulfur";
       public static final String CONTROLLERHYDROTREATER = MODID + "_controller_hydrotreater";
       public static final String CONTROLLERGASPROCESSOR = MODID + "_controller_gas_processor";
+      public static final String CONTROLLERCROCKER = MODID + "_controller_crocker";
+      public static final String FLUIDALKALYTE = MODID + "_alkalyte";
+      public static final String FLUIDALKALYTICFUEL = MODID + "_alkalytic_fuel";
+      public static final String FLUIDGAS = MODID + "_fluid_gas";
    }
 
    public class Textures {
@@ -99,6 +103,7 @@ public class References {
       public static final String VALVEINLETHT = MODID + ":machine_valve_ht";
       public static final String CONTROLLERHYDROTREATER = MODID + ":controller_hydrotreater";
       public static final String CONTROLLERGASPROCESSOR = MODID + ":controller_gasproc";
+      public static final String CONTROLLERCROCKER = MODID + ":controller_crocker";
    }
 
    public class Icons {

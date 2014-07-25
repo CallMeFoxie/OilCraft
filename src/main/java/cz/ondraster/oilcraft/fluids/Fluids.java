@@ -44,6 +44,9 @@ public class Fluids {
 
    public static Fluid fluidPButane;
    public static Fluid fluidLPG;
+   public static Fluid fluidAlkalyticFuel;
+   public static Fluid fluidAlkalyte;
+   public static Fluid fluidGas;
 
 
    public static void init() {
@@ -91,6 +94,12 @@ public class Fluids {
       FluidRegistry.registerFluid(fluidPButane);
       fluidLPG = new Fluid(References.UnlocalizedNames.FLUIDLPG);
       FluidRegistry.registerFluid(fluidLPG);
+      fluidAlkalyte = new Fluid(References.UnlocalizedNames.FLUIDALKALYTE);
+      FluidRegistry.registerFluid(fluidAlkalyte);
+      fluidAlkalyticFuel = new Fluid(References.UnlocalizedNames.FLUIDALKALYTICFUEL);
+      FluidRegistry.registerFluid(fluidAlkalyticFuel);
+      fluidGas = new Fluid(References.UnlocalizedNames.FLUIDGAS);
+      FluidRegistry.registerFluid(fluidGas);
 
       blockFluidCrudeOil = new BlockFluid(fluidCrudeOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDCRUDEOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
       Registrator.registerBlock(blockFluidCrudeOil);

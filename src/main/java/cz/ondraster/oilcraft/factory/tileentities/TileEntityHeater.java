@@ -139,7 +139,7 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
             if (((TileEntityPart) te).isComplete())
                isOk = false;
          } else if (te instanceof TileEntityPartWithInventory)
-            if (((TileEntityPartWithInventory) te).isComplete)
+            if (((TileEntityPartWithInventory) te).isComplete())
                isOk = false;
       }
 
