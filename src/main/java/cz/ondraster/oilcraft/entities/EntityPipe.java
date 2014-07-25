@@ -78,8 +78,8 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
                if (dir != fluidSourceSide) {
                   if ((connections & (1 << dir.ordinal())) != 0 && tank.getFluidAmount() > 0) {
                      IFluidHandler handler = (IFluidHandler) worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
-                     if (!(handler instanceof EntityPipe) && worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))
-                        continue;
+                     /*if (!(handler instanceof EntityPipe) && worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))
+                        continue;                                                                                              */
                      if (handler == null)
                         continue;
                      if (handler.canFill(dir.getOpposite(), tank.getFluid().getFluid()) && (handler.fill(dir.getOpposite(), tank.getFluid(), false) > 0)) {
@@ -127,10 +127,14 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
                if (te instanceof IFluidHandler && !(te instanceof EntityPipe)) {
                   IFluidHandler fluid = (IFluidHandler) te;
                   for (FluidTankInfo info : fluid.getTankInfo(dir)) {
-                     int filled = this.fill(ForgeDirection.UNKNOWN, info.fluid, true);
-                     if (filled > 0) {
-                        fluid.drain(dir, filled, true);
-                        worldObj.markBlockForUpdate(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+                     if (info.fluid != null && info.fluid.getFluid() != null) {
+                        if (fluid.canDrain(dir.getOpposite(), info.fluid.getFluid())) {
+                           int filled = this.fill(ForgeDirection.UNKNOWN, info.fluid, true);
+                           if (filled > 0) {
+                              fluid.drain(dir, filled, true);
+                              worldObj.markBlockForUpdate(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+                           }
+                        }
                      }
                   }
                }
