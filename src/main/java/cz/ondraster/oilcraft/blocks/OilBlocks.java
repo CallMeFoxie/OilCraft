@@ -2,11 +2,9 @@ package cz.ondraster.oilcraft.blocks;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cz.ondraster.oilcraft.Registrator;
-import cz.ondraster.oilcraft.client.renderers.OiljackPipeRenderer;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
 import cz.ondraster.oilcraft.client.renderers.PipeRenderer;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
-import cz.ondraster.oilcraft.entities.EntityOiljackPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.block.Block;
 
@@ -15,6 +13,7 @@ public class OilBlocks {
    public static Block oiljack;
    public static Block pipe;
    public static Block oiljackPipe;
+   public static Block blockActualPipe;
 
 
    public static void init() {
@@ -28,6 +27,8 @@ public class OilBlocks {
 
       oiljackPipe = new BlockOiljackPipe();
       Registrator.registerBlock(oiljackPipe);
-      ClientRegistry.bindTileEntitySpecialRenderer(EntityOiljackPipe.class, new OiljackPipeRenderer());
+
+      blockActualPipe = new BlockActualPipe();
+      Registrator.registerBlock(blockActualPipe);
    }
 }

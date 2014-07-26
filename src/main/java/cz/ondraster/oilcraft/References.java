@@ -66,15 +66,16 @@ public class References {
       public static final String FLUIDALKALYTICFUEL = MODID + "_alkalytic_fuel";
       public static final String FLUIDGAS = MODID + "_fluid_gas";
       public static final String CONTROLLERCATALYTICREFORMER = MODID + "_controller_catalytic_reformer";
+      public static final String BLOCKACTUALPIPE = MODID + "_block_actual_pipe";
    }
 
    public class Textures {
       public static final String BLOCKOILJACK3D = "oiljack.png";
       public static final String BLOCKPIPE3D = "pipe_front.png";
       public static final String BLOCKPIPEMIDDLE3D = "pipe_middle.png";
-      public static final String BLOCKACTUALPIPE = "actual_pipe.png";
+      public static final String BLOCKACTUALPIPE = MODID + ":actual_pipe";
       public static final String BUCKETCRUDEOIL = MODID + ":bucket_crudeoil";
-      public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe";
+      public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe_side";
       public static final String FLUIDCRUDEOILFLOWING = MODID + ":fluid_crudeoil_flowing";
       public static final String FLUIDCRUDEOILSTILL = MODID + ":fluid_crudeoil_still";
       public static final String ITEMDEBUGTOOL = MODID + ":icon_debugger";

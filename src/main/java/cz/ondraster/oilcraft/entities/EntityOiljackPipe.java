@@ -1,5 +1,6 @@
 package cz.ondraster.oilcraft.entities;
 
+import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.fluids.FluidTank;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import net.minecraft.block.Block;
@@ -58,15 +59,16 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
          if (block == Blocks.air) {
             depth++;
             worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+            worldObj.setBlock(xCoord, yCoord - depth, zCoord, OilBlocks.blockActualPipe);
             markDirty();
-         } else if (block == Fluids.blockFluidCrudeOil) {
+         } /*else if (block == Fluids.blockFluidCrudeOil) {
             tank.fill(new FluidStack(Fluids.fluidCrudeOil, 1000), true);
             didDig = true;
             worldObj.setBlock(xCoord, yCoord - depth - 2, zCoord, Blocks.air, 0, 3);
             depth++;
             worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
             markDirty();
-         }
+         }      */
       }
 
       return didDig;
@@ -156,5 +158,14 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
    @Override
    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
       readFromNBT(pkt.func_148857_g());
+   }
+
+   public void clearActualPipes() {
+      for (int i = 0; i <= depth; i++) {
+         Block block = worldObj.getBlock(xCoord, yCoord - i, zCoord);
+         if (block == OilBlocks.blockActualPipe)
+            worldObj.setBlockToAir(xCoord, yCoord - i, zCoord);
+      }
+
    }
 }
