@@ -5,6 +5,9 @@ import cz.ondraster.oilcraft.fluids.Fluids;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
@@ -13,7 +16,8 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
 
    public final static int MAXIMUM_SIZE = 2000;
    public final static int RANGE = 8;
-   int depth = 0;
+   public ForgeDirection lastExport;
+   private int depth = 0;
    private FluidTank tank;
    private int ticksSinceOutput = 0;
 
@@ -53,11 +57,15 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
          Block block = worldObj.getBlock(xCoord, yCoord - depth - 1, zCoord);
          if (block == Blocks.air) {
             depth++;
+            worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+            markDirty();
          } else if (block == Fluids.blockFluidCrudeOil) {
             tank.fill(new FluidStack(Fluids.fluidCrudeOil, 1000), true);
             didDig = true;
             worldObj.setBlock(xCoord, yCoord - depth - 2, zCoord, Blocks.air, 0, 3);
             depth++;
+            worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+            markDirty();
          }
       }
 
@@ -85,11 +93,15 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
 
    @Override
    public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
+      if (doDrain)
+         lastExport = from;
       return tank.drain(resource.amount, doDrain);
    }
 
    @Override
    public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
+      if (doDrain)
+         lastExport = from;
       return tank.drain(maxDrain, doDrain);
    }
 
@@ -121,14 +133,28 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
                   if (handler.canFill(direction.getOpposite(), tank.getFluid().getFluid())) {
                      int amount = handler.fill(direction.getOpposite(), tank.getFluid(), true);
                      this.tank.drain(amount, true);
+                     lastExport = direction;
                   }
                }
             }
          }
          ticksSinceOutput = 0;
       }
-
-
    }
 
+   public int getDepth() {
+      return depth;
+   }
+
+   @Override
+   public Packet getDescriptionPacket() {
+      NBTTagCompound nbtTagCompound = new NBTTagCompound();
+      this.writeToNBT(nbtTagCompound);
+      return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, nbtTagCompound);
+   }
+
+   @Override
+   public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+      readFromNBT(pkt.func_148857_g());
+   }
 }

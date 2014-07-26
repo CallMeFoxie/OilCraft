@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.blocks;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.client.renderers.OiljackPipeRenderer;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
 import cz.ondraster.oilcraft.client.renderers.PipeRenderer;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
@@ -26,7 +27,6 @@ public class OilBlocks {
 
       oiljackPipe = new BlockOiljackPipe();
       Registrator.registerBlock(oiljackPipe);
-
-
+      ClientRegistry.bindTileEntitySpecialRenderer(EntityPipe.class, new OiljackPipeRenderer());
    }
 }

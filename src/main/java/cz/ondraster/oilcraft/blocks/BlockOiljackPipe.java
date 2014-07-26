@@ -7,6 +7,7 @@ import cz.ondraster.oilcraft.entities.EntityOiljackPipe;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockOiljackPipe extends BlockContainer {
@@ -24,19 +25,22 @@ public class BlockOiljackPipe extends BlockContainer {
       return new EntityOiljackPipe();
    }
 
+   public boolean shouldSideBeRendered(IBlockAccess iblockaccess, int i, int j, int k, int l) {
+      return false;
+   }
+
+   public boolean isOpaqueCube() {
+      return false;
+   }
+
    @Override
    public boolean hasTileEntity(int metadata) {
       return true;
    }
 
    @Override
-   public boolean isOpaqueCube() {
-      return true;
-   }
-
-   @Override
-   public boolean renderAsNormalBlock() {
-      return true;
+   public int getRenderType() {
+      return 4;
    }
 
 }
