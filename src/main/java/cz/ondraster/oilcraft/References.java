@@ -72,6 +72,7 @@ public class References {
       public static final String BLOCKOILJACK3D = "oiljack.png";
       public static final String BLOCKPIPE3D = "pipe_front.png";
       public static final String BLOCKPIPEMIDDLE3D = "pipe_middle.png";
+      public static final String BLOCKACTUALPIPE = "actual_pipe.png";
       public static final String BUCKETCRUDEOIL = MODID + ":bucket_crudeoil";
       public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe";
       public static final String FLUIDCRUDEOILFLOWING = MODID + ":fluid_crudeoil_flowing";
@@ -106,6 +107,7 @@ public class References {
       public static final String CONTROLLERGASPROCESSOR = MODID + ":controller_gasproc";
       public static final String CONTROLLERCROCKER = MODID + ":controller_crocker";
       public static final String CONTROLLERCATALYTICREFORMER = MODID + ":controller_catalytic_reformer";
+
    }
 
    public class Icons {

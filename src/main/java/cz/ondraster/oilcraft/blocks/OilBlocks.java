@@ -6,6 +6,7 @@ import cz.ondraster.oilcraft.client.renderers.OiljackPipeRenderer;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
 import cz.ondraster.oilcraft.client.renderers.PipeRenderer;
 import cz.ondraster.oilcraft.entities.EntityOiljack;
+import cz.ondraster.oilcraft.entities.EntityOiljackPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
 import net.minecraft.block.Block;
 
@@ -27,6 +28,6 @@ public class OilBlocks {
 
       oiljackPipe = new BlockOiljackPipe();
       Registrator.registerBlock(oiljackPipe);
-      ClientRegistry.bindTileEntitySpecialRenderer(EntityPipe.class, new OiljackPipeRenderer());
+      ClientRegistry.bindTileEntitySpecialRenderer(EntityOiljackPipe.class, new OiljackPipeRenderer());
    }
 }
