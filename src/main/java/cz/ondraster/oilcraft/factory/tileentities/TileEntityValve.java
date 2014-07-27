@@ -12,6 +12,7 @@ import net.minecraftforge.fluids.*;
 
 
 public class TileEntityValve extends TileEntityPartWithInventory implements IFluidHandler {
+   int ticksSinceLastUpdate = 0;
    private FluidTank tank;
    private TankDirection direction;
 
@@ -132,7 +133,6 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       return new FluidTankInfo[]{tank.getInfo()};
    }
 
-
    @Override
    public Packet getDescriptionPacket() {
       NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -145,15 +145,14 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       readFromNBT(pkt.func_148857_g());
    }
 
-   @Override
-   protected void onInventoryChanged(int slot) {
+   protected void trySlot() {
       if (worldObj == null)
          return;
 
       if (worldObj.isRemote)
          return;
 
-      if (slot == 0 && getStackInSlot(0) != null) { // input
+      if (getStackInSlot(0) != null) { // input
          ItemStack inputSlot = getStackInSlot(0);
          ItemStack outputSlot = getStackInSlot(1);
          if (FluidContainerRegistry.isFilledContainer(inputSlot)) {
@@ -178,7 +177,7 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
                   return;
 
 
-               decrStackSize(0, 1, false);
+               decrStackSize(0, 1);
 
                if (outputSlot == null)
                   setInventorySlotContents(1, empty);
@@ -201,6 +200,18 @@ public class TileEntityValve extends TileEntityPartWithInventory implements IFlu
       this.markDirty();
       if (worldObj != null)
          worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+   }
+
+   @Override
+   public void updateEntity() {
+      super.updateEntity();
+
+      if (ticksSinceLastUpdate >= 40) {
+         trySlot();
+         ticksSinceLastUpdate = 0;
+      }
+
+      ticksSinceLastUpdate++;
    }
 
    public boolean isExport() {

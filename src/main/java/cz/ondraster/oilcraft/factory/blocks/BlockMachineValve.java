@@ -46,12 +46,12 @@ public class BlockMachineValve extends MultiblockPartEntity {
    @Override
    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX,
                                    float hitY, float hitZ) {
-      if (world.isRemote)
-         return false;
-
       if (!player.isSneaking()) {
-         player.openGui(OilCraft.instance, References.GUIs.guiValve, world, x, y, z);
+         if (!world.isRemote)
+            player.openGui(OilCraft.instance, References.GUIs.guiValve, world, x, y, z);
+
          return true;
+
       } else if (player.isSneaking() && player.getCurrentEquippedItem() == null) {
          toggleDirection(world, x, y, z);
       }

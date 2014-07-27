@@ -33,6 +33,10 @@ public class BasicInventory implements IInventory {
       this.inventory = new ItemStack[slots];
    }
 
+   public void setContainer(Container container) {
+      this.owner = container;
+   }
+
    @Override
    public int getSizeInventory() {
       return inventory.length;
