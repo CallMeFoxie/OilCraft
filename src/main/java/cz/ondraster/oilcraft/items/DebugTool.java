@@ -4,6 +4,7 @@ import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
 import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.factory.IMachineRequiresHeat;
 import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockPart;
@@ -64,6 +65,10 @@ public class DebugTool extends Item {
 
       if (te instanceof IMachineRequiresPower) {
          player.addChatComponentMessage(new ChatComponentText("Machine power: " + ((IMachineRequiresPower) te).getPower()));
+      }
+
+      if (te instanceof IMachineRequiresHeat) {
+         player.addChatComponentMessage(new ChatComponentText("Machine temperature: " + ((IMachineRequiresHeat) te).getTemperature()));
       }
 
       if (te instanceof IInventory) {

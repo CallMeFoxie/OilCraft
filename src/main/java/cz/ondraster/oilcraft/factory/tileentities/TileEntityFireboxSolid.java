@@ -9,8 +9,8 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 public class TileEntityFireboxSolid extends TileEntityFirebox implements IInventory {
 
-   int ticksSinceLastUpdate = 0;
    BasicInventory inventory;
+   private int ticksSinceLastUpdateLocal = 0;
 
    public TileEntityFireboxSolid() {
       inventory = new BasicInventory(1);
@@ -97,16 +97,16 @@ public class TileEntityFireboxSolid extends TileEntityFirebox implements IInvent
    @Override
    public void updateEntity() {
       super.updateEntity();
-      if (isComplete && ticksSinceLastUpdate > 20 && getStackInSlot(0) != null) {
+      if (isComplete && ticksSinceLastUpdateLocal > 20 && getStackInSlot(0) != null) {
          int power = TileEntityFurnace.getItemBurnTime(getStackInSlot(0));
          if (storedPower + power <= POWER_CAPACITY) {
             storedPower += power;
             decrStackSize(0, 1);
          }
 
-         ticksSinceLastUpdate = 0;
+         ticksSinceLastUpdateLocal = 0;
       }
 
-      ticksSinceLastUpdate++;
+      ticksSinceLastUpdateLocal++;
    }
 }

@@ -1,6 +1,6 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
-import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
+import cz.ondraster.oilcraft.factory.IMachineRequiresHeat;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxMJ;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxSolid;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
@@ -13,11 +13,12 @@ import net.minecraftforge.common.util.ForgeDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TileEntityHeater extends TileEntityController implements IMachineRequiresPower {
-   private final static int POWER_MAX = 100000;
+public class TileEntityHeater extends TileEntityController implements IMachineRequiresHeat {
    private static final int PROCESS_MAX = 200;
-   private static final int POWER_PER_OPERATION = 1000;
-   private int power;
+   private static final int TEMPERATURE_REQUIRED = 480;
+   private static final int TEMPERATURE_MAX = 500;
+
+   private int temperature = 0;
 
    // this multiblock is 2 deep, 2 high and 3 deep:
    /*
@@ -148,7 +149,6 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
          markBlocks(checked);
       } else {
          reset();
-         // blocks will reset on their own within a second
       }
 
    }
@@ -192,7 +192,7 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
 
    @Override
    public boolean canWork() {
-      return getPower() >= POWER_PER_OPERATION;
+      return temperature >= TEMPERATURE_REQUIRED;
    }
 
    @Override
@@ -202,35 +202,19 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
 
    @Override
    public void afterWork(boolean success) {
-      if (success)
-         drainPower(POWER_PER_OPERATION);
-   }
-
-
-   @Override
-   public boolean addPower(int amount) {
-      if (amount + power <= POWER_MAX) {
-         power += amount;
-         return true;
-      }
-
-      return false;
-   }
-
-   public int getPower() {
-      return power;
+      temperature--;
    }
 
    @Override
    public void save(NBTTagCompound nbt) {
       super.save(nbt);
-      nbt.setInteger("power", power);
+      nbt.setInteger("temperature", temperature);
    }
 
    @Override
    public void load(NBTTagCompound nbtTagCompound) {
       super.load(nbtTagCompound);
-      power = nbtTagCompound.getInteger("power");
+      temperature = nbtTagCompound.getInteger("temperature");
    }
 
    @Override
@@ -272,9 +256,28 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
       return valves;
    }
 
-   private void drainPower(int i) {
-      this.power -= i;
-      if (power < 0)
-         power = 0;
+   @Override
+   public boolean increaseTemperature(int step, boolean doIt) {
+      boolean retval = temperature + step < TEMPERATURE_MAX;
+
+      if (doIt)
+         temperature += step;
+
+      if (temperature > TEMPERATURE_MAX)
+         temperature = TEMPERATURE_MAX;
+
+      return retval;
+   }
+
+   @Override
+   public void decreaseTemperature(int step) {
+      temperature -= step;
+      if (temperature < 0)
+         temperature = 0;
+   }
+
+   @Override
+   public int getTemperature() {
+      return temperature;
    }
 }
