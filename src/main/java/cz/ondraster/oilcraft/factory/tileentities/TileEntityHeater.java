@@ -1,8 +1,6 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.factory.IMachineRequiresHeat;
-import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxMJ;
-import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxSolid;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import net.minecraft.block.Block;
@@ -52,13 +50,14 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
             int b = xCoord;
             for (int x = Math.min(a, b); x <= Math.max(a, b); x++) {
                Block block = worldObj.getBlock(x, yCoord - 1, z);
+               TileEntity te = worldObj.getTileEntity(x, yCoord - 1, z);
                if (bottomHeater != null && block != bottomHeater) {
                   isOk = false;
-               } else if (!((block instanceof BlockMachineFireboxMJ) || (block instanceof BlockMachineFireboxSolid))) {
+               } else if (!((te instanceof TileEntityFirebox))) {
                   isOk = false;
                } else {
-                  bottomHeater = block;
                   checked.add(worldObj.getTileEntity(x, yCoord - 1, z));
+                  bottomHeater = block;
                }
             }
 
@@ -96,9 +95,10 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
             int b = zCoord;
             for (int z = Math.min(a, b); z <= Math.max(a, b); z++) {
                Block block = worldObj.getBlock(x, yCoord - 1, z);
+               TileEntity te = worldObj.getTileEntity(x, yCoord - 1, z);
                if (bottomHeater != null && block != bottomHeater) {
                   isOk = false;
-               } else if (!((block instanceof BlockMachineFireboxMJ) || (block instanceof BlockMachineFireboxSolid))) {
+               } else if (!((te instanceof TileEntityFirebox))) {
                   isOk = false;
                } else {
                   checked.add(worldObj.getTileEntity(x, yCoord - 1, z));

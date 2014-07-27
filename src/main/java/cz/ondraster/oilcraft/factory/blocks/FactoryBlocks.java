@@ -16,6 +16,7 @@ public class FactoryBlocks {
    public static Block blockMachineCasing;
    public static Block blockMachineCasingHT; // HT for High Temperature
    public static Block blockElectricFireboxMJ;
+   public static Block blockElectricFireboxEU;
    public static Block blockSolidFirebox;
    //public static Block blockWindow;
    public static Block blockMeter;
@@ -38,7 +39,7 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
       Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
       Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
-      Registrator.registerTileEntity(TileEntityFireboxMJ.class, References.Entities.FIREBOXELECTRIC);
+      Registrator.registerTileEntity(TileEntityFireboxMJ.class, References.Entities.FIREBOXELECTRICMJ);
       Registrator.registerTileEntity(TileEntityFireboxSolid.class, References.Entities.FIREBOXSOLID);
       Registrator.registerTileEntity(TileEntityHatch.class, References.Entities.HATCH);
 
@@ -54,9 +55,10 @@ public class FactoryBlocks {
       Registrator.registerBlock(blockMachineCasingHT);
 
       blockElectricFireboxMJ = new BlockMachineFireboxMJ();
-      blockElectricFireboxMJ.setBlockName(References.UnlocalizedNames.BLOCKELECTRICFIREBOXMJ);
-      blockElectricFireboxMJ.setBlockTextureName(References.Textures.BLOCKELECTRICFIREBOXMJ);
       Registrator.registerBlock(blockElectricFireboxMJ);
+
+      blockElectricFireboxEU = new BlockMachineFireboxEU();
+      Registrator.registerBlock(blockElectricFireboxEU);
 
       blockSolidFirebox = new BlockMachineFireboxSolid();
       blockSolidFirebox.setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
@@ -113,6 +115,7 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityCrocker.class, References.Entities.ENTITYCROCKER);
       Registrator.registerTileEntity(TileEntityHydrotreater.class, References.Entities.ENTITYHYDROTREATER);
       Registrator.registerTileEntity(TileEntityCatalyticReformer.class, References.Entities.ENTITYCATALYTICREFORMER);
+      Registrator.registerTileEntity(TileEntityFireboxEU.class, References.Entities.ENTITYFIREBOXEU);
    }
 
    public static void addFactoryRecipes() {

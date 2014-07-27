@@ -67,6 +67,7 @@ public class References {
       public static final String FLUIDGAS = MODID + "_fluid_gas";
       public static final String CONTROLLERCATALYTICREFORMER = MODID + "_controller_catalytic_reformer";
       public static final String BLOCKACTUALPIPE = MODID + "_block_actual_pipe";
+      public static final String BLOCKELECTRICFIREBOXEU = MODID + "_block_firebox_eu";
    }
 
    public class Textures {
@@ -136,10 +137,11 @@ public class References {
       public static final String ENTITYASPHALT = MODID + "_asphalt_te";
       public static final String ENTITYDISTILLATOR = MODID + "_distillator_te";
       public static final String FIREBOXSOLID = MODID + "_firebox_solid";
-      public static final String FIREBOXELECTRIC = MODID + "_firebox_electric";
+      public static final String FIREBOXELECTRICMJ = MODID + "_firebox_electric";
       public static final String HATCH = MODID + "_hatch";
       public static final String ENTITYASPHALTBLOWER = MODID + "_asphalt_blower_te";
       public static final String ENTITYCATALYTICREFORMER = MODID + "_catalytic_reformer_te";
+      public static final String ENTITYFIREBOXEU = MODID + "_firebox_eu_te";
    }
 
    public class FactoryControllers {
