@@ -10,8 +10,9 @@ public class TileEntityFireboxMJ extends TileEntityFirebox {
    @Override
    public void updateEntity() {
       super.updateEntity();
-      if (mjStored >= 1) {
+      if (mjStored >= 1 && storedPower + 20 <= POWER_CAPACITY) {
          storedPower += 20;
+         mjStored--;
       }
    }
 }
