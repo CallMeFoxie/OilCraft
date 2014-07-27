@@ -54,7 +54,7 @@ minecraft {
 dependencies {
     //compile "mcp.mobius.waila:Waila:1.5.2a"
     compile "com.mod-buildcraft:buildcraft:6.0.17:dev"
-    compile 'net.industrial-craft:industrialcraft-2:2.1.470-experimental:api'
+    compile 'net.industrial-craft:industrialcraft-2:2.2.540-experimental:api'
 }
 
 processResources
