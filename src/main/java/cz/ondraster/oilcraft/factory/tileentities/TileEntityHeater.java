@@ -1,7 +1,7 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
-import cz.ondraster.oilcraft.factory.blocks.BlockMachineFirebox;
+import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxMJ;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineFireboxSolid;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
@@ -53,7 +53,7 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
                Block block = worldObj.getBlock(x, yCoord - 1, z);
                if (bottomHeater != null && block != bottomHeater) {
                   isOk = false;
-               } else if (!((block instanceof BlockMachineFirebox) || (block instanceof BlockMachineFireboxSolid))) {
+               } else if (!((block instanceof BlockMachineFireboxMJ) || (block instanceof BlockMachineFireboxSolid))) {
                   isOk = false;
                } else {
                   bottomHeater = block;
@@ -97,7 +97,7 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
                Block block = worldObj.getBlock(x, yCoord - 1, z);
                if (bottomHeater != null && block != bottomHeater) {
                   isOk = false;
-               } else if (!((block instanceof BlockMachineFirebox) || (block instanceof BlockMachineFireboxSolid))) {
+               } else if (!((block instanceof BlockMachineFireboxMJ) || (block instanceof BlockMachineFireboxSolid))) {
                   isOk = false;
                } else {
                   checked.add(worldObj.getTileEntity(x, yCoord - 1, z));

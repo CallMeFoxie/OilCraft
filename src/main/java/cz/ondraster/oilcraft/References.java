@@ -19,7 +19,7 @@ public class References {
       public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
       public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + "_block_machine_casinght";
-      public static final String BLOCKELECTRICFIREBOX = MODID + "_block_machine_electric_firebox";
+      public static final String BLOCKELECTRICFIREBOXMJ = MODID + "_block_machine_electric_firebox";
       public static final String BLOCKWINDOW = MODID + "_block_machine_window";
       public static final String BLOCKMETER = MODID + "_block_machine_meter";
       public static final String BLOCKSOLIDFIREBOX = MODID + "_block_machine_solid_firebox";
@@ -81,7 +81,7 @@ public class References {
       public static final String ITEMDEBUGTOOL = MODID + ":icon_debugger";
       public static final String BLOCKMACHINECASING = MODID + ":machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + ":machine_casinght";
-      public static final String BLOCKELECTRICFIREBOX = MODID + ":machine_electric_firebox";
+      public static final String BLOCKELECTRICFIREBOXMJ = MODID + ":machine_electric_firebox";
       public static final String BLOCKWINDOW = MODID + ":machine_window";
       public static final String BLOCKMETER = MODID + ":machine_meter";
       public static final String BLOCKSOLIDFIREBOX = MODID + ":machine_solid_firebox";

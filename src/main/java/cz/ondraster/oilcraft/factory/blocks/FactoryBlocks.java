@@ -15,7 +15,7 @@ import net.minecraftforge.fluids.FluidStack;
 public class FactoryBlocks {
    public static Block blockMachineCasing;
    public static Block blockMachineCasingHT; // HT for High Temperature
-   public static Block blockElectricFirebox;
+   public static Block blockElectricFireboxMJ;
    public static Block blockSolidFirebox;
    //public static Block blockWindow;
    public static Block blockMeter;
@@ -38,7 +38,7 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
       Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
       Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
-      Registrator.registerTileEntity(TileEntityFireboxElectric.class, References.Entities.FIREBOXELECTRIC);
+      Registrator.registerTileEntity(TileEntityFireboxMJ.class, References.Entities.FIREBOXELECTRIC);
       Registrator.registerTileEntity(TileEntityFireboxSolid.class, References.Entities.FIREBOXSOLID);
       Registrator.registerTileEntity(TileEntityHatch.class, References.Entities.HATCH);
 
@@ -53,10 +53,10 @@ public class FactoryBlocks {
       blockMachineCasingHT.setBlockTextureName(References.Textures.BLOCKMACHINECASINGHT);
       Registrator.registerBlock(blockMachineCasingHT);
 
-      blockElectricFirebox = new BlockMachineFirebox();
-      blockElectricFirebox.setBlockName(References.UnlocalizedNames.BLOCKELECTRICFIREBOX);
-      blockElectricFirebox.setBlockTextureName(References.Textures.BLOCKELECTRICFIREBOX);
-      Registrator.registerBlock(blockElectricFirebox);
+      blockElectricFireboxMJ = new BlockMachineFireboxMJ();
+      blockElectricFireboxMJ.setBlockName(References.UnlocalizedNames.BLOCKELECTRICFIREBOXMJ);
+      blockElectricFireboxMJ.setBlockTextureName(References.Textures.BLOCKELECTRICFIREBOXMJ);
+      Registrator.registerBlock(blockElectricFireboxMJ);
 
       blockSolidFirebox = new BlockMachineFireboxSolid();
       blockSolidFirebox.setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
