@@ -17,7 +17,7 @@ public class FactoryBlocks {
    public static Block blockMachineCasingHT; // HT for High Temperature
    public static Block blockElectricFirebox;
    public static Block blockSolidFirebox;
-   public static Block blockWindow;
+   //public static Block blockWindow;
    public static Block blockMeter;
    public static Block blockValve;
    public static Block blockValveHT;
@@ -63,10 +63,10 @@ public class FactoryBlocks {
       blockSolidFirebox.setBlockTextureName(References.Textures.BLOCKSOLIDFIREBOX);
       Registrator.registerBlock(blockSolidFirebox);
 
-      blockWindow = new BlockMachineCasing();
+      /*blockWindow = new BlockMachineCasing();
       blockWindow.setBlockName(References.UnlocalizedNames.BLOCKWINDOW);
       blockWindow.setBlockTextureName(References.Textures.BLOCKWINDOW);
-      Registrator.registerBlock(blockWindow);
+      Registrator.registerBlock(blockWindow);  */
 
       blockMeter = new BlockMachineCasing();
       blockMeter.setBlockName(References.UnlocalizedNames.BLOCKMETER);
