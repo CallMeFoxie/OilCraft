@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.client.gui.GuiHandlers;
+import cz.ondraster.oilcraft.compatibility.CompatibilityBase;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.handlers.Events;
@@ -52,6 +53,10 @@ public class OilCraft {
 
       // add recipes
       FactoryBlocks.addFactoryRecipes();
+      Recipes.addRecipes();
+
+      // compatibility with other mods
+      CompatibilityBase.init();
 
    }
 

@@ -7,7 +7,7 @@ import cz.ondraster.oilcraft.References;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 
-@Optional.Interface(iface = "IToolWrench", modid = "BuildCraftAPI|tools")
+@Optional.Interface(iface = "buildcraft.api.tools.IToolWrench", modid = "BuildCraftAPI|tools")
 public class OilWrench extends Item implements IToolWrench {
    public OilWrench() {
       setUnlocalizedName(References.UnlocalizedNames.ITEMWRENCH);
