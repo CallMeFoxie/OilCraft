@@ -68,6 +68,11 @@ public class References {
       public static final String CONTROLLERCATALYTICREFORMER = MODID + "_controller_catalytic_reformer";
       public static final String BLOCKACTUALPIPE = MODID + "_block_actual_pipe";
       public static final String BLOCKELECTRICFIREBOXEU = MODID + "_block_firebox_eu";
+      public static final String ITEMOILJACKTOP = MODID + "_oiljack_top";
+      public static final String ITEMOILJACKBASE = MODID + "_oiljack_base";
+      public static final String ITEMRUBBERGASKET = MODID + "_rubber_gasket";
+      public static final String ITEMSTEELINGOT = MODID + "_steel_ingot";
+      public static final String ITEMHEATINGCOIL = MODID + "_heating_coil";
    }
 
    public class Textures {
@@ -119,6 +124,11 @@ public class References {
       public static final String ITEMWRENCH = MODID + ":wrench";
       public static final String DUSTPARAFFIN = MODID + ":dust_paraffin";
       public static final String DUSTSULFUR = MODID + ":dust_sulfur";
+      public static final String ITEMOILJACKBASE = MODID + ":oiljack_base";
+      public static final String ITEMOILJACKTOP = MODID + ":oiljack_top";
+      public static final String ITEMRUBBERGASKET = MODID + ":rubber_gasket";
+      public static final String ITEMSTEELINGOT = MODID + ":steel_ingot";
+      public static final String ITEMHEATINGCOIL = MODID + ":heating_coil";
    }
 
    public class Entities {
