@@ -49,8 +49,10 @@ public class Events {
       if (block != OilBlocks.rubberSapling)
          return;
 
-      Random random = new Random(event.world.getSeed());
-      if (random.nextInt(3) == 0) {
+      Random random = new Random();
+      int rand = random.nextInt(10);
+
+      if (rand == 0) {
          RubberTree.growTree(event.world, event.x, event.y, event.z, random);
       }
 

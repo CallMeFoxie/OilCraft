@@ -44,7 +44,7 @@ public class RubberTree implements IWorldGenerator {
    }
 
    public static boolean setBlockIfAir(World world, int x, int y, int z, Block newBlock) {
-      if (world.isAirBlock(x, y, z)) {
+      if (world.isAirBlock(x, y, z) || world.getBlock(x, y, z) == OilBlocks.rubberSapling) {
          world.setBlock(x, y, z, newBlock);
          return true;
       }

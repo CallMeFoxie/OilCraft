@@ -52,16 +52,17 @@ public class RubberWood extends Block {
       if ((meta & MASK_HAS_RESIN) == 0 && (meta & MASK_REGENERATES) == 0)
          return;
 
-      if ((meta & MASK_REGENERATES) != 0) {
-         if ((meta & MASK_HAS_RESIN) != 0) {
-            Block block = world.getBlock(x, y - 1, z);
-            if (block.getClass() == this.getClass()) {
-               world.setBlockMetadataWithNotify(x, y - 1, z, world.getBlockMetadata(x, y - 1, z) | MASK_HAS_RESIN, 2);
+      if (random.nextInt(10) == 0)
+         if ((meta & MASK_REGENERATES) != 0) {
+            if ((meta & MASK_HAS_RESIN) != 0) {
+               Block block = world.getBlock(x, y - 1, z);
+               if (block.getClass() == this.getClass() && random.nextInt(10) == 0) {
+                  world.setBlockMetadataWithNotify(x, y - 1, z, world.getBlockMetadata(x, y - 1, z) | MASK_HAS_RESIN, 2);
+               }
+            } else {
+               world.setBlockMetadataWithNotify(x, y, z, MASK_HAS_RESIN | MASK_REGENERATES, 2);
             }
-         } else {
-            world.setBlockMetadataWithNotify(x, y, z, MASK_HAS_RESIN | MASK_REGENERATES, 2);
          }
-      }
    }
 
 }
