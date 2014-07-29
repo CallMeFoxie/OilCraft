@@ -6,6 +6,7 @@ import cz.ondraster.oilcraft.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
@@ -38,6 +39,9 @@ public class RubberWood extends Block {
 
    @SideOnly(Side.CLIENT)
    public IIcon getIcon(int side, int meta) {
+      if (side == 0 || side == 1)
+         return Blocks.log.getIcon(side, 0);
+
       if ((meta & MASK_HAS_RESIN) != 0)
          return iconRubberTap;
       return blockIcon;
