@@ -20,14 +20,12 @@ public class References {
       public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + "_block_machine_casinght";
       public static final String BLOCKELECTRICFIREBOXMJ = MODID + "_block_machine_electric_firebox";
-      public static final String BLOCKWINDOW = MODID + "_block_machine_window";
       public static final String BLOCKMETER = MODID + "_block_machine_meter";
       public static final String BLOCKSOLIDFIREBOX = MODID + "_block_machine_solid_firebox";
       public static final String TABNAME = MODID + "_tabname";
       public static final String BLOCKVALVE = MODID + "_block_machine_valve";
       public static final String BLOCKVALVEHT = MODID + "_block_machine_valveht";
       public static final String FLUIDHYDROGEN = MODID + "_hydrogen";
-      public static final String BUCKETHYDROVEN = MODID + "_bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + "_matches";
       public static final String ITEMWRENCH = MODID + "_wrench";
       public static final String CONTROLLERHEATER = MODID + "_controller_heater";
@@ -90,14 +88,10 @@ public class References {
       public static final String BLOCKMACHINECASING = MODID + ":machine_casing";
       public static final String BLOCKMACHINECASINGHT = MODID + ":machine_casinght";
       public static final String BLOCKELECTRICFIREBOXMJ = MODID + ":machine_electric_firebox";
-      public static final String BLOCKWINDOW = MODID + ":machine_window";
       public static final String BLOCKMETER = MODID + ":machine_meter";
       public static final String BLOCKSOLIDFIREBOX = MODID + ":machine_solid_firebox";
       public static final String BLOCKVALVE = MODID + ":machine_valve";
       public static final String BLOCKVALVEHT = MODID + ":machine_valveht";
-      public static final String FLUIDHYDROGENFLOWING = MODID + ":fluid_hydrogen_flowing";
-      public static final String FLUIDHYDROGENSTILL = MODID + ":fluid_hydrogen_still";
-      public static final String BUCKETHYDROGEN = MODID + ":bucket_hydrogen";
       public static final String ITEMMATCHES = MODID + ":matches";
       public static final String CONTROLLERHEATER = MODID + ":machine_heater";
       public static final String VALVEOUTLET = MODID + ":machine_valve_export";
@@ -149,8 +143,6 @@ public class References {
       public static final String ENTITYGASPROC = MODID + "_gasproc_te";
       public static final String ENTITYHYDROTREATER = MODID + "_hydrotreater_te";
       public static final String ENTITYCROCKER = MODID + "_crocker_te";
-      public static final String ENTITYCOKER = MODID + "_coker_te";
-      public static final String ENTITYASPHALT = MODID + "_asphalt_te";
       public static final String ENTITYDISTILLATOR = MODID + "_distillator_te";
       public static final String FIREBOXSOLID = MODID + "_firebox_solid";
       public static final String FIREBOXELECTRICMJ = MODID + "_firebox_electric";
@@ -158,15 +150,5 @@ public class References {
       public static final String ENTITYASPHALTBLOWER = MODID + "_asphalt_blower_te";
       public static final String ENTITYCATALYTICREFORMER = MODID + "_catalytic_reformer_te";
       public static final String ENTITYFIREBOXEU = MODID + "_firebox_eu_te";
-   }
-
-   public class FactoryControllers {
-      public static final int MEROXTREATER = 0;
-      public static final int GASPROC = 1;
-      public static final int HYDROTREATER = 2;
-      public static final int CROCKER = 3;
-      public static final int COKER = 4;
-      public static final int ASPHALT = 5;
-      public static final int DISTILLATOR = 6;
    }
 }
