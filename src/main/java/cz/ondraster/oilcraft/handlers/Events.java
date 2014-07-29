@@ -5,7 +5,7 @@ import cpw.mods.fml.common.eventhandler.Event;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.fluids.BlockFluid;
-import cz.ondraster.oilcraft.worldgen.RubberTree;
+import cz.ondraster.oilcraft.worldgen.RubberTreeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -53,7 +53,7 @@ public class Events {
       int rand = random.nextInt(10);
 
       if (rand == 0) {
-         RubberTree.growTree(event.world, event.x, event.y, event.z, random);
+         RubberTreeGenerator.growTree(event.world, event.x, event.y, event.z, random);
       }
 
       event.setResult(Event.Result.ALLOW);

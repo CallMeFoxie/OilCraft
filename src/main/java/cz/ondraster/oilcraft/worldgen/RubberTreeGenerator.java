@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
-public class RubberTree implements IWorldGenerator {
+public class RubberTreeGenerator implements IWorldGenerator {
 
    public static boolean growTree(World world, int x, int y, int z, Random random) {
       int height = random.nextInt(2) + 4;
@@ -44,11 +44,11 @@ public class RubberTree implements IWorldGenerator {
    }
 
    public static boolean setBlockIfAir(World world, int x, int y, int z, Block newBlock) {
-      if (world.isAirBlock(x, y, z) || world.getBlock(x, y, z) == OilBlocks.rubberSapling) {
-         world.setBlock(x, y, z, newBlock);
-         return true;
-      }
-      return false;
+      //if (world.isAirBlock(x, y, z) || world.getBlock(x, y, z) == OilBlocks.rubberSapling) {
+      world.setBlock(x, y, z, newBlock);
+      return true;
+      //}
+      //return false;
    }
 
    public boolean generate(World world, Random random, int x, int z) {

@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.blocks;
 
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
-import cz.ondraster.oilcraft.worldgen.RubberTree;
+import cz.ondraster.oilcraft.worldgen.RubberTreeGenerator;
 import net.minecraft.block.BlockBush;
 import net.minecraft.world.World;
 
@@ -20,7 +20,7 @@ public class RubberSapling extends BlockBush {
    @Override
    public void updateTick(World world, int x, int y, int z, Random random) {
       if (random.nextInt(3) == 0) {
-         RubberTree.growTree(world, x, y, z, random);
+         RubberTreeGenerator.growTree(world, x, y, z, random);
       }
    }
 }

@@ -11,8 +11,10 @@ import cz.ondraster.oilcraft.factory.multiblock.MultiblockPart;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityController;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityPart;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityPartWithInventory;
+import cz.ondraster.oilcraft.worldgen.OilGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,6 +22,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+
+import java.util.Random;
 
 public class DebugTool extends Item {
    public DebugTool() {
@@ -75,6 +79,10 @@ public class DebugTool extends Item {
       if (te instanceof IInventory) {
          IInventory inv = (IInventory) te;
          player.addChatComponentMessage(new ChatComponentText("Inventories: " + inv.getSizeInventory()));
+      }
+
+      if (block == Blocks.diamond_block) {
+         OilGenerator.generateOil(world, x, z, new Random());
       }
 
 

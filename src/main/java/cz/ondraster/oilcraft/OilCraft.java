@@ -15,7 +15,8 @@ import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.handlers.Events;
 import cz.ondraster.oilcraft.items.OilItems;
 import cz.ondraster.oilcraft.network.Network;
-import cz.ondraster.oilcraft.worldgen.RubberTree;
+import cz.ondraster.oilcraft.worldgen.OilGenerator;
+import cz.ondraster.oilcraft.worldgen.RubberTreeGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = References.MODID, version = References.VERSION, name = References.MODNAME)
@@ -60,7 +61,8 @@ public class OilCraft {
       // compatibility with other mods
       CompatibilityBase.init();
 
-      GameRegistry.registerWorldGenerator(new RubberTree(), 10);
+      GameRegistry.registerWorldGenerator(new RubberTreeGenerator(), 10);
+      GameRegistry.registerWorldGenerator(new OilGenerator(), 1);
 
    }
 
