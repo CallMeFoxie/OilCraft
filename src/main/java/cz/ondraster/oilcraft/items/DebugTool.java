@@ -35,6 +35,7 @@ public class DebugTool extends Item {
       Block block = world.getBlock(x, y, z);
       int meta = world.getBlockMetadata(x, y, z);
       TileEntity te = world.getTileEntity(x, y, z);
+      player.addChatComponentMessage(new ChatComponentText("Block: " + block.getUnlocalizedName() + ", meta: " + meta + ", has TE: " + (te != null ? "yes" : "no")));
       if (block instanceof BlockPipe) {
          EntityPipe pipe = (EntityPipe) world.getTileEntity(x, y, z);
          if (pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid == null)

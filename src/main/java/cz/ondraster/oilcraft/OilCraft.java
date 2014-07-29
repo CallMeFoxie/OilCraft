@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.client.gui.GuiHandlers;
 import cz.ondraster.oilcraft.compatibility.CompatibilityBase;
@@ -14,6 +15,7 @@ import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.handlers.Events;
 import cz.ondraster.oilcraft.items.OilItems;
 import cz.ondraster.oilcraft.network.Network;
+import cz.ondraster.oilcraft.worldgen.RubberTree;
 import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = References.MODID, version = References.VERSION, name = References.MODNAME)
@@ -57,6 +59,8 @@ public class OilCraft {
 
       // compatibility with other mods
       CompatibilityBase.init();
+
+      GameRegistry.registerWorldGenerator(new RubberTree(), 10);
 
    }
 

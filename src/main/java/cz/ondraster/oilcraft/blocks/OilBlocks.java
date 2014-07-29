@@ -15,6 +15,10 @@ public class OilBlocks {
    public static Block oiljackPipe;
    public static Block blockActualPipe;
 
+   public static Block rubberWood;
+   public static Block rubberLeaf;
+   public static Block rubberSapling;
+
 
    public static void init() {
       oiljack = new BlockOiljack();
@@ -30,5 +34,14 @@ public class OilBlocks {
 
       blockActualPipe = new BlockActualPipe();
       Registrator.registerBlock(blockActualPipe);
+
+      rubberWood = new RubberWood();
+      Registrator.registerBlock(rubberWood);
+
+      rubberLeaf = new RubberLeaf();
+      Registrator.registerBlock(rubberLeaf);
+
+      rubberSapling = new RubberSapling();
+      Registrator.registerBlock(rubberSapling);
    }
 }
