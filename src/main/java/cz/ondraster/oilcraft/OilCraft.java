@@ -30,12 +30,6 @@ public class OilCraft {
 
    @Mod.EventHandler
    public void preinit(FMLPreInitializationEvent event) {
-   }
-
-
-   @Mod.EventHandler
-   public void init(FMLInitializationEvent event) {
-
       creativeTab = new CreativeTabOilCraft();
 
 
@@ -56,6 +50,12 @@ public class OilCraft {
       // add recipes
       FactoryBlocks.addFactoryRecipes();
       Recipes.addRecipes();
+
+   }
+
+
+   @Mod.EventHandler
+   public void init(FMLInitializationEvent event) {
 
       // compatibility with other mods
       CompatibilityBase.init();
