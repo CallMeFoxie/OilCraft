@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.fluids;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
-import cz.ondraster.oilcraft.client.OilMaterials;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -50,7 +50,7 @@ public class Fluids {
 
 
    public static void init() {
-      fluidCrudeOil = new Fluid(References.UnlocalizedNames.FLUIDCRUDEOIL);
+      fluidCrudeOil = new Fluid(References.UnlocalizedNames.FLUIDCRUDEOIL).setDensity(800).setViscosity(1500);
       FluidRegistry.registerFluid(fluidCrudeOil);
       fluidHydrogen = new Fluid(References.UnlocalizedNames.FLUIDHYDROGEN).setGaseous(true);
       FluidRegistry.registerFluid(fluidHydrogen);
@@ -101,13 +101,13 @@ public class Fluids {
       fluidGas = new Fluid(References.UnlocalizedNames.FLUIDGAS);
       FluidRegistry.registerFluid(fluidGas);
 
-      blockFluidCrudeOil = new BlockFluid(fluidCrudeOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDCRUDEOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
+      blockFluidCrudeOil = new BlockFluid(fluidCrudeOil, Material.water, References.UnlocalizedNames.FLUIDCRUDEOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
       Registrator.registerBlock(blockFluidCrudeOil);
       /*blockFluidHydrogen = new BlockFluid(fluidHydrogen, OilMaterials.materialHydrogen, References.UnlocalizedNames.FLUIDHYDROGEN, References.Textures.FLUIDHYDROGENSTILL, References.Textures.FLUIDHYDROGENFLOWING);
       Registrator.registerBlock(blockFluidHydrogen);
       blockFluidHeatedOil = new BlockFluid(fluidHeatedOil, OilMaterials.materialOil, References.UnlocalizedNames.FLUIDHEATEDOIL, References.Textures.FLUIDCRUDEOILSTILL, References.Textures.FLUIDCRUDEOILFLOWING);
       Registrator.registerBlock(blockFluidHeatedOil);*/
-      blockFluidAsphalt = new BlockFluid(fluidAsphalt, OilMaterials.materialAsphalt, References.UnlocalizedNames.FLUIDASPHALT, References.Textures.FLUIDASPHALTSTILL, References.Textures.FLUIDASPHALTFLOWING);
+      blockFluidAsphalt = new BlockFluid(fluidAsphalt, Material.water, References.UnlocalizedNames.FLUIDASPHALT, References.Textures.FLUIDASPHALTSTILL, References.Textures.FLUIDASPHALTFLOWING);
       Registrator.registerBlock(blockFluidAsphalt);
 
    }
