@@ -76,6 +76,7 @@ public class References {
       public static final String RESINEXTRACTOR = MODID + "_resin_extractor";
       public static final String ITEMRUBBERBAR = MODID + "_rubber_bar";
       public static final String RUBBERWOOD = MODID + "_rubber_wood";
+      public static final String STEELCOMPOUND = MODID + "_steel_compound";
    }
 
    public class Textures {
@@ -134,6 +135,7 @@ public class References {
       public static final String ITEMSTEELINGOT = MODID + ":steel_ingot";
       public static final String ITEMHEATINGCOIL = MODID + ":heating_coil";
       public static final String ITEMRUBBERBAR = MODID + ":rubber_bar";
+      public static final String STEELCOMPOUND = MODID + ":steel_compound";
    }
 
    public class Entities {
