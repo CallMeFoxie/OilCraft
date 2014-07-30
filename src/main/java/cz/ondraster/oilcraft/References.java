@@ -75,6 +75,7 @@ public class References {
       public static final String RUBBERSAPLING = MODID + "_rubber_sapling";
       public static final String RESINEXTRACTOR = MODID + "_resin_extractor";
       public static final String ITEMRUBBERBAR = MODID + "_rubber_bar";
+      public static final String RUBBERWOOD = MODID + "_rubber_wood";
    }
 
    public class Textures {

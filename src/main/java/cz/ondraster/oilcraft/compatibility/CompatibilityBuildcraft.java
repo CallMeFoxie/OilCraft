@@ -19,5 +19,7 @@ public class CompatibilityBuildcraft extends CompatibilityBase {
             new MultiblockController.ProcessingFluid(
                   new FluidStack[]{new FluidStack(FluidRegistry.getFluid("oil"), 100)},
                   new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)}));
+
+      // TODO - recipe FireboxMJ
    }
 }

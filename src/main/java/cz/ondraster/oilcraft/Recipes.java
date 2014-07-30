@@ -5,6 +5,7 @@ import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
 import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -42,8 +43,11 @@ public class Recipes {
       OreDictionary.registerOre("gasketRubber", itemRubberGasket);
 
 
-      GameRegistry.addSmelting(new ItemStack(OilItems.resinExtractor, 1, 10), new ItemStack(Recipes.itemRubberBar), 0);
-      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Recipes.itemRubberGasket, 2), "rrr", "r r", "rrr", 'r', "barRubber"));
+      // supplier items
+      GameRegistry.addSmelting(new ItemStack(OilItems.resinExtractor, 1, 10), new ItemStack(itemRubberBar), 0);
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemRubberGasket, 2), "rrr", "r r", "rrr", 'r', "barRubber"));
+      // TODO - how to get steel
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(OilItems.resinExtractor), " s ", "tst", "iii", 's', Items.stick, 't', Items.string, 'i', "ingotIron"));
 
       // mining
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemOiljackBase), " x ", " x ", " x ", 'x', "ingotIron"));
@@ -60,7 +64,7 @@ public class Recipes {
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockHatch), new ItemStack(FactoryBlocks.blockMachineCasing), new ItemStack(Blocks.chest)));
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockValve), new ItemStack(FactoryBlocks.blockMachineCasing), new ItemStack(itemRubberGasket), new ItemStack(OilBlocks.pipe)));
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockValveHT), new ItemStack(FactoryBlocks.blockMachineCasingHT), new ItemStack(itemRubberGasket), new ItemStack(OilBlocks.pipe)));
-
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.blockSolidFirebox), "iii", "shs", "sss", 'i', "ingotIron", 's', "stone", 'h', itemHeatingCoil));
 
       // controller parts
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemHeatingCoil), "ggg", "gsg", "ggg", 'g', "ingotGold", 's', "ingotSteel"));
@@ -68,6 +72,15 @@ public class Recipes {
       // controllers
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerAsphaltBlower), "sss", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', "ingotGold"));
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerHeater), "sss", "ghg", "sss", 's', "ingotSteel", 'h', itemHeatingCoil, 'g', "gasketRubber"));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerCatalyticReformer), "gsg", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', "ingotGold"));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerCrocker), "sgs", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', "ingotGold"));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerDistillator), "sss", "sos", "sss", 's', "ingotSteel", 'o', "ingotGold"));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerGasProcessor), "s s", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', "ingotGold"));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerHydrotreater), "gsg", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', Blocks.gold_block));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.controllerMeroxTreater), "oso", "gog", "sss", 's', "ingotSteel", 'g', "gasketRubber", 'o', "ingotGold"));
+
+      // other stuff
+      // TODO - Matches
 
    }
 }
