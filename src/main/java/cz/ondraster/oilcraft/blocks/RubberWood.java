@@ -30,6 +30,16 @@ public class RubberWood extends Block {
       setTickRandomly(true);
    }
 
+   public static boolean scoopResin(World world, int x, int y, int z) {
+      int meta = world.getBlockMetadata(x, y, z);
+      if ((meta & MASK_HAS_RESIN) == 0)
+         return false;
+
+      meta &= ~MASK_HAS_RESIN;
+      world.setBlockMetadataWithNotify(x, y, z, meta, 2);
+      return true;
+   }
+
    @Override
    @SideOnly(Side.CLIENT)
    public void registerBlockIcons(IIconRegister reg) {

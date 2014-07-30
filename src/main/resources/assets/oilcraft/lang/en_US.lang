@@ -48,3 +48,5 @@ item.oilcraft_oiljack_base.name=Oiljack Leg
 item.oilcraft_rubber_gasket.name=Rubber Gasket
 item.oilcraft_steel_ingot.name=Steel ingot
 item.oilcraft_heating_coil.name=Heating coil
+item.oilcraft_resin_extractor.name=Resin Extractor
+tile.oilcraft_rubber_sapling.name=Rubber Sapling

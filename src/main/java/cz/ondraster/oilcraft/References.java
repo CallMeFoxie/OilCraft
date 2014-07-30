@@ -73,6 +73,8 @@ public class References {
       public static final String ITEMHEATINGCOIL = MODID + "_heating_coil";
       public static final String RUBBERLEAF = MODID + "_rubber_leaf";
       public static final String RUBBERSAPLING = MODID + "_rubber_sapling";
+      public static final String RESINEXTRACTOR = MODID + "_resin_extractor";
+      public static final String ITEMRUBBERBAR = MODID + "_rubber_bar";
    }
 
    public class Textures {
@@ -115,6 +117,7 @@ public class References {
       public static final String RUBBERTAP = MODID + ":rubber_tap";
       public static final String RUBBERWOOD = MODID + ":rubber_wood";
       public static final String RUBBERSAPLING = MODID + ":rubber_sapling";
+      public static final String RESINEXTRACTOR = MODID + ":resin_extractor";
    }
 
    public class Icons {
@@ -129,6 +132,7 @@ public class References {
       public static final String ITEMRUBBERGASKET = MODID + ":rubber_gasket";
       public static final String ITEMSTEELINGOT = MODID + ":steel_ingot";
       public static final String ITEMHEATINGCOIL = MODID + ":heating_coil";
+      public static final String ITEMRUBBERBAR = MODID + ":rubber_bar";
    }
 
    public class Entities {
