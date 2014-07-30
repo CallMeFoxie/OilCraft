@@ -5,6 +5,7 @@ import cz.ondraster.oilcraft.blocks.OilBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -64,7 +65,9 @@ public class RubberTreeGenerator implements IWorldGenerator {
 
    @Override
    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-      if (random.nextInt(10) == 0)
-         generate(world, random, chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16));
+      int x = chunkX * 16 + random.nextInt(16);
+      int z = chunkZ * 16 + random.nextInt(16);
+      if (random.nextInt(30) == 0 && BiomeDictionary.isBiomeOfType(world.getWorldChunkManager().getBiomeGenAt(x, z), BiomeDictionary.Type.FOREST))
+         generate(world, random, x, z);
    }
 }

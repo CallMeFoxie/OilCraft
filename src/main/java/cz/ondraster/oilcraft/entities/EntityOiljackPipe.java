@@ -56,7 +56,7 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
          return true;
       } else {
          Block block = worldObj.getBlock(xCoord, yCoord - depth - 1, zCoord);
-         if (block == Blocks.air) {
+         if (block == Blocks.air || block.isReplaceable(worldObj, xCoord, yCoord - depth - 1, zCoord)) {
             depth++;
             worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
             worldObj.setBlock(xCoord, yCoord - depth, zCoord, OilBlocks.blockActualPipe);
