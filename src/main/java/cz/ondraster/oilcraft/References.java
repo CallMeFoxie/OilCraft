@@ -105,8 +105,8 @@ public class References {
       public static final String BLOCKHATCH = MODID + ":machine_hatch";
       public static final String CONTROLLERDISTILLATOR = MODID + ":machine_distillator";
       public static final String CONTROLLERASPHALTBLOWER = MODID + ":machine_asphalt_blower";
-      public static final String FLUIDASPHALTSTILL = MODID + ":fluid_asphalt_still";
-      public static final String FLUIDASPHALTFLOWING = MODID + ":fluid_asphalt_flowing";
+      public static final String FLUIDASPHALTSTILL = MODID + ":fluid_asphalt";
+      public static final String FLUIDASPHALTFLOWING = MODID + ":fluid_asphalt";
       public static final String BUCKETASPHALT = MODID + ":bucket_asphalt";
       public static final String VALVEINLET = MODID + ":machine_valve";
       public static final String VALVEINLETHT = MODID + ":machine_valve_ht";

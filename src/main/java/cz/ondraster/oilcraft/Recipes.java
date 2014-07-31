@@ -70,7 +70,7 @@ public class Recipes {
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockHatch), new ItemStack(FactoryBlocks.blockMachineCasing), new ItemStack(Blocks.chest)));
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockValve), new ItemStack(FactoryBlocks.blockMachineCasing), "gasketRubber", new ItemStack(OilBlocks.pipe)));
       GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(FactoryBlocks.blockValveHT), new ItemStack(FactoryBlocks.blockMachineCasingHT), "gasketRubber", new ItemStack(OilBlocks.pipe)));
-      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.blockSolidFirebox), "iii", "shs", "sss", 'i', "ingotIron", 's', "stone", 'h', itemHeatingCoil));
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.blockSolidFirebox), "iii", "shs", "sss", 'i', "ingotIron", 's', "ingotSteel", 'h', itemHeatingCoil));
 
       // controller parts
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemHeatingCoil), "ggg", "gsg", "ggg", 'g', "ingotGold", 's', "ingotSteel"));
