@@ -29,6 +29,12 @@ public abstract class MultiblockPart extends BlockContainer {
    //   super(Material.iron);
    //}
 
+   public static ForgeDirection getDirection(int meta) {
+      meta &= 0x3;
+      meta += 2;
+      return ForgeDirection.getOrientation(meta);
+   }
+
    public void onBlockPreDestroy(World world, int x, int y, int z, int meta) {
       notifyController(world, x, y, z);
    }
@@ -76,12 +82,6 @@ public abstract class MultiblockPart extends BlockContainer {
       }
 
       return false;
-   }
-
-   public ForgeDirection getDirection(int meta) {
-      meta &= 0x3;
-      meta += 2;
-      return ForgeDirection.getOrientation(meta);
    }
 
    public enum RotationsAllowed {

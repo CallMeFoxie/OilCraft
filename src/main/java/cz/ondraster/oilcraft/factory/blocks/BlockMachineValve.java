@@ -29,7 +29,7 @@ public class BlockMachineValve extends MultiblockPartEntity {
       return (meta & 0x4) != 0;
    }
 
-   public void toggleDirection(World world, int x, int y, int z) {
+   public static void toggleDirection(World world, int x, int y, int z) {
       int meta = world.getBlockMetadata(x, y, z);
       if ((meta & 0x4) != 0)
          meta &= 0x3;
