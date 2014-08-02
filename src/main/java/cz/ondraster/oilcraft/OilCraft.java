@@ -10,7 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.client.gui.GuiHandlers;
 import cz.ondraster.oilcraft.compatibility.CompatibilityBase;
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import cz.ondraster.oilcraft.handlers.Events;
 import cz.ondraster.oilcraft.items.OilItems;

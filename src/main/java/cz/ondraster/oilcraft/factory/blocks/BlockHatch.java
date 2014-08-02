@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockPartEntity;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityHatch;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +13,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 public class BlockHatch extends MultiblockPartEntity {
-   protected BlockHatch() {
+   public BlockHatch() {
       super(RotationsAllowed.SIDEONLY);
       setBlockTextureName(References.Textures.BLOCKHATCH);
       setBlockName(References.UnlocalizedNames.BLOCKHATCH);

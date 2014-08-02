@@ -77,6 +77,7 @@ public class References {
       public static final String ITEMRUBBERBAR = MODID + "_rubber_bar";
       public static final String RUBBERWOOD = MODID + "_rubber_wood";
       public static final String STEELCOMPOUND = MODID + "_steel_compound";
+      public static final String BLOCKELECTRICFIREBOXRF = MODID + "_block_firebox_rf";
    }
 
    public class Textures {
@@ -152,10 +153,11 @@ public class References {
       public static final String ENTITYCROCKER = MODID + "_crocker_te";
       public static final String ENTITYDISTILLATOR = MODID + "_distillator_te";
       public static final String FIREBOXSOLID = MODID + "_firebox_solid";
-      public static final String FIREBOXELECTRICMJ = MODID + "_firebox_electric";
+      public static final String ENTITYFIREBOXMJ = MODID + "_firebox_electric";
       public static final String HATCH = MODID + "_hatch";
       public static final String ENTITYASPHALTBLOWER = MODID + "_asphalt_blower_te";
       public static final String ENTITYCATALYTICREFORMER = MODID + "_catalytic_reformer_te";
       public static final String ENTITYFIREBOXEU = MODID + "_firebox_eu_te";
+      public static final String ENTITYFIREBOXRF = MODID + "_firebox_eu_rf";
    }
 }

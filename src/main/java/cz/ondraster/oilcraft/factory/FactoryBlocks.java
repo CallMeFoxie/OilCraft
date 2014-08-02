@@ -1,7 +1,8 @@
-package cz.ondraster.oilcraft.factory.blocks;
+package cz.ondraster.oilcraft.factory;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.factory.blocks.*;
 import cz.ondraster.oilcraft.factory.controllers.*;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.tileentities.*;
@@ -16,6 +17,7 @@ public class FactoryBlocks {
    public static Block blockMachineCasingHT; // HT for High Temperature
    public static Block blockElectricFireboxMJ;
    public static Block blockElectricFireboxEU;
+   public static Block blockElectricFireboxRF;
    public static Block blockSolidFirebox;
    //public static Block blockWindow;
    public static Block blockMeter;
@@ -38,7 +40,9 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityValve.class, References.Entities.ENTITYVALVE);
       Registrator.registerTileEntity(TileEntityValveHT.class, References.Entities.ENTITYVALVEHT);
       Registrator.registerTileEntity(TileEntityPart.class, References.Entities.ENTITYBASE);
-      Registrator.registerTileEntity(TileEntityFireboxMJ.class, References.Entities.FIREBOXELECTRICMJ);
+      Registrator.registerTileEntity(TileEntityFireboxMJ.class, References.Entities.ENTITYFIREBOXMJ);
+      Registrator.registerTileEntity(TileEntityFireboxEU.class, References.Entities.ENTITYFIREBOXEU);
+      Registrator.registerTileEntity(TileEntityFireboxRF.class, References.Entities.ENTITYFIREBOXRF);
       Registrator.registerTileEntity(TileEntityFireboxSolid.class, References.Entities.FIREBOXSOLID);
       Registrator.registerTileEntity(TileEntityHatch.class, References.Entities.HATCH);
 
@@ -58,6 +62,9 @@ public class FactoryBlocks {
 
       blockElectricFireboxEU = new BlockMachineFireboxEU();
       Registrator.registerBlock(blockElectricFireboxEU);
+
+      blockElectricFireboxRF = new BlockMachineFireboxRF();
+      Registrator.registerBlock(blockElectricFireboxRF);
 
       blockSolidFirebox = new BlockMachineFireboxSolid();
       blockSolidFirebox.setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
@@ -114,7 +121,6 @@ public class FactoryBlocks {
       Registrator.registerTileEntity(TileEntityCrocker.class, References.Entities.ENTITYCROCKER);
       Registrator.registerTileEntity(TileEntityHydrotreater.class, References.Entities.ENTITYHYDROTREATER);
       Registrator.registerTileEntity(TileEntityCatalyticReformer.class, References.Entities.ENTITYCATALYTICREFORMER);
-      Registrator.registerTileEntity(TileEntityFireboxEU.class, References.Entities.ENTITYFIREBOXEU);
    }
 
    public static void addFactoryRecipes() {

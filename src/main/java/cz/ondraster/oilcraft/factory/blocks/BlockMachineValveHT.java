@@ -3,6 +3,7 @@ package cz.ondraster.oilcraft.factory.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityValveHT;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;

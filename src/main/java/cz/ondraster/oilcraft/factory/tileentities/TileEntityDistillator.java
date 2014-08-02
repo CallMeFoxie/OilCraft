@@ -1,6 +1,6 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

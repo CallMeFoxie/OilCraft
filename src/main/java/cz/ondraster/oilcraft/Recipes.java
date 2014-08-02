@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cz.ondraster.oilcraft.blocks.OilBlocks;
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.items.OilItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

@@ -11,6 +11,9 @@ public abstract class CompatibilityBase {
 
       compatIC = new CompatibilityIC();
       compatIC.addRecipes();
+
+      compatRF = new CompatibilityRF();
+      compatRF.addRecipes();
    }
 
    // has to be overriden, but with @Optional.Method it will be stripped and run this empty implementation instead :]

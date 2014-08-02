@@ -3,7 +3,7 @@ package cz.ondraster.oilcraft.factory.controllers;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.References;
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityHeater;
 import net.minecraft.tileentity.TileEntity;

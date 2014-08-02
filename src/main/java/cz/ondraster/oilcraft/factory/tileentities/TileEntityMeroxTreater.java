@@ -1,7 +1,7 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;

@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockPartEntity;
 import cz.ondraster.oilcraft.factory.tileentities.TileEntityValve;
 import net.minecraft.client.renderer.texture.IIconRegister;

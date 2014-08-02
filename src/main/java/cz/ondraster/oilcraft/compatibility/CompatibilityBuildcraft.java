@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.compatibility;
 
 import buildcraft.api.fuels.IronEngineFuel;
 import cpw.mods.fml.common.Optional;
-import cz.ondraster.oilcraft.factory.blocks.FactoryBlocks;
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.fluids.Fluids;
 import net.minecraftforge.fluids.FluidRegistry;
