@@ -2,11 +2,14 @@ package cz.ondraster.oilcraft.compatibility;
 
 import buildcraft.api.fuels.IronEngineFuel;
 import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
 import cz.ondraster.oilcraft.fluids.Fluids;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class CompatibilityBuildcraft extends CompatibilityBase {
    @Override
@@ -20,6 +23,8 @@ public class CompatibilityBuildcraft extends CompatibilityBase {
                   new FluidStack[]{new FluidStack(FluidRegistry.getFluid("oil"), 100)},
                   new FluidStack[]{new FluidStack(Fluids.fluidHeatedOil, 100)}));
 
-      // TODO - recipe FireboxMJ
+      GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.blockElectricFireboxMJ), "iii", "shs", "iii", 'i', "ingotIron", 's', "ingotSteel", 'h', "gearGold"));
+
+
    }
 }
