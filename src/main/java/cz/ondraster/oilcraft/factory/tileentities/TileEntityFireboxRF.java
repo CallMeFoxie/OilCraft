@@ -30,9 +30,9 @@ public class TileEntityFireboxRF extends TileEntityFirebox implements IEnergyHan
    @Override
    public void updateEntity() {
       super.updateEntity();
-      if (storage.getEnergyStored() >= 1 && storedPower + 20 <= POWER_CAPACITY) {
+      if (storage.getEnergyStored() >= 10 && storedPower + 20 <= POWER_CAPACITY) {
          storedPower += 20;
-         storage.extractEnergy(20, false);
+         storage.extractEnergy(10, false);
       }
    }
 

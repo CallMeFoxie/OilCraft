@@ -1,8 +1,8 @@
 package cz.ondraster.oilcraft.factory.tileentities;
 
+import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import cz.ondraster.oilcraft.factory.IMachineRequiresHeat;
 import cz.ondraster.oilcraft.factory.blocks.BlockMachineValve;
-import cz.ondraster.oilcraft.factory.FactoryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 public class TileEntityHeater extends TileEntityController implements IMachineRequiresHeat {
    private static final int PROCESS_MAX = 200;
    private static final int TEMPERATURE_REQUIRED = 480;
-   private static final int TEMPERATURE_MAX = 500;
+   private static final int TEMPERATURE_MAX = 520;
 
    private int temperature = 0;
 
@@ -192,7 +192,16 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
 
    @Override
    public boolean canWork() {
-      return temperature >= TEMPERATURE_REQUIRED;
+      boolean retval = false;
+      if (temperature >= TEMPERATURE_REQUIRED) {
+         retval = true;
+      }
+      if (temperature > 0)
+         temperature--;
+      else
+         temperature = 0;
+
+      return retval;
    }
 
    @Override
@@ -202,7 +211,6 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
 
    @Override
    public void afterWork(boolean success) {
-      temperature--;
    }
 
    @Override

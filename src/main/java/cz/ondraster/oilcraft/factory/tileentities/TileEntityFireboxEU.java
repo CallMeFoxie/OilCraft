@@ -60,9 +60,9 @@ public class TileEntityFireboxEU extends TileEntityFirebox implements IEnergySin
          MinecraftForge.EVENT_BUS.post(event);
          notified = true;
       }
-      if (EUstored >= 3 && storedPower + 20 <= POWER_CAPACITY) {
+      if (EUstored >= 2.5 && storedPower + 20 <= POWER_CAPACITY) {
          storedPower += 20;
-         EUstored -= 3;
+         EUstored -= 2.5;
       }
       super.updateEntity();
    }
