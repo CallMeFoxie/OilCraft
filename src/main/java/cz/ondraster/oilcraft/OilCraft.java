@@ -31,6 +31,7 @@ public class OilCraft {
 
    @Mod.EventHandler
    public void preinit(FMLPreInitializationEvent event) {
+      Helper.logInfo("Hello!");
       creativeTab = new CreativeTabOilCraft();
 
 

@@ -11,6 +11,10 @@ public class Helper {
       FMLLog.warning("[" + References.MODNAME + "] " + message);
    }
 
+   public static void logInfo(String message) {
+      FMLLog.info("[" + References.MODNAME + "] " + message);
+   }
+
    public static boolean canMergeStacks(ItemStack a, ItemStack b) {
       if (a == null || b == null)
          return true;

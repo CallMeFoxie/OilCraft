@@ -14,6 +14,7 @@ public class CompatibilityIC extends CompatibilityBase {
    @Override
    @Optional.Method(modid = "IC2API")
    public void addRecipes() {
+      Helper.logInfo("[IC2 compat] Trying to load compatibility between OilCraft and IC2");
       Item x = GameData.getItemRegistry().getObject("IC2:itemRecipePart");
 
       if (x == null) {
@@ -25,6 +26,9 @@ public class CompatibilityIC extends CompatibilityBase {
       GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(FactoryBlocks.blockElectricFireboxEU), "iii", "shs", "iii", 'i', "ingotIron", 's', "ingotSteel", 'h', y));
 
       ic2.api.recipe.Recipes.semiFluidGenerator.addFluid(References.UnlocalizedNames.FLUIDGASOLINE, 2, 32);
+      ic2.api.recipe.Recipes.semiFluidGenerator.addFluid(References.UnlocalizedNames.FLUIDDIESEL, 1, 20);
+      ic2.api.recipe.Recipes.semiFluidGenerator.addFluid(References.UnlocalizedNames.FLUIDKEROSENE, 1, 24);
 
+      Helper.logInfo("[IC2 compat] Done!");
    }
 }
