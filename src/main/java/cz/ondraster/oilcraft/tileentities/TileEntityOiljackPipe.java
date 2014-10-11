@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.entities;
+package cz.ondraster.oilcraft.tileentities;
 
 import cz.ondraster.oilcraft.blocks.OilBlocks;
 import cz.ondraster.oilcraft.fluids.FluidTank;
@@ -13,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
-public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
+public class TileEntityOiljackPipe extends TileEntity implements IFluidHandler {
 
    public final static int MAXIMUM_SIZE = 2000;
    public final static int RANGE = 8;
@@ -22,7 +22,7 @@ public class EntityOiljackPipe extends TileEntity implements IFluidHandler {
    private FluidTank tank;
    private int ticksSinceOutput = 0;
 
-   public EntityOiljackPipe() {
+   public TileEntityOiljackPipe() {
       this.tank = new FluidTank(MAXIMUM_SIZE, Fluids.fluidCrudeOil);
    }
 

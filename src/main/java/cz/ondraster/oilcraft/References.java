@@ -31,6 +31,7 @@ public class References {
          public static final String RUBBERWOOD = MODID + "_rubber_wood";
          public static final String BLOCKELECTRICFIREBOXRF = MODID + "_block_firebox_rf";
          public static final String BLOCKINVISIBLE = MODID + "_block_invisible";
+         public static final String BLOCKINVISIBLEGENERATOR = MODID + "_block_invisible_generator";
       }
 
       public static final String FLUIDCRUDEOIL = MODID + "_crude_oil";
@@ -165,5 +166,6 @@ public class References {
       public static final String ENTITYCATALYTICREFORMER = MODID + "_catalytic_reformer_te";
       public static final String ENTITYFIREBOXEU = MODID + "_firebox_eu_te";
       public static final String ENTITYFIREBOXRF = MODID + "_firebox_eu_rf";
+      public static final String ENTITYGENERATOR = MODID + "_generator";
    }
 }

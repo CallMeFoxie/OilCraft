@@ -21,6 +21,7 @@ public class ModelOiljack extends ModelBase {
    ModelRenderer armConnect;
    ModelRenderer wheelLeft;
    ModelRenderer wheelRight;
+   ModelRenderer powerConnector;
 
    public ModelOiljack() {
       textureWidth = 128;
@@ -116,6 +117,12 @@ public class ModelOiljack extends ModelBase {
       wheelRight.setTextureSize(128, 128);
       wheelRight.mirror = true;
       setRotation(wheelRight, -0.7853982F, 0F, 0F);
+      powerConnector = new ModelRenderer(this, 32, 72);
+      powerConnector.addBox(-8F, -8F, -6F, 16, 16, 6);
+      powerConnector.setRotationPoint(0F, 16F, -34F);
+      powerConnector.setTextureSize(128, 128);
+      powerConnector.mirror = true;
+      setRotation(powerConnector, 0F, 0F, 0F);
    }
 
    public void render(float angle) {
@@ -180,6 +187,8 @@ public class ModelOiljack extends ModelBase {
 
       wheelLeft.render(renderDepth);
       wheelRight.render(renderDepth);
+
+      powerConnector.render(renderDepth);
    }
 
    private void setRotation(ModelRenderer model, float x, float y, float z) {

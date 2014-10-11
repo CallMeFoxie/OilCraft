@@ -3,7 +3,7 @@ package cz.ondraster.oilcraft.blocks;
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
-import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.tileentities.TileEntityPipe;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
@@ -19,22 +19,22 @@ public class BlockPipe extends BlockContainer {
       setBlockName(References.UnlocalizedNames.Blocks.BLOCKPIPE);
       setCreativeTab(OilCraft.creativeTab);
       setBlockTextureName(References.Icons.ICONPIPE);
-      Registrator.registerTileEntity(EntityPipe.class, References.Entities.ENTITYPIPE);
+      Registrator.registerTileEntity(TileEntityPipe.class, References.Entities.ENTITYPIPE);
    }
 
    @Override
    public TileEntity createNewTileEntity(World world, int p_149915_2_) {
-      return new EntityPipe();
+      return new TileEntityPipe();
    }
 
    private void updateBlockStatus(World world, int x, int y, int z) {
-      EntityPipe ourPipe = (EntityPipe) world.getTileEntity(x, y, z);
+      TileEntityPipe ourPipe = (TileEntityPipe) world.getTileEntity(x, y, z);
       for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
          if (world.getTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ) instanceof IFluidHandler) {
             TileEntity pipe = world.getTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
             if (pipe != null) {
-               if (pipe instanceof EntityPipe)
-                  ((EntityPipe) pipe).changeState(dir.getOpposite(), true);
+               if (pipe instanceof TileEntityPipe)
+                  ((TileEntityPipe) pipe).changeState(dir.getOpposite(), true);
 
                ourPipe.changeState(dir, true);
             }

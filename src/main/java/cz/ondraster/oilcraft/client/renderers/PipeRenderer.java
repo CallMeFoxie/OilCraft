@@ -3,7 +3,7 @@ package cz.ondraster.oilcraft.client.renderers;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.client.renderers.models.ModelPipeHalf;
 import cz.ondraster.oilcraft.client.renderers.models.ModelPipeMiddle;
-import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.tileentities.TileEntityPipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -32,7 +32,7 @@ public class PipeRenderer extends TileEntitySpecialRenderer {
 
       tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/" + References.Textures.BLOCKPIPE3D));
 
-      EntityPipe pipe = (EntityPipe) var1;
+      TileEntityPipe pipe = (TileEntityPipe) var1;
 
       if (pipe.isConnected(ForgeDirection.NORTH)) {
          //GL11.glRotatef();

@@ -1,4 +1,4 @@
-package cz.ondraster.oilcraft.entities;
+package cz.ondraster.oilcraft.tileentities;
 
 import cz.ondraster.oilcraft.Helper;
 import cz.ondraster.oilcraft.fluids.FluidTank;
@@ -15,7 +15,7 @@ import net.minecraftforge.fluids.IFluidHandler;
 
 import java.util.ArrayList;
 
-public class EntityPipe extends TileEntity implements IFluidHandler {
+public class TileEntityPipe extends TileEntity implements IFluidHandler {
    public static final int MAXMOVED = 500; // 500mB/10 ticks
    public int connections = 0;
    //public boolean hasDr = false;
@@ -28,7 +28,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
    int ticksSinceLastMove = 0;
    private boolean sucking;
 
-   public EntityPipe() {
+   public TileEntityPipe() {
       tank = new FluidTank(2000);
    }
 
@@ -124,7 +124,7 @@ public class EntityPipe extends TileEntity implements IFluidHandler {
          if (worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)) {
             for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
                TileEntity te = worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
-               if (te instanceof IFluidHandler && !(te instanceof EntityPipe)) {
+               if (te instanceof IFluidHandler && !(te instanceof TileEntityPipe)) {
                   IFluidHandler fluid = (IFluidHandler) te;
                   for (FluidTankInfo info : fluid.getTankInfo(dir)) {
                      if (info.fluid != null && info.fluid.getFluid() != null) {

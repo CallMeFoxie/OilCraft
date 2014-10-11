@@ -3,7 +3,7 @@ package cz.ondraster.oilcraft.items;
 import cz.ondraster.oilcraft.OilCraft;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.blocks.BlockPipe;
-import cz.ondraster.oilcraft.entities.EntityPipe;
+import cz.ondraster.oilcraft.tileentities.TileEntityPipe;
 import cz.ondraster.oilcraft.factory.IMachineRequiresHeat;
 import cz.ondraster.oilcraft.factory.IMachineRequiresPower;
 import cz.ondraster.oilcraft.factory.multiblock.MultiblockController;
@@ -41,7 +41,7 @@ public class DebugTool extends Item {
       TileEntity te = world.getTileEntity(x, y, z);
       player.addChatComponentMessage(new ChatComponentText("Block: " + block.getUnlocalizedName() + ", meta: " + meta + ", has TE: " + (te != null ? "yes" : "no")));
       if (block instanceof BlockPipe) {
-         EntityPipe pipe = (EntityPipe) world.getTileEntity(x, y, z);
+         TileEntityPipe pipe = (TileEntityPipe) world.getTileEntity(x, y, z);
          if (pipe.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid == null)
             player.addChatComponentMessage(new ChatComponentText("empty."));
          else

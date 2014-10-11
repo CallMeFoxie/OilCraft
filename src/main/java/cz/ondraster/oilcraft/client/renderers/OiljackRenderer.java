@@ -2,7 +2,7 @@ package cz.ondraster.oilcraft.client.renderers;
 
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.client.renderers.models.ModelOiljack;
-import cz.ondraster.oilcraft.entities.EntityOiljack;
+import cz.ondraster.oilcraft.tileentities.TileEntityOiljack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -22,7 +22,7 @@ public class OiljackRenderer extends TileEntitySpecialRenderer {
    @Override
    public void renderTileEntityAt(TileEntity var1, double x, double y, double z, float scale) {
 
-      ForgeDirection rotation = ((EntityOiljack) var1).getOrientation();
+      ForgeDirection rotation = ((TileEntityOiljack) var1).getOrientation();
 
       TextureManager tm = Minecraft.getMinecraft().getTextureManager();
 
@@ -38,7 +38,7 @@ public class OiljackRenderer extends TileEntitySpecialRenderer {
 
       tm.bindTexture(new ResourceLocation(References.MODID, "textures/blocks/" + References.Textures.BLOCKOILJACK3D));
 
-      EntityOiljack te = (EntityOiljack) var1;
+      TileEntityOiljack te = (TileEntityOiljack) var1;
 
       if (te.canWork())
          te.renderOffset += 4;
