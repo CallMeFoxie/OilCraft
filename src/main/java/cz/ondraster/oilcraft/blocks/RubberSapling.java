@@ -12,7 +12,7 @@ public class RubberSapling extends BlockBush {
    public RubberSapling() {
       super();
       this.setCreativeTab(OilCraft.creativeTab);
-      this.setBlockName(References.UnlocalizedNames.RUBBERSAPLING);
+      this.setBlockName(References.UnlocalizedNames.Blocks.RUBBERSAPLING);
       this.setBlockTextureName(References.Textures.RUBBERSAPLING);
       setTickRandomly(true);
    }

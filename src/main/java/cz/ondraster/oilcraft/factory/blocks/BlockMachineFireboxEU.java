@@ -18,7 +18,7 @@ public class BlockMachineFireboxEU extends MultiblockPart {
 
    public BlockMachineFireboxEU() {
       super(RotationsAllowed.SIDEONLY);
-      setBlockName(References.UnlocalizedNames.BLOCKELECTRICFIREBOXEU);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKELECTRICFIREBOXEU);
    }
 
    @Override

@@ -16,7 +16,7 @@ public class BlockPipe extends BlockContainer {
 
    public BlockPipe() {
       super(Material.anvil);
-      setBlockName(References.UnlocalizedNames.BLOCKPIPE);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKPIPE);
       setCreativeTab(OilCraft.creativeTab);
       setBlockTextureName(References.Icons.ICONPIPE);
       Registrator.registerTileEntity(EntityPipe.class, References.Entities.ENTITYPIPE);

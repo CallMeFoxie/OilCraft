@@ -24,12 +24,9 @@ public class TileEntityFirebox extends TileEntityPart {
 
       boolean temp = heat.increaseTemperature(1, false); // step
       if (temp && storedPower >= 20) {
-         heat.increaseTemperature(1, true);
+         heat.increaseTemperature(2, true);
          storedPower -= 20;
-      } else if (!temp && storedPower < 5)
-         heat.decreaseTemperature(1);
-
-
+      }
    }
 
    @Override

@@ -10,7 +10,7 @@ import java.util.Random;
 public class RubberLeaf extends BlockLeaves {
    public RubberLeaf() {
       setBlockTextureName(References.Textures.RUBBERLEAF);
-      setBlockName(References.UnlocalizedNames.RUBBERLEAF);
+      setBlockName(References.UnlocalizedNames.Blocks.RUBBERLEAF);
    }
 
    @Override

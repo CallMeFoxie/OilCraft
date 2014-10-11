@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 public class BlockOiljackPipe extends BlockContainer {
    protected BlockOiljackPipe() {
       super(Material.anvil);
-      setBlockName(References.UnlocalizedNames.BLOCKOILJACKPIPE);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKOILJACKPIPE);
       setCreativeTab(OilCraft.creativeTab);
       setBlockTextureName(References.Textures.BLOCKOILJACKPIPE);
       setBlockBounds(0f, 0f, 0f, 1f, 1f, 1f);

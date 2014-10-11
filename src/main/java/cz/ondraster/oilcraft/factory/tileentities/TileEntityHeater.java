@@ -196,17 +196,14 @@ public class TileEntityHeater extends TileEntityController implements IMachineRe
       if (temperature >= TEMPERATURE_REQUIRED) {
          retval = true;
       }
-      if (temperature > 0)
-         temperature--;
-      else
-         temperature = 0;
+      decreaseTemperature(1);
 
       return retval;
    }
 
    @Override
    public void beforeWork() {
-
+      //decreaseTemperature(1);
    }
 
    @Override

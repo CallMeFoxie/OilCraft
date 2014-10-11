@@ -47,14 +47,15 @@ group = "cz.ondraster.oilcraft" // http://maven.apache.org/guides/mini/guide-nam
 archivesBaseName = "OilCraft"
 
 minecraft {
-    version = "1.7.10-10.13.0.1180"
+    version = "1.7.10-10.13.1.1225"
     runDir = "eclipse/assets"
 }
 
 dependencies {
-    //compile "mcp.mobius.waila:Waila:1.5.2a"
-    compile "com.mod-buildcraft:buildcraft:6.0.17:dev"
-    compile 'net.industrial-craft:industrialcraft-2:2.2.540-experimental:api'
+    //compile "codechicken.NotEnoughItems:1.7.10-1.0.3.56"
+    //compile "mcp.mobius.waila:Waila:1.5.5_1.7.10"
+    compile "com.mod-buildcraft:buildcraft:6.0.18:dev"
+    compile 'net.industrial-craft:industrialcraft-2:2.2.648-experimental:api'
 }
 
 processResources

@@ -91,9 +91,9 @@ public class OilGenerator implements IWorldGenerator {
 
    private static void setMossyWithProbability(World world, int x, int y, int z, Random random) {
       if (random.nextDouble() <= 0.3) {
-         world.setBlockMetadataWithNotify(x, y, z, 1, 2);
+         world.setBlockMetadataWithNotify(x, y, z, 1, 3);
       } else if (random.nextDouble() <= 0.3) {
-         world.setBlockMetadataWithNotify(x, y, z, 2, 2);
+         world.setBlockMetadataWithNotify(x, y, z, 2, 3);
       }
    }
 

@@ -28,7 +28,7 @@ public class RubberWood extends Block {
       super(Material.wood);
       setHarvestLevel("axe", 2);
       setTickRandomly(true);
-      setBlockName(References.UnlocalizedNames.RUBBERWOOD);
+      setBlockName(References.UnlocalizedNames.Blocks.RUBBERWOOD);
    }
 
    public static boolean scoopResin(World world, int x, int y, int z) {

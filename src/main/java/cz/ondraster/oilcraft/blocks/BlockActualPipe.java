@@ -9,7 +9,7 @@ import java.util.Random;
 public class BlockActualPipe extends Block {
    public BlockActualPipe() {
       super(Material.rock);
-      setBlockName(References.UnlocalizedNames.BLOCKACTUALPIPE);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKACTUALPIPE);
       setBlockTextureName(References.Textures.BLOCKACTUALPIPE);
    }
 

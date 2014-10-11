@@ -48,12 +48,12 @@ public class FactoryBlocks {
 
 
       blockMachineCasing = new BlockMachineCasing();
-      blockMachineCasing.setBlockName(References.UnlocalizedNames.BLOCKMACHINECASING);
+      blockMachineCasing.setBlockName(References.UnlocalizedNames.Blocks.BLOCKMACHINECASING);
       blockMachineCasing.setBlockTextureName(References.Textures.BLOCKMACHINECASING);
       Registrator.registerBlock(blockMachineCasing);
 
       blockMachineCasingHT = new BlockMachineCasing();
-      blockMachineCasingHT.setBlockName(References.UnlocalizedNames.BLOCKMACHINECASINGHT);
+      blockMachineCasingHT.setBlockName(References.UnlocalizedNames.Blocks.BLOCKMACHINECASINGHT);
       blockMachineCasingHT.setBlockTextureName(References.Textures.BLOCKMACHINECASINGHT);
       Registrator.registerBlock(blockMachineCasingHT);
 
@@ -67,7 +67,7 @@ public class FactoryBlocks {
       Registrator.registerBlock(blockElectricFireboxRF);
 
       blockSolidFirebox = new BlockMachineFireboxSolid();
-      blockSolidFirebox.setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
+      blockSolidFirebox.setBlockName(References.UnlocalizedNames.Blocks.BLOCKSOLIDFIREBOX);
       blockSolidFirebox.setBlockTextureName(References.Textures.BLOCKSOLIDFIREBOX);
       Registrator.registerBlock(blockSolidFirebox);
 
@@ -77,17 +77,17 @@ public class FactoryBlocks {
       Registrator.registerBlock(blockWindow);  */
 
       blockMeter = new BlockMachineCasing();
-      blockMeter.setBlockName(References.UnlocalizedNames.BLOCKMETER);
+      blockMeter.setBlockName(References.UnlocalizedNames.Blocks.BLOCKMETER);
       blockMeter.setBlockTextureName(References.Textures.BLOCKMETER);
       Registrator.registerBlock(blockMeter);
 
       blockValve = new BlockMachineValve();
-      blockValve.setBlockName(References.UnlocalizedNames.BLOCKVALVE);
+      blockValve.setBlockName(References.UnlocalizedNames.Blocks.BLOCKVALVE);
       blockValve.setBlockTextureName(References.Textures.BLOCKVALVE);
       Registrator.registerBlock(blockValve);
 
       blockValveHT = new BlockMachineValveHT();
-      blockValveHT.setBlockName(References.UnlocalizedNames.BLOCKVALVEHT);
+      blockValveHT.setBlockName(References.UnlocalizedNames.Blocks.BLOCKVALVEHT);
       blockValveHT.setBlockTextureName(References.Textures.BLOCKVALVEHT);
       Registrator.registerBlock(blockValveHT);
 

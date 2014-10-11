@@ -16,7 +16,7 @@ public class BlockHatch extends MultiblockPartEntity {
    public BlockHatch() {
       super(RotationsAllowed.SIDEONLY);
       setBlockTextureName(References.Textures.BLOCKHATCH);
-      setBlockName(References.UnlocalizedNames.BLOCKHATCH);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKHATCH);
    }
 
    @Override

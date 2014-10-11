@@ -17,7 +17,7 @@ public class BlockMachineFireboxSolid extends MultiblockPart {
 
    public BlockMachineFireboxSolid() {
       super(RotationsAllowed.SIDEONLY);
-      setBlockName(References.UnlocalizedNames.BLOCKSOLIDFIREBOX);
+      setBlockName(References.UnlocalizedNames.Blocks.BLOCKSOLIDFIREBOX);
       this.setTickRandomly(true);
    }
 

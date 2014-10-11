@@ -11,20 +11,32 @@ public class References {
    }
 
    public class UnlocalizedNames {
-      public static final String BLOCKOILJACK = MODID + "_oiljack";
-      public static final String BLOCKPIPE = MODID + "_pipe";
+      public class Blocks {
+
+         public static final String BLOCKOILJACK = MODID + "_oiljack";
+         public static final String BLOCKPIPE = MODID + "_pipe";
+         public static final String BLOCKOILJACKPIPE = MODID + "_oiljack_pipe";
+         public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
+         public static final String BLOCKMACHINECASINGHT = MODID + "_block_machine_casinght";
+         public static final String BLOCKELECTRICFIREBOXMJ = MODID + "_block_machine_electric_firebox";
+         public static final String BLOCKMETER = MODID + "_block_machine_meter";
+         public static final String BLOCKSOLIDFIREBOX = MODID + "_block_machine_solid_firebox";
+         public static final String BLOCKVALVE = MODID + "_block_machine_valve";
+         public static final String BLOCKVALVEHT = MODID + "_block_machine_valveht";
+         public static final String BLOCKHATCH = MODID + "_block_machine_hatch";
+         public static final String BLOCKACTUALPIPE = MODID + "_block_actual_pipe";
+         public static final String BLOCKELECTRICFIREBOXEU = MODID + "_block_firebox_eu";
+         public static final String RUBBERLEAF = MODID + "_rubber_leaf";
+         public static final String RUBBERSAPLING = MODID + "_rubber_sapling";
+         public static final String RUBBERWOOD = MODID + "_rubber_wood";
+         public static final String BLOCKELECTRICFIREBOXRF = MODID + "_block_firebox_rf";
+         public static final String BLOCKINVISIBLE = MODID + "_block_invisible";
+      }
+
       public static final String FLUIDCRUDEOIL = MODID + "_crude_oil";
-      public static final String BLOCKOILJACKPIPE = MODID + "_oiljack_pipe";
       public static final String BUCKETCRUDEOIL = MODID + "_bucket_crudeoil";
       public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
-      public static final String BLOCKMACHINECASING = MODID + "_block_machine_casing";
-      public static final String BLOCKMACHINECASINGHT = MODID + "_block_machine_casinght";
-      public static final String BLOCKELECTRICFIREBOXMJ = MODID + "_block_machine_electric_firebox";
-      public static final String BLOCKMETER = MODID + "_block_machine_meter";
-      public static final String BLOCKSOLIDFIREBOX = MODID + "_block_machine_solid_firebox";
       public static final String TABNAME = MODID + "_tabname";
-      public static final String BLOCKVALVE = MODID + "_block_machine_valve";
-      public static final String BLOCKVALVEHT = MODID + "_block_machine_valveht";
       public static final String FLUIDHYDROGEN = MODID + "_hydrogen";
       public static final String ITEMMATCHES = MODID + "_matches";
       public static final String ITEMWRENCH = MODID + "_wrench";
@@ -46,7 +58,6 @@ public class References {
       public static final String FLUIDASPHALTRAW = MODID + "_fluid_asphalt_raw";
       public static final String FLUIDASPHALT = MODID + "_fluid_asphalt";
       public static final String FLUIDPARAFFIN = MODID + "_fluid_paraffin";
-      public static final String BLOCKHATCH = MODID + "_block_machine_hatch";
       public static final String FLUIDPPETROLEUM = MODID + "_fluid_processed_petroleum";
       public static final String FLUIDNAPHTA = MODID + "_fluid_naphta";
       public static final String FLUIDGASOLINE = MODID + "_fluid_gasoline";
@@ -64,20 +75,14 @@ public class References {
       public static final String FLUIDALKALYTICFUEL = MODID + "_alkalytic_fuel";
       public static final String FLUIDGAS = MODID + "_fluid_gas";
       public static final String CONTROLLERCATALYTICREFORMER = MODID + "_controller_catalytic_reformer";
-      public static final String BLOCKACTUALPIPE = MODID + "_block_actual_pipe";
-      public static final String BLOCKELECTRICFIREBOXEU = MODID + "_block_firebox_eu";
       public static final String ITEMOILJACKTOP = MODID + "_oiljack_top";
       public static final String ITEMOILJACKBASE = MODID + "_oiljack_base";
       public static final String ITEMRUBBERGASKET = MODID + "_rubber_gasket";
       public static final String ITEMSTEELINGOT = MODID + "_steel_ingot";
       public static final String ITEMHEATINGCOIL = MODID + "_heating_coil";
-      public static final String RUBBERLEAF = MODID + "_rubber_leaf";
-      public static final String RUBBERSAPLING = MODID + "_rubber_sapling";
       public static final String RESINEXTRACTOR = MODID + "_resin_extractor";
       public static final String ITEMRUBBERBAR = MODID + "_rubber_bar";
-      public static final String RUBBERWOOD = MODID + "_rubber_wood";
       public static final String STEELCOMPOUND = MODID + "_steel_compound";
-      public static final String BLOCKELECTRICFIREBOXRF = MODID + "_block_firebox_rf";
    }
 
    public class Textures {
@@ -115,6 +120,7 @@ public class References {
       public static final String CONTROLLERGASPROCESSOR = MODID + ":controller_gasproc";
       public static final String CONTROLLERCROCKER = MODID + ":controller_crocker";
       public static final String CONTROLLERCATALYTICREFORMER = MODID + ":controller_catalytic_reformer";
+      public static final String BLOCKINVISIBLE = MODID + ":invisible";
 
       public static final String RUBBERLEAF = MODID + ":rubber_leaf";
       public static final String RUBBERTAP = MODID + ":rubber_tap";
