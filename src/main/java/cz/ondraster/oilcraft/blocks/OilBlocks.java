@@ -5,7 +5,7 @@ import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
 import cz.ondraster.oilcraft.client.renderers.PipeRenderer;
-import cz.ondraster.oilcraft.tileentities.TileEntityGenerator;
+import cz.ondraster.oilcraft.tileentities.TileEntityGeneratorPower;
 import cz.ondraster.oilcraft.tileentities.TileEntityOiljack;
 import cz.ondraster.oilcraft.tileentities.TileEntityPipe;
 import net.minecraft.block.Block;
@@ -54,6 +54,6 @@ public class OilBlocks {
 
       invisibleGenerator = new BlockInvisibleGenerator();
       Registrator.registerBlock(invisibleGenerator);
-      Registrator.registerTileEntity(TileEntityGenerator.class, References.Entities.ENTITYGENERATOR);
+      Registrator.registerTileEntity(TileEntityGeneratorPower.class, References.Entities.ENTITYGENERATOR);
    }
 }

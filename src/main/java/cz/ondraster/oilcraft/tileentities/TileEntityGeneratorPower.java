@@ -18,12 +18,12 @@ import net.minecraftforge.common.util.ForgeDirection;
       @Optional.Interface(iface = "ic2.api.energy.tile.IEnergySink", modid = "IC2API")
 })
 
-public class TileEntityGenerator extends TileEntity implements IEnergyHandler, IEnergySink {
+public class TileEntityGeneratorPower extends TileEntity implements IEnergyHandler, IEnergySink {
    RFEnergyStorage RFStorage;
    boolean notifiedIC2 = false;
    private int powerStored = 0;
 
-   public TileEntityGenerator() {
+   public TileEntityGeneratorPower() {
       RFStorage = new RFEnergyStorage(Config.oiljackPowerCapacity, Config.oiljackMaxTransferRF, Config.powerPerAction);
    }
 

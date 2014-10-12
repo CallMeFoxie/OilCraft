@@ -1,7 +1,7 @@
 package cz.ondraster.oilcraft.blocks;
 
 import cz.ondraster.oilcraft.References;
-import cz.ondraster.oilcraft.tileentities.TileEntityGenerator;
+import cz.ondraster.oilcraft.tileentities.TileEntityGeneratorPower;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
@@ -25,6 +25,6 @@ public class BlockInvisibleGenerator extends BlockContainer {
 
    @Override
    public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-      return new TileEntityGenerator();
+      return new TileEntityGeneratorPower();
    }
 }

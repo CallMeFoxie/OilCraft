@@ -37,7 +37,7 @@ public class TileEntityOiljack extends TileEntity {
          lastUpdate = 0;
          if (worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof TileEntityOiljackPipe) {
             ((TileEntityOiljackPipe) worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ)).digOil();
-            TileEntityGenerator generator = (TileEntityGenerator) getGenerator();
+            TileEntityGeneratorPower generator = (TileEntityGeneratorPower) getGenerator();
             generator.extractEnergy(Config.powerPerAction);
          }
       }
@@ -47,12 +47,12 @@ public class TileEntityOiljack extends TileEntity {
 
    public boolean hasPower() {
       TileEntity generator = getGenerator();
-      if (!(generator instanceof TileEntityGenerator)) {
+      if (!(generator instanceof TileEntityGeneratorPower)) {
          Helper.logWarn("TileEntity Generator NOT found where it should have been! This error should NOT happen!");
          return false;
       }
 
-      int power = ((TileEntityGenerator) generator).getStoredEnergy();
+      int power = ((TileEntityGeneratorPower) generator).getStoredEnergy();
       if (power < Config.powerPerAction)
          return false;
 
