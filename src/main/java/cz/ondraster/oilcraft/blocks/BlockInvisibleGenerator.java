@@ -14,7 +14,7 @@ public class BlockInvisibleGenerator extends BlockContainer {
       setResistance(6000000.0F);
       setBlockUnbreakable();
       setBlockTextureName(References.Textures.BLOCKINVISIBLE);
-      setBlockBounds(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+      //setBlockBounds(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
    }
 
    @Override

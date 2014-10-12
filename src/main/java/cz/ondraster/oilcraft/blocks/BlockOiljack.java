@@ -23,6 +23,7 @@ public class BlockOiljack extends BlockContainer {
       this.setBlockTextureName(References.Icons.ICONOILJACK);
       this.setBlockName(References.UnlocalizedNames.Blocks.BLOCKOILJACK);
       Registrator.registerTileEntity(TileEntityOiljack.class, References.Entities.ENTITYOILJACK);
+      //setBlockBounds(0f, 0f, -1f, 1f, 2f, 1f);
    }
 
    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {
