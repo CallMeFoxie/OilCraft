@@ -21,7 +21,6 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class TileEntityGeneratorPower extends TileEntity implements IEnergyHandler, IEnergySink {
    RFEnergyStorage RFStorage;
    boolean notifiedIC2 = false;
-   private int powerStored = 0;
 
    public TileEntityGeneratorPower() {
       RFStorage = new RFEnergyStorage(Config.oiljackPowerCapacity, Config.oiljackMaxTransferRF, Config.powerPerAction);
@@ -30,13 +29,13 @@ public class TileEntityGeneratorPower extends TileEntity implements IEnergyHandl
    @Override
    public void readFromNBT(NBTTagCompound tag) {
       super.readFromNBT(tag);
-      powerStored = tag.getInteger("powerStored");
+      RFStorage.load(tag);
    }
 
    @Override
    public void writeToNBT(NBTTagCompound tag) {
       super.writeToNBT(tag);
-      tag.setInteger("powerStored", powerStored);
+      RFStorage.save(tag);
    }
 
    @Override
