@@ -3,8 +3,10 @@ package cz.ondraster.oilcraft.blocks;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cz.ondraster.oilcraft.References;
 import cz.ondraster.oilcraft.Registrator;
+import cz.ondraster.oilcraft.client.renderers.GasGeneratorRenderer;
 import cz.ondraster.oilcraft.client.renderers.OiljackRenderer;
 import cz.ondraster.oilcraft.client.renderers.PipeRenderer;
+import cz.ondraster.oilcraft.tileentities.TileEntityGeneratorGas;
 import cz.ondraster.oilcraft.tileentities.TileEntityGeneratorPower;
 import cz.ondraster.oilcraft.tileentities.TileEntityOiljack;
 import cz.ondraster.oilcraft.tileentities.TileEntityPipe;
@@ -23,6 +25,8 @@ public class OilBlocks {
 
    public static Block invisibleBlock;
    public static Block invisibleGenerator;
+
+   public static Block gasGeneratorRF;
 
 
    public static void init() {
@@ -55,5 +59,11 @@ public class OilBlocks {
       invisibleGenerator = new BlockInvisibleGenerator();
       Registrator.registerBlock(invisibleGenerator);
       Registrator.registerTileEntity(TileEntityGeneratorPower.class, References.Entities.ENTITYGENERATOR);
+
+      gasGeneratorRF = new GasGeneratorRF();
+      Registrator.registerBlock(gasGeneratorRF);
+      ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGeneratorGas.class, new GasGeneratorRenderer());
+      Registrator.registerTileEntity(TileEntityGeneratorGas.class, References.Entities.ENTITYGASGENERATOR);
+
    }
 }

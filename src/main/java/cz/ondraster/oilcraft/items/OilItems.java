@@ -14,6 +14,7 @@ public class OilItems {
    public static Item bucketCrudeOil;
    public static Item bucketHydrogen;
    public static Item bucketAsphalt;
+   public static Item bucketGas;
 
    public static Item debugTool;
    public static Item itemMatches;

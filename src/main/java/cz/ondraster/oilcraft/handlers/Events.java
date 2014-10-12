@@ -49,7 +49,7 @@ public class Events {
       if (block != OilBlocks.rubberSapling)
          return;
 
-      Random random = new Random();
+      Random random = new Random(event.world.getSeed());
       int rand = random.nextInt(10);
 
       if (rand == 0) {
@@ -58,5 +58,4 @@ public class Events {
 
       event.setResult(Event.Result.ALLOW);
    }
-
 }

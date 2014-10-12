@@ -32,6 +32,7 @@ public class References {
          public static final String BLOCKELECTRICFIREBOXRF = MODID + "_block_firebox_rf";
          public static final String BLOCKINVISIBLE = MODID + "_block_invisible";
          public static final String BLOCKINVISIBLEGENERATOR = MODID + "_block_invisible_generator";
+         public static final String BLOCKGASGENERATOR = MODID + "_block_gas_generator";
       }
 
       public static final String FLUIDCRUDEOIL = MODID + "_crude_oil";
@@ -90,6 +91,7 @@ public class References {
       public static final String BLOCKOILJACK3D = "oiljack.png";
       public static final String BLOCKPIPE3D = "pipe_front.png";
       public static final String BLOCKPIPEMIDDLE3D = "pipe_middle.png";
+      public static final String MODELGASGENERATOR = "gas_generator.png";
       public static final String BLOCKACTUALPIPE = MODID + ":actual_pipe";
       public static final String BUCKETCRUDEOIL = MODID + ":bucket_crudeoil";
       public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe_side";
@@ -128,6 +130,8 @@ public class References {
       public static final String RUBBERWOOD = MODID + ":rubber_wood";
       public static final String RUBBERSAPLING = MODID + ":rubber_sapling";
       public static final String RESINEXTRACTOR = MODID + ":resin_extractor";
+      public static final String BLOCKGASGENERATOR = MODID + ":gas_generator";
+
    }
 
    public class Icons {
@@ -167,5 +171,6 @@ public class References {
       public static final String ENTITYFIREBOXEU = MODID + "_firebox_eu_te";
       public static final String ENTITYFIREBOXRF = MODID + "_firebox_eu_rf";
       public static final String ENTITYGENERATOR = MODID + "_generator";
+      public static final String ENTITYGASGENERATOR = MODID + "_gas_generator";
    }
 }
