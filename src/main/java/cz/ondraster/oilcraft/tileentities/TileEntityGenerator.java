@@ -2,6 +2,7 @@ package cz.ondraster.oilcraft.tileentities;
 
 import cofh.api.energy.IEnergyHandler;
 import cpw.mods.fml.common.Optional;
+import cz.ondraster.oilcraft.PowerTools;
 import cz.ondraster.oilcraft.compatibility.rf.RFEnergyStorage;
 import cz.ondraster.oilcraft.worldgen.Config;
 import ic2.api.energy.event.EnergyTileLoadEvent;
@@ -23,7 +24,7 @@ public class TileEntityGenerator extends TileEntity implements IEnergyHandler, I
    private int powerStored = 0;
 
    public TileEntityGenerator() {
-      RFStorage = new RFEnergyStorage(Config.oiljackPowerCapacity, Config.oiljackMaxTransferRF, 0);
+      RFStorage = new RFEnergyStorage(Config.oiljackPowerCapacity, Config.oiljackMaxTransferRF, Config.powerPerAction);
    }
 
    @Override
@@ -49,6 +50,10 @@ public class TileEntityGenerator extends TileEntity implements IEnergyHandler, I
       }
    }
 
+   public int getStoredEnergy() {
+      return RFStorage.getEnergyStored();
+   }
+
    /* RF API */
    @Override
    public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
@@ -60,10 +65,7 @@ public class TileEntityGenerator extends TileEntity implements IEnergyHandler, I
 
    @Override
    public int extractEnergy(ForgeDirection from, int maxExtract, boolean simulate) {
-      if (!canConnectEnergy(from))
-         return 0;
-
-      return RFStorage.extractEnergy(maxExtract, simulate);
+      return 0;
    }
 
    @Override
@@ -102,7 +104,8 @@ public class TileEntityGenerator extends TileEntity implements IEnergyHandler, I
 
    @Override
    public double injectEnergy(ForgeDirection forgeDirection, double amount, double voltage) {
-      return RFStorage.receiveEnergy((int) (amount * (Config.powerPerEu / Config.powerPerRF)), false);
+      double unused = amount - PowerTools.convertRFtoEU(RFStorage.receiveEnergy(PowerTools.convertEUtoRF(amount), false));
+      return unused;
    }
 
    @Override
@@ -124,4 +127,8 @@ public class TileEntityGenerator extends TileEntity implements IEnergyHandler, I
    }
 
    /* /IC2 API */
+
+   public void extractEnergy(int powerPerAction) {
+      RFStorage.extractEnergy(powerPerAction, false);
+   }
 }

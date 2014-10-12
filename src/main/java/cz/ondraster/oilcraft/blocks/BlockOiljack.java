@@ -72,7 +72,7 @@ public class BlockOiljack extends BlockContainer {
       TileEntityOiljack oiljack = (TileEntityOiljack) world.getTileEntity(x, y, z);
 
       if (oiljack.getOrientation().offsetX != 0) {
-         world.setBlock(x + oiljack.getOrientation().offsetX, y + 0, z, newBlock);
+         //world.setBlock(x + oiljack.getOrientation().offsetX, y + 0, z, newBlock);
          world.setBlock(x - oiljack.getOrientation().offsetX, y + 0, z, newBlock);
          world.setBlock(x + oiljack.getOrientation().offsetX, y + 1, z, newBlock);
          world.setBlock(x - oiljack.getOrientation().offsetX, y + 1, z, newBlock);
@@ -84,7 +84,7 @@ public class BlockOiljack extends BlockContainer {
             world.setBlock(x + oiljack.getOrientation().getOpposite().offsetX * 2, y + 0, z, OilBlocks.invisibleGenerator);
       }
       if (oiljack.getOrientation().offsetZ != 0) {
-         world.setBlock(x, y + 0, z + oiljack.getOrientation().offsetZ, newBlock);
+         //world.setBlock(x, y + 0, z + oiljack.getOrientation().offsetZ, newBlock);
          world.setBlock(x, y + 0, z - oiljack.getOrientation().offsetZ, newBlock);
          world.setBlock(x, y + 1, z + oiljack.getOrientation().offsetZ, newBlock);
          world.setBlock(x, y + 1, z - oiljack.getOrientation().offsetZ, newBlock);

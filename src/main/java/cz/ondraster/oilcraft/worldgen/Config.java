@@ -8,4 +8,5 @@ public class Config {
 
    public static int oiljackMaxTransferEu = 32;
    public static int oiljackMaxTransferRF = oiljackMaxTransferEu * (powerPerEu / powerPerRF);
+   public static int powerPerAction = 200;
 }

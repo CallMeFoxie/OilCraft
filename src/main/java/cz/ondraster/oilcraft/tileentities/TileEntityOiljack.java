@@ -1,5 +1,7 @@
 package cz.ondraster.oilcraft.tileentities;
 
+import cz.ondraster.oilcraft.Helper;
+import cz.ondraster.oilcraft.worldgen.Config;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -31,23 +33,46 @@ public class TileEntityOiljack extends TileEntity {
       if (worldObj.isRemote)
          return;
 
-
-      if (lastUpdate >= 40) {
+      if (lastUpdate >= 40 && canWork() && hasPower()) {
          lastUpdate = 0;
          if (worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof TileEntityOiljackPipe) {
             ((TileEntityOiljackPipe) worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ)).digOil();
+            TileEntityGenerator generator = (TileEntityGenerator) getGenerator();
+            generator.extractEnergy(Config.powerPerAction);
          }
       }
 
       lastUpdate++;
    }
 
-   public boolean canWork() {
-      // check for neighbour blocks. Should run client side only to help with server perfomance!
-      if (worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof TileEntityOiljackPipe)
-         return true;
+   public boolean hasPower() {
+      TileEntity generator = getGenerator();
+      if (!(generator instanceof TileEntityGenerator)) {
+         Helper.logWarn("TileEntity Generator NOT found where it should have been! This error should NOT happen!");
+         return false;
+      }
 
-      return false;
+      int power = ((TileEntityGenerator) generator).getStoredEnergy();
+      if (power < Config.powerPerAction)
+         return false;
+
+      return true;
+   }
+
+   public boolean canWork() {
+      boolean canWork = true;
+      // check for neighbour blocks. Should run client side only to help with server perfomance!
+      if (!(worldObj.getTileEntity(xCoord + orientation.offsetX, yCoord, zCoord + orientation.offsetZ) instanceof TileEntityOiljackPipe))
+         canWork = false;
+
+      return canWork;
+   }
+
+   private TileEntity getGenerator() {
+      if (getOrientation().offsetX != 0)
+         return worldObj.getTileEntity(xCoord + getOrientation().getOpposite().offsetX * 2, yCoord + 0, zCoord);
+      else
+         return worldObj.getTileEntity(xCoord, yCoord, zCoord + getOrientation().getOpposite().offsetZ * 2);
    }
 
    public ForgeDirection getOrientation() {
