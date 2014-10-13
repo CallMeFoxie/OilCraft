@@ -8,7 +8,7 @@ public class Config {
 
    public static int oiljackMaxTransferEu = 32;
    public static int oiljackMaxTransferRF = oiljackMaxTransferEu * (powerPerEu / powerPerRF);
-   public static int powerPerAction = 200;
+   public static int powerPerAction = 2000;
 
    public class GeneratorRF {
       public static final int maxStorage = 20000;

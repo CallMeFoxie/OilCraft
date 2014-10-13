@@ -26,6 +26,10 @@ public class RFEnergyStorage implements IEnergyStorage {
       nbt.setInteger("rfStored", this.curStorage);
    }
 
+   public int maxExtractEnergy() {
+      return Math.min(maxExtract, curStorage);
+   }
+
    @Override
    public int receiveEnergy(int maxReceive, boolean simulate) {
       int rx = Math.min(maxStorage - curStorage, Math.min(maxReceive, this.maxTransfer));
