@@ -34,6 +34,10 @@ public class OilItems {
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDASPHALT, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketAsphalt), new ItemStack(Items.bucket));
       Fluids.blockFluidAsphalt.setBucket((OilCraftBucket) bucketAsphalt);
 
+      bucketGas = new OilCraftBucket(Fluids.blockFluidGas).setUnlocalizedName(References.UnlocalizedNames.BUCKETGAS).setTextureName(References.Textures.BUCKETGAS);
+      Registrator.registerItem(bucketGas);
+      FluidContainerRegistry.registerFluidContainer(Fluids.fluidGas, new ItemStack(bucketGas), new ItemStack(Items.bucket));
+
       /*bucketHydrogen = new OilCraftBucket(Fluids.blockFluidHydrogen).setUnlocalizedName(References.UnlocalizedNames.BUCKETHYDROVEN).setTextureName(References.Textures.BUCKETHYDROGEN);
       Registrator.registerItem(bucketHydrogen);
       FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack(References.UnlocalizedNames.FLUIDHYDROGEN, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(OilItems.bucketHydrogen), new ItemStack(Items.bucket));

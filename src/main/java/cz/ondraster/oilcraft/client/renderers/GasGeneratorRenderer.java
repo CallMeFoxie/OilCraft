@@ -35,12 +35,11 @@ public class GasGeneratorRenderer extends TileEntitySpecialRenderer {
       else if (rotation == ForgeDirection.WEST)
          GL11.glRotatef(90, 0f, 1f, 0f);
 
-      tm.bindTexture(new ResourceLocation(References.MODID, "textures/models/" + References.Textures.MODELGASGENERATOR));
 
       TileEntityGeneratorGas te = (TileEntityGeneratorGas) var1;
 
       if (te.getEnergyStored(ForgeDirection.UNKNOWN) > 0)
-         te.rotationOffset += 45;
+         te.rotationOffset += 15;
       if (te.rotationOffset >= 360) {
          te.rotationOffset = 0;
       }
@@ -49,8 +48,17 @@ public class GasGeneratorRenderer extends TileEntitySpecialRenderer {
 
       GL11.glRotatef(180, 1f, 0f, 0f);
       GL11.glTranslatef(0, -1f, 0f);
+
+      int percent = (int) ((te.getEnergyStored(ForgeDirection.UNKNOWN) / (float) te.getMaxEnergyStored(ForgeDirection.UNKNOWN)) * 10);
+      if (percent < 0)
+         percent = 0;
+      if (percent > 10)
+         percent = 0;
+
+      tm.bindTexture(new ResourceLocation(References.MODID, "textures/models/" + References.Textures.MODELGASGENERATOR + "_" + percent + ".png"));
       this.generator.render(off);
 
+      // TODO - render bar graph
 
       GL11.glPopMatrix();
    }

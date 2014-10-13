@@ -46,7 +46,9 @@ public class Fluids {
    public static Fluid fluidLPG;
    public static Fluid fluidAlkalyticFuel;
    public static Fluid fluidAlkalyte;
+
    public static Fluid fluidGas;
+   public static BlockFluid blockFluidGas;
 
 
    public static void init() {
@@ -109,6 +111,9 @@ public class Fluids {
       Registrator.registerBlock(blockFluidHeatedOil);*/
       blockFluidAsphalt = new BlockFluid(fluidAsphalt, Material.water, References.UnlocalizedNames.FLUIDASPHALT, References.Textures.FLUIDASPHALTSTILL, References.Textures.FLUIDASPHALTFLOWING);
       Registrator.registerBlock(blockFluidAsphalt);
+
+      blockFluidGas = new BlockFluid(fluidGas, Material.water, References.UnlocalizedNames.FLUIDGAS, References.Textures.FLUIDGASSTILL, References.Textures.FLUIDGASFLOWING);
+      Registrator.registerBlock(blockFluidGas);
 
    }
 }

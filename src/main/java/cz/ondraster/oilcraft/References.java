@@ -35,6 +35,9 @@ public class References {
          public static final String BLOCKGASGENERATOR = MODID + "_block_gas_generator";
       }
 
+      public static final String BUCKETGAS = MODID + "_bucket_gas";
+
+
       public static final String FLUIDCRUDEOIL = MODID + "_crude_oil";
       public static final String BUCKETCRUDEOIL = MODID + "_bucket_crudeoil";
       public static final String ITEMDEBUGTOOL = MODID + "_debugtool";
@@ -91,7 +94,7 @@ public class References {
       public static final String BLOCKOILJACK3D = "oiljack.png";
       public static final String BLOCKPIPE3D = "pipe_front.png";
       public static final String BLOCKPIPEMIDDLE3D = "pipe_middle.png";
-      public static final String MODELGASGENERATOR = "gas_generator.png";
+      public static final String MODELGASGENERATOR = "gas_generator";
       public static final String BLOCKACTUALPIPE = MODID + ":actual_pipe";
       public static final String BUCKETCRUDEOIL = MODID + ":bucket_crudeoil";
       public static final String BLOCKOILJACKPIPE = MODID + ":oiljack_pipe_side";
@@ -132,6 +135,9 @@ public class References {
       public static final String RESINEXTRACTOR = MODID + ":resin_extractor";
       public static final String BLOCKGASGENERATOR = MODID + ":gas_generator";
 
+      public static final String BUCKETGAS = MODID + ":bucket_gas";
+      public static final String FLUIDGASSTILL = MODID + ":gas_still";
+      public static final String FLUIDGASFLOWING = MODID + ":gas_flowing";
    }
 
    public class Icons {
